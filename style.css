@@ -52,3 +52,8 @@ footer {
   text-align: center;
   padding: 20px;
 }
+.project img {
+  width: 48%;
+  margin: 1%;
+  border-radius: 6px;
+}
