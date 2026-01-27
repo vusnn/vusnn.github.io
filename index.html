@@ -10,32 +10,103 @@
       padding: 40px;
       line-height: 1.6;
     }
-    h1 {
+
+    h1, h2 {
       text-align: center;
       color: #2c3e50;
     }
+
     p {
       max-width: 700px;
       margin: 20px auto;
     }
+
+    /* Navigation */
+    nav {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2c3e50;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #e67e22;
+    }
+
+    /* Image gallery styling */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .gallery-item {
+      flex: 1;
+      min-width: 250px;
+      max-width: 400px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .gallery-item p {
+      text-align: center;
+      margin-top: 5px;
+      font-size: 0.9em;
+      color: #555;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="wit-arena.html">WIT Arena Café</a>
+  </nav>
+
   <h1>WIT Arena – Frank & Honest Café</h1>
+
   <p>
     CTS Group successfully completed the Electrical & Mechanical installation for the 
     <strong>Frank & Honest Café</strong> at <strong>SETU Arena</strong>, finalizing the project on 
     <strong>30th September 2022</strong>. The works included a series of upgrades to enhance the café’s 
     functionality and overall environment.
   </p>
+
   <p>
     Key installations included a Saniflo unit with plumbing and electrical wiring, a new sink in the toilet 
     with a mixer tap, an upgraded communications cabinet to support CCTV, and the relocation of the Merry Chef unit. 
     Additionally, lighting alterations and switching modifications were completed as requested by the client.
   </p>
+
+  <!-- Image Gallery -->
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="cafep2.jpg" alt="Frank & Honest Café view 1">
+      <p>Café interior view 1</p>
+    </div>
+    <div class="gallery-item">
+      <img src="cafep3.jpg" alt="Frank & Honest Café view 2">
+      <p>Café interior view 2</p>
+    </div>
+  </div>
+
   <p>
     CTS Group is proud to have contributed to the improvement of <strong>SETU Arena’s facilities</strong> 
     and wishes the café continued success in serving its visitors.
   </p>
+
 </body>
 </html>
