@@ -1,78 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CTS Group | Building Services</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CTS Group | Construction & Fit-Out Specialists</title>
+
+  <!-- BASIC RESET -->
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #1f1f1f;
+      background: #ffffff;
+    }
+    img { width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* GLOBAL */
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 4rem 1.5rem;
+    }
+    h1, h2, h3 {
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    p { margin-bottom: 1.2rem; color: #444; }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.6rem;
+      background: #000;
+      color: #fff;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      transition: background 0.3s ease;
+    }
+    .btn:hover { background: #333; }
+
+    /* HEADER */
+    header {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* HERO */
+    .hero {
+      height: 75vh;
+      background: url('images/hero-placeholder.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+    .hero-content {
+      position: relative;
+      max-width: 700px;
+      padding: 0 2rem;
+    }
+
+    /* IMAGE GRID */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .image-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .image-card img {
+      height: 320px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .image-card:hover img { transform: scale(1.05); }
+    .image-label {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 0.85rem;
+    }
+
+    /* SERVICES */
+    .services {
+      background: #f7f7f7;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+    .service {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 6px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      color: #ccc;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+    footer p { color: #aaa; font-size: 0.85rem; }
+  </style>
 </head>
 <body>
 
-<header class="header">
-  <div class="header-inner">
-    <img src="cts-logo.png" alt="CTS Group Logo" class="logo">
-    <div>
-      <h1>CTS Group</h1>
-      <p>Mechanical & Electrical Building Services</p>
+  <!-- HEADER -->
+  <header>
+    <strong>CTS GROUP</strong>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Building with Precision. Delivering with Trust.</h1>
+      <p>CTS Group is a leading Irish construction and fit‑out contractor delivering high‑quality projects across retail, commercial, hospitality, industrial, education, and public sectors.</p>
+      <a href="#projects" class="btn">View Our Projects</a>
     </div>
-  </div>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About CTS</a>
-    <a href="projects.html">Our Difference</a>
-    <a href="team.html">Team</a>
-    <a href="careers.html">Careers</a>
-  </nav>
-</header>
-
-<!-- HERO IMAGE PLACEHOLDER -->
-<section class="hero-image">
-  <img src="cts-office-hero.jpg" alt="CTS Group Head Office">
-</section>
-
-<div class="container">
-
-  <section class="section">
-    <h2>Delivering Innovative Building Services</h2>
-    <p>
-      CTS Group delivers high-quality mechanical and electrical building services
-      across commercial, retail, industrial and healthcare sectors throughout Ireland.
-    </p>
   </section>
 
-  <section class="section">
-    <h2>Featured Projects</h2>
-
-    <div class="project">
-      <h3>SETU Arena – Frank & Honest Café</h3>
-      <p>
-        Electrical and mechanical installation including lighting alterations,
-        communications upgrades and plumbing works.
-      </p>
-      <img src="cafep2.jpg" alt="SETU Arena Cafe">
-      <img src="cafep3.jpg" alt="SETU Arena Cafe">
-    </div>
-
-    <div class="project">
-      <h3>Sweaty Betty – Kildare Village</h3>
-      <p>
-        Electrical installation works including lighting upgrades, access control,
-        data points and fire alarm integration.
-      </p>
-      <img src="sweatybep1.jpg" alt="Sweaty Betty Fitout">
-      <img src="sweatybep2.jpg" alt="Sweaty Betty Fitout">
-    </div>
-
-    <p>
-      <a href="projects.html" class="btn">View All Projects</a>
-    </p>
+  <!-- ABOUT -->
+  <section class="container">
+    <h2>About CTS Group</h2>
+    <p>With decades of experience, CTS Group delivers reliable, high‑quality construction solutions through collaboration, technical expertise, and a hands‑on approach. We are committed to safe delivery, attention to detail, and building long‑term relationships with our clients.</p>
+    <p>Our goal is to consistently exceed expectations while embracing innovation, sustainability, and continuous improvement across every project we deliver.</p>
   </section>
 
-</div>
+  <!-- IMAGE SHOWCASE (NO PROJECT LIST) -->
+  <section class="container">
+    <h2>What We Do</h2>
+    <div class="image-grid">
+      <div class="image-card">
+        <img src="images/retail-placeholder.jpg" alt="Retail Projects" />
+        <div class="image-label">Retail & Supermarkets</div>
+      </div>
+      <div class="image-card">
+        <img src="images/commercial-placeholder.jpg" alt="Commercial Projects" />
+        <div class="image-label">Commercial & Office Fit‑Outs</div>
+      </div>
+      <div class="image-card">
+        <img src="images/hospitality-placeholder.jpg" alt="Hospitality Projects" />
+        <div class="image-label">Hospitality & Leisure</div>
+      </div>
+      <div class="image-card">
+        <img src="images/industrial-placeholder.jpg" alt="Industrial Projects" />
+        <div class="image-label">Industrial & Logistics</div>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  <p>© CTS Group | Waterford & Dublin</p>
-</footer>
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service-grid">
+        <div class="service">
+          <h3>Main Contracting</h3>
+          <p>End‑to‑end project delivery with full programme, cost, and quality control.</p>
+        </div>
+        <div class="service">
+          <h3>Fit‑Out & Refurbishment</h3>
+          <p>High‑quality interior fit‑outs delivered with minimal disruption.</p>
+        </div>
+        <div class="service">
+          <h3>Design & Build</h3>
+          <p>Collaborative solutions from concept through to completion.</p>
+        </div>
+        <div class="service">
+          <h3>Public & Commercial Works</h3>
+          <p>Proven experience across education, healthcare, and public sector projects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <p><strong>CTS Group</strong></p>
+    <p>Construction & Fit‑Out Specialists</p>
+    <p>Email: info@ctsgroup.ie | Phone: +353 (0)XX XXX XXXX</p>
+    <p>© CTS Group. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
+
