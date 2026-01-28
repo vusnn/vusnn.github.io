@@ -2,30 +2,168 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>CTS Group | About</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn about CTS Group's history, values, and commitment to quality construction services in Ireland.">
+<title>About Us | CTS Group Construction</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 <header>
-<strong>CTS GROUP</strong>
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="projects.html">Projects</a>
-<a href="team.html">Team</a>
-<a href="careers.html">Careers</a>
-</nav>
+  <nav>
+    <a href="index.html" class="logo">CTS GROUP</a>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="careers.html">Careers</a></li>
+    </ul>
+  </nav>
 </header>
 
+<div class="breadcrumb">
+  <div class="breadcrumb-content">
+    <a href="index.html">Home</a> / About Us
+  </div>
+</div>
 
-<section class="container">
-<h1>About Us</h1>
-<p>CTS Group is a trusted Irish construction and fit‑out contractor with decades of industry experience.</p>
-<p>We focus on quality delivery, collaboration and building long‑term relationships.</p>
-</section>
+<main>
+  <section style="padding-top:3rem;">
+    <div class="container">
+      <div class="section-header">
+        <h1>About CTS Group</h1>
+        <p>A legacy of building excellence across Ireland since 1999</p>
+      </div>
+      
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; margin:4rem 0;">
+        <div class="animate-on-scroll">
+          <img src="https://placehold.co/600x500/0f172a/ffffff?text=Company+History" alt="CTS History" style="border-radius:1rem; box-shadow:var(--shadow-lg);">
+        </div>
+        <div class="animate-on-scroll">
+          <h2>Our Story</h2>
+          <p>Founded in Dublin in 1999, CTS Group began as a small family-owned construction business with a commitment to quality workmanship and honest relationships.</p>
+          <p>Over the past 25 years, we have grown into one of Ireland's leading construction and fit-out contractors, completing over 500 projects across retail, commercial, industrial, and public sectors.</p>
+          <p>Despite our growth, we maintain the same values that defined our early days: integrity, quality, and a relentless focus on client satisfaction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section class="services" style="padding:4rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Values</h2>
+        <p>The principles that guide every project we undertake</p>
+      </div>
+      
+      <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));">
+        <div class="service-card text-center animate-on-scroll">
+          <div class="service-icon" style="margin:0 auto 1.5rem;">
+            <i class="fas fa-award"></i>
+          </div>
+          <h3>Quality</h3>
+          <p>We never compromise on craftsmanship. Every detail matters, and every project must meet our exacting standards.</p>
+        </div>
+        
+        <div class="service-card text-center animate-on-scroll">
+          <div class="service-icon" style="margin:0 auto 1.5rem;">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>Integrity</h3>
+          <p>Honest communication, transparent pricing, and ethical business practices form the foundation of our client relationships.</p>
+        </div>
+        
+        <div class="service-card text-center animate-on-scroll">
+          <div class="service-icon" style="margin:0 auto 1.5rem;">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Collaboration</h3>
+          <p>We work as an extension of your team, ensuring seamless integration with your operations and minimal disruption.</p>
+        </div>
+        
+        <div class="service-card text-center animate-on-scroll">
+          <div class="service-icon" style="margin:0 auto 1.5rem;">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Safety</h3>
+          <p>Zero compromises on safety. Our rigorous protocols protect our team, your staff, and the public on every site.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer><p>© CTS Group</p></footer>
+  <section class="container">
+    <div style="text-align:center; max-width:800px; margin:0 auto;">
+      <h2 class="animate-on-scroll">Why Choose CTS Group?</h2>
+      <p class="animate-on-scroll" style="font-size:1.125rem; margin:2rem 0;">
+        Whether you're looking for a single store fit-out or a nationwide roll-out program, we bring the same level of dedication, expertise, and professionalism to every project.
+      </p>
+      
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:2rem; margin-top:3rem; text-align:left;">
+        <div class="animate-on-scroll" style="padding:1.5rem; background:var(--cts-light); border-radius:0.5rem; border-left:4px solid var(--cts-blue);">
+          <h4 style="margin-bottom:0.5rem;">Experienced Team</h4>
+          <p style="margin:0; font-size:0.95rem;">Over 150 skilled professionals across all trades and disciplines.</p>
+        </div>
+        
+        <div class="animate-on-scroll" style="padding:1.5rem; background:var(--cts-light); border-radius:0.5rem; border-left:4px solid var(--cts-blue);">
+          <h4 style="margin-bottom:0.5rem;">Nationwide Coverage</h4>
+          <p style="margin:0; font-size:0.95rem;">Operating across all 32 counties of Ireland with consistent quality.</p>
+        </div>
+        
+        <div class="animate-on-scroll" style="padding:1.5rem; background:var(--cts-light); border-radius:0.5rem; border-left:4px solid var(--cts-blue);">
+          <h4 style="margin-bottom:0.5rem;">On-Time Delivery</h4>
+          <p style="margin:0; font-size:0.95rem;">98% of projects completed on or before schedule.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>CTS Group</h3>
+        <p>Building Ireland's future with precision, quality, and integrity.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul>
+          <li>Dublin, Ireland</li>
+          <li>+353 1 234 5678</li>
+          <li>info@ctsgroup.ie</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 CTS Group. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('active');
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, {threshold: 0.1});
+
+document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
+</script>
 </body>
-</html>
 </html>
