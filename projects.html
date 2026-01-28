@@ -1,81 +1,191 @@
-<!-- =====================================================
-CTS GROUP WEBSITE – FULL MULTI‑PAGE CODE
-Image placeholders follow naming rules:
-- Management images: managementp1.jpg, managementp2.jpg
-- Store / project images: storep1.jpg, storep2.jpg
-===================================================== -->
-
-
-<!-- ========================= index.html ========================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CTS Group | Construction & Fit‑Out Specialists</title>
-<style>
-:root{
---cts-blue:#0b5ed7;
---cts-dark:#0a2540;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,Helvetica,sans-serif;color:#1f1f1f;line-height:1.6}
-a{text-decoration:none;color:inherit}
-img{width:100%;display:block}
-.container{max-width:1200px;margin:auto;padding:4rem 1.5rem}
-h1,h2,h3{color:var(--cts-dark);margin-bottom:1rem}
-h1{font-size:2.6rem}
-h2{font-size:2rem}
-p{color:#444;margin-bottom:1.2rem}
-.btn{background:var(--cts-blue);color:#fff;padding:.8rem 1.6rem;display:inline-block}
-.btn:hover{background:#084298}
-header{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-bottom:3px solid var(--cts-blue)}
-nav a{margin-left:1.5rem;font-weight:600}
-.hero{height:75vh;background:url('images/storep1.jpg') center/cover no-repeat;position:relative;display:flex;align-items:center}
-.hero::after{content:'';position:absolute;inset:0;background:rgba(10,37,64,.7)}
-.hero-content{position:relative;color:#fff;max-width:700px;padding:0 2rem}
-.hero-content h1{color:#fff}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3rem}
-.card{position:relative;overflow:hidden;border-bottom:4px solid var(--cts-blue)}
-.card img{height:320px;object-fit:cover}
-.label{position:absolute;bottom:0;width:100%;background:rgba(11,94,215,.85);color:#fff;padding:.8rem}
-.services{background:#f2f6fb}
-.service{background:#fff;padding:2rem;border-left:5px solid var(--cts-blue)}
-footer{background:var(--cts-dark);color:#cfd8e3;text-align:center;padding:3rem 1.5rem}
-</style>
+<meta name="description" content="Explore CTS Group's portfolio of completed construction and fit-out projects across Ireland.">
+<title>Our Projects | CTS Group Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 <header>
-<strong>CTS GROUP</strong>
-<nav>
-<a href="index.html">Home</a>
-<a href="projects.html">Projects</a>
-<a href="team.html">Our Team</a>
-<a href="services.html">Services</a>
-</nav>
+  <nav>
+    <a href="index.html" class="logo">CTS GROUP</a>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="careers.html">Careers</a></li>
+    </ul>
+  </nav>
 </header>
 
-
-<section class="hero">
-<div class="hero-content">
-<h1>Building with Precision. Delivering with Trust.</h1>
-<p>CTS Group delivers high‑quality construction and fit‑out projects across Ireland.</p>
-<a href="projects.html" class="btn">View Our Projects</a>
+<div class="breadcrumb">
+  <div class="breadcrumb-content">
+    <a href="index.html">Home</a> / Projects
+  </div>
 </div>
-</section>
 
+<main>
+  <section style="padding-top:3rem;">
+    <div class="container">
+      <div class="section-header">
+        <h1>Our Projects</h1>
+        <p>A selection of successfully delivered projects demonstrating our capability across retail, commercial, and industrial sectors.</p>
+      </div>
+      
+      <div class="grid" style="margin-top:3rem;">
+        <!-- Project 1 -->
+        <div class="card animate-on-scroll">
+          <div class="card-image">
+            <span class="card-label">Retail Fit-Out</span>
+            <img src="https://placehold.co/800x600/2563eb/ffffff?text=Supermarket+Interior" alt="Supermarket Project">
+          </div>
+          <div class="card-content">
+            <h3>Dunnes Stores Refurbishment</h3>
+            <p>Complete interior renovation including new flooring, lighting, refrigeration units, and customer service areas.</p>
+            <div class="card-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Limerick</span>
+              <span><i class="fas fa-calendar"></i> 2024</span>
+              <span><i class="fas fa-euro-sign"></i> 2.4M</span>
+            </div>
+          </div>
+        </div>
 
-<section class="container">
-<h2>About CTS Group</h2>
-<p>CTS Group is an Irish construction and fit‑out contractor delivering reliable, high‑quality projects across retail, commercial, hospitality, industrial and public sectors.</p>
-<p>Our goal is to build long‑term partnerships through trust, quality workmanship and consistent delivery.</p>
-</section>
+        <!-- Project 2 -->
+        <div class="card animate-on-scroll">
+          <div class="card-image">
+            <span class="card-label">Commercial</span>
+            <img src="https://placehold.co/800x600/0f172a/cbd5e1?text=Office+Building" alt="Office Project">
+          </div>
+          <div class="card-content">
+            <h3>Tech Campus Phase 2</h3>
+            <p>15,000 sq ft office fit-out with meeting rooms, breakout areas, and state-of-the-art AV systems.</p>
+            <div class="card-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Dublin 2</span>
+              <span><i class="fas fa-calendar"></i> 2024</span>
+              <span><i class="fas fa-euro-sign"></i> 1.8M</span>
+            </div>
+          </div>
+        </div>
 
+        <!-- Project 3 -->
+        <div class="card animate-on-scroll">
+          <div class="card-image">
+            <span class="card-label">Industrial</span>
+            <img src="https://placehold.co/800x600/475569/ffffff?text=Warehouse" alt="Warehouse Project">
+          </div>
+          <div class="card-content">
+            <h3>Logistics Hub Development</h3>
+            <p>45,000 sq ft warehouse construction with integrated office space and loading bay facilities.</p>
+            <div class="card-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Kildare</span>
+              <span><i class="fas fa-calendar"></i> 2023</span>
+              <span><i class="fas fa-euro-sign"></i> 4.2M</span>
+            </div>
+          </div>
+        </div>
 
-<section class="container">
-<h2>What We Do</h2>
-<div class="grid">
-<div class="card"><img src="images/storep2.jpg"><div class="label">Retail & Supermarkets</div></div>
-<div class="card"><img src="images/storep3.jpg"><div class="label">Commercial & Offices</div></div>
-<div class="card"><img src="images/storep4.jpg"><div class="label">Hospitality & Leisure</div></div>
+        <!-- Project 4 -->
+        <div class="card animate-on-scroll">
+          <div class="card-image">
+            <span class="card-label">Hospitality</span>
+            <img src="https://placehold.co/800x600/dc2626/ffffff?text=Hotel+Lobby" alt="Hotel Project">
+          </div>
+          <div class="card-content">
+            <h3>Boutique Hotel Renovation</h3>
+            <p>Full renovation of 40-room boutique hotel including restaurant, bar, and reception areas.</p>
+            <div class="card-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Galway</span>
+              <span><i class="fas fa-calendar"></i> 2023</span>
+              <span><i class="fas fa-euro-sign"></i> 3.1M</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="card animate-on-scroll">
+          <div class="card-image">
+            <span class="card-label">Retail</span>
+            <img src="https://placehold.co/800x600/059669/ffffff?text=Pharmacy+Store" alt="Pharmacy Project">
+          </div>
+          <div class="card-content">
+            <h3>Pharmacy Chain Roll-out</h3>
+            <p>Programme of 12 pharmacy fit-outs across Leinster, completed on time and within budget.</p>
+            <div class="card-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Various</span>
+              <span><i class="fas fa-calendar"></i> 2023</span>
+              <span><i class="fas fa-euro-sign"></i> 1.2M</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="card animate-on-scroll">
+          <div class="card-image">
+            <span class="card-label">Public Sector</span>
+            <img src="https://placehold.co/800x600/7c3aed/ffffff?text=Medical+Center" alt="Medical Project">
+          </div>
+          <div class="card-content">
+            <h3>Primary Care Centre</h3>
+            <p>Construction and fit-out of modern medical facility serving 15,000+ patients.</p>
+            <div class="card-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Cork</span>
+              <span><i class="fas fa-calendar"></i> 2022</span>
+              <span><i class="fas fa-euro-sign"></i> 5.5M</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>CTS Group</h3>
+        <p>Building Ireland's future with precision, quality, and integrity.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul>
+          <li>Dublin, Ireland</li>
+          <li>+353 1 234 5678</li>
+          <li>info@ctsgroup.ie</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 CTS Group. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('active');
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, {threshold: 0.1});
+
+document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
+</script>
+</body>
 </html>
