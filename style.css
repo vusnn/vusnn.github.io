@@ -118,18 +118,18 @@ nav{
 }
 
 .logo{
+  display:flex;
+  align-items:center;
+  gap:0.75rem;
   font-size:1.5rem;
   font-weight:700;
   color:var(--cts-dark);
-  display:flex;
-  align-items:center;
-  gap:0.5rem;
 }
 
-.logo::before{
-  content:'◆';
-  color:var(--cts-blue);
-  font-size:1.75rem;
+.logo img{
+  height:50px;
+  width:auto;
+  display:block;
 }
 
 .nav-links{
@@ -199,7 +199,7 @@ nav{
   content:'';
   position:absolute;
   inset:0;
-  background:url('https://placehold.co/1920x1080/1e293b/475569?text=Construction+Site') center/cover;
+  background:url('https://placehold.co/1920x1080/1e293b/475569?text=Construction+Excellence') center/cover;
   opacity:0.3;
 }
 
@@ -329,7 +329,7 @@ section{
   color:var(--cts-gray);
 }
 
-/* Stats Section */
+/* Stats Section - Updated for clients instead of stats */
 .stats{
   background:var(--cts-dark);
   color:#fff;
@@ -529,6 +529,89 @@ section{
   text-decoration:underline;
 }
 
+/* Client List Styling */
+.client-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+  gap:1.5rem;
+  margin-top:2rem;
+}
+
+.client-item{
+  padding:1.5rem;
+  background:#fff;
+  border-radius:0.75rem;
+  border-left:4px solid var(--cts-blue);
+  box-shadow:var(--shadow);
+  transition:var(--transition);
+}
+
+.client-item:hover{
+  transform:translateX(5px);
+  box-shadow:var(--shadow-lg);
+}
+
+.client-item h4{
+  color:var(--cts-dark);
+  margin-bottom:0.5rem;
+  font-size:1.1rem;
+}
+
+.client-item p{
+  color:var(--cts-gray);
+  margin:0;
+  font-size:0.9rem;
+}
+
+/* Contact Info Cards */
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+  gap:2rem;
+  margin-top:3rem;
+}
+
+.contact-card{
+  background:#fff;
+  padding:2.5rem;
+  border-radius:1rem;
+  box-shadow:var(--shadow);
+  border:1px solid #e2e8f0;
+  text-align:center;
+}
+
+.contact-card h3{
+  color:var(--cts-blue);
+  margin-bottom:1.5rem;
+  font-size:1.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:0.5rem;
+}
+
+.contact-detail{
+  margin-bottom:1rem;
+  color:var(--cts-gray);
+  display:flex;
+  align-items:flex-start;
+  gap:0.75rem;
+  text-align:left;
+}
+
+.contact-detail i{
+  color:var(--cts-blue);
+  margin-top:0.25rem;
+  width:20px;
+  text-align:center;
+}
+
+.contact-detail strong{
+  color:var(--cts-dark);
+  display:block;
+  margin-bottom:0.25rem;
+}
+
 /* Footer */
 footer{
   background:var(--cts-dark);
@@ -683,6 +766,14 @@ footer{
   
   .stat-item h3{
     font-size:2.5rem;
+  }
+  
+  .logo img{
+    height:40px;
+  }
+  
+  .contact-grid{
+    grid-template-columns:1fr;
   }
 }
 
