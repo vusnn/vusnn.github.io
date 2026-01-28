@@ -1,52 +1,267 @@
 <!DOCTYPE html>
-<div class="card">
-<img src="storep2.jpg">
-<div class="label">Commercial Construction Project</div>
-</div>
-</div>
-</section>
-
-
-<footer><p>© CTS Group</p></footer>
-</body>
-</html>
-
-
-
-
-<!-- ========================= team.html ========================= -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>CTS Group | Team</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CTS Group - Irish construction and fit-out contractor delivering high-quality retail, commercial, and industrial projects across Ireland.">
+<title>CTS Group | Building with Precision. Delivering with Trust.</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 <header>
-<strong>CTS GROUP</strong>
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="projects.html">Projects</a>
-<a href="team.html">Team</a>
-<a href="careers.html">Careers</a>
-</nav>
+  <nav>
+    <a href="index.html" class="logo">CTS GROUP</a>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="careers.html">Careers</a></li>
+    </ul>
+  </nav>
 </header>
 
+<main>
+  <section class="hero">
+    <div class="hero-content container">
+      <h1>Building with Precision.<br>Delivering with Trust.</h1>
+      <p>CTS Group is an Irish construction and fit-out contractor delivering high-quality projects across retail, commercial, hospitality, and industrial sectors.</p>
+      <div class="hero-buttons">
+        <a href="projects.html" class="btn">View Our Projects</a>
+        <a href="about.html" class="btn btn-outline">Learn More</a>
+      </div>
+    </div>
+  </section>
 
-<section class="container">
-<h1>Our Team</h1>
-<p>Our management team brings extensive construction and project delivery experience.</p>
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3>25+</h3>
+          <p>Years Experience</p>
+        </div>
+        <div class="stat-item">
+          <h3>500+</h3>
+          <p>Projects Completed</p>
+        </div>
+        <div class="stat-item">
+          <h3>150+</h3>
+          <p>Team Members</p>
+        </div>
+        <div class="stat-item">
+          <h3>100%</h3>
+          <p>Commitment</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section class="container" style="padding-top:5rem;">
+    <div class="section-header animate-on-scroll">
+      <h2>About CTS Group</h2>
+      <p>Delivering reliable, high-quality construction solutions across multiple sectors with a focus on long-term partnerships.</p>
+    </div>
+    
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; margin-top:3rem;" class="grid-responsive">
+      <div class="animate-on-scroll">
+        <h3>Excellence in Every Build</h3>
+        <p>Founded in Ireland, CTS Group has grown to become a trusted name in construction and fit-out services. We specialize in delivering projects on time, within budget, and to the highest standards of quality.</p>
+        <p>Our integrated approach combines innovative design, skilled craftsmanship, and rigorous project management to bring your vision to life.</p>
+        <a href="about.html" class="btn mt-2">Our Story</a>
+      </div>
+      <div class="animate-on-scroll">
+        <img src="https://placehold.co/600x400/1e293b/475569?text=Office+Building" alt="CTS Group Office" style="border-radius:1rem; box-shadow:var(--shadow-lg);">
+      </div>
+    </div>
+  </section>
 
-<div class="grid">
-<div class="card"><img src="managementp1.jpg"><div class="label">Managing Director</div></div>
-<div class="card"><img src="managementp2.jpg"><div class="label">Project Director</div></div>
-</div>
-</section>
+  <section class="services">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <h2>What We Do</h2>
+        <p>Comprehensive construction and fit-out services tailored to your sector</p>
+      </div>
+      
+      <div class="grid">
+        <div class="card service-card animate-on-scroll">
+          <div class="service-icon">
+            <i class="fas fa-store"></i>
+          </div>
+          <h3>Retail & supermarkets</h3>
+          <p>Complete fit-outs for retail chains, supermarkets, and luxury retail spaces. We understand the importance of brand consistency and customer experience.</p>
+        </div>
+        
+        <div class="card service-card animate-on-scroll">
+          <div class="service-icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3>Commercial & Offices</h3>
+          <p>Modern office fit-outs and commercial construction that prioritize functionality, aesthetics, and employee wellbeing.</p>
+        </div>
+        
+        <div class="card service-card animate-on-scroll">
+          <div class="service-icon">
+            <i class="fas fa-industry"></i>
+          </div>
+          <h3>Industrial & Manufacturing</h3>
+          <p>Specialized industrial construction including warehouses, manufacturing facilities, and distribution centers.</p>
+        </div>
+        
+        <div class="card service-card animate-on-scroll">
+          <div class="service-icon">
+            <i class="fas fa-hotel"></i>
+          </div>
+          <h3>Hospitality</h3>
+          <p>Hotels, restaurants, and leisure facilities built to create memorable experiences while meeting strict regulatory standards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section class="container">
+    <div class="section-header animate-on-scroll">
+      <h2>Featured Projects</h2>
+      <p>A selection of our recent work demonstrating capability and craftsmanship</p>
+    </div>
+    
+    <div class="grid">
+      <div class="card animate-on-scroll">
+        <div class="card-image">
+          <span class="card-label">Retail</span>
+          <img src="https://placehold.co/600x400/2563eb/ffffff?text=Supermarket+Fit-out" alt="Retail Project">
+        </div>
+        <div class="card-content">
+          <h3>Major Supermarket Chain</h3>
+          <p>Complete interior fit-out including refrigeration, shelving, and customer areas across multiple locations.</p>
+          <div class="card-meta">
+            <span><i class="fas fa-map-marker-alt"></i> Dublin</span>
+            <span><i class="fas fa-calendar"></i> 2024</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card animate-on-scroll">
+        <div class="card-image">
+          <span class="card-label">Commercial</span>
+          <img src="https://placehold.co/600x400/0f172a/cbd5e1?text=Office+Renovation" alt="Commercial Project">
+        </div>
+        <div class="card-content">
+          <h3>Corporate Headquarters</h3>
+          <p>Full office renovation and fit-out for a leading tech company, featuring open plan areas and meeting facilities.</p>
+          <div class="card-meta">
+            <span><i class="fas fa-map-marker-alt"></i> Cork</span>
+            <span><i class="fas fa-calendar"></i> 2024</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card animate-on-scroll">
+        <div class="card-image">
+          <span class="card-label">Industrial</span>
+          <img src="https://placehold.co/600x400/475569/ffffff?text=Warehouse+Build" alt="Industrial Project">
+        </div>
+        <div class="card-content">
+          <h3>Distribution Center</h3>
+          <p>Large-scale industrial construction project including warehousing, office integration, and logistics infrastructure.</p>
+          <div class="card-meta">
+            <span><i class="fas fa-map-marker-alt"></i> Galway</span>
+            <span><i class="fas fa-calendar"></i> 2023</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-2">
+      <a href="projects.html" class="btn">View All Projects</a>
+    </div>
+  </section>
+</main>
 
-<footer><p>© CTS Group</p></footer>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>CTS Group</h3>
+        <p>Building Ireland's future with precision, quality, and integrity. Your trusted construction partner since 1999.</p>
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="projects.html">Our Projects</a></li>
+          <li><a href="team.html">Leadership Team</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Sectors</h4>
+        <ul>
+          <li><a href="projects.html">Retail</a></li>
+          <li><a href="projects.html">Commercial</a></li>
+          <li><a href="projects.html">Industrial</a></li>
+          <li><a href="projects.html">Hospitality</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul>
+          <li><i class="fas fa-map-marker-alt" style="margin-right:0.5rem; color:var(--cts-blue);"></i> Dublin, Ireland</li>
+          <li><i class="fas fa-phone" style="margin-right:0.5rem; color:var(--cts-blue);"></i> +353 1 234 5678</li>
+          <li><i class="fas fa-envelope" style="margin-right:0.5rem; color:var(--cts-blue);"></i> info@ctsgroup.ie</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2024 CTS Group. All rights reserved. | Built with precision.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile Menu Toggle
+function toggleMenu() {
+  const navLinks = document.getElementById('navLinks');
+  navLinks.classList.toggle('active');
+}
+
+// Close menu when clicking on a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('active');
+  });
+});
+
+// Scroll Animation
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
+</script>
+
 </body>
 </html>
