@@ -3,750 +3,495 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects | CTS Group - Building Services Engineering</title>
+<meta name="description" content="Explore CTS Group's portfolio of completed building services projects across Ireland including VHI Limerick, Sweaty Betty, Frank & Honest Café, Lidl Wexford, and Pallet Xpress.">
+<title>Our Projects | CTS Group Portfolio</title>
+<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --cts-navy: #1e3a8a;
-  --cts-navy-dark: #172554;
-  --cts-navy-light: #1e40af;
-  --cts-orange: #f59e0b;
-  --cts-orange-dark: #d97706;
-  --cts-white: #ffffff;
-  --cts-gray: #f3f4f6;
-  --cts-gray-dark: #6b7280;
-  --cts-border: #e5e7eb;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--cts-white);
-  color: var(--cts-navy-dark);
-  line-height: 1.6;
-}
-
-/* Header */
-.main-header {
-  background: var(--cts-white);
-  border-bottom: 4px solid var(--cts-orange);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-.header-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  text-decoration: none;
-}
-
-.logo-icon {
-  width: 60px;
-  height: 60px;
-  background: var(--cts-navy);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--cts-white);
-  font-weight: 700;
-  font-size: 1.25rem;
-  border: 3px solid var(--cts-orange);
-}
-
-.logo-text {
-  color: var(--cts-navy);
-}
-
-.logo-text h1 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--cts-navy);
-}
-
-.logo-text span {
-  display: block;
-  font-size: 0.75rem;
-  color: var(--cts-gray-dark);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-/* Navigation */
-.main-nav {
-  background: var(--cts-navy);
-}
-
-.nav-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-}
-
-.nav-link {
-  color: var(--cts-white);
-  text-decoration: none;
-  padding: 1.25rem 2rem;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: all 0.3s;
-  position: relative;
-}
-
-.nav-link:hover {
-  background: var(--cts-navy-light);
-}
-
-.nav-link.active {
-  background: var(--cts-orange);
-  color: var(--cts-navy-dark);
-  font-weight: 600;
-}
-
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--cts-white);
-}
-
-/* Hero Section */
-.hero-section {
-  background: var(--cts-navy);
-  color: var(--cts-white);
-  padding: 4rem 2rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--cts-orange);
-}
-
-.hero-content {
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-.hero-content h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--cts-white);
-}
-
-.hero-content p {
-  font-size: 1.25rem;
-  color: rgba(255,255,255,0.9);
-  margin-bottom: 2rem;
-}
-
-.hero-stats {
-  display: flex;
-  justify-content: center;
-  gap: 4rem;
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255,255,255,0.2);
-}
-
-.stat-box {
-  text-align: center;
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--cts-orange);
-  display: block;
-}
-
-.stat-label {
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  opacity: 0.8;
-}
-
-/* Filter Bar */
-.filter-section {
-  background: var(--cts-gray);
-  padding: 1.5rem 2rem;
-  border-bottom: 1px solid var(--cts-border);
-}
-
-.filter-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.filter-label {
-  font-weight: 600;
-  color: var(--cts-navy);
-  margin-right: 1rem;
-}
-
-.filter-btn {
-  padding: 0.75rem 1.5rem;
-  background: var(--cts-white);
-  border: 2px solid var(--cts-border);
-  color: var(--cts-navy);
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s;
-  border-radius: 4px;
-}
-
-.filter-btn:hover, .filter-btn.active {
-  background: var(--cts-navy);
-  color: var(--cts-white);
-  border-color: var(--cts-navy);
-}
-
-/* Projects Grid */
-.projects-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-  gap: 2rem;
-}
-
-/* Project Cards */
-.project-card {
-  background: var(--cts-white);
-  border: 1px solid var(--cts-border);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: all 0.3s;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  border-color: var(--cts-orange);
-}
-
-.card-header {
-  background: var(--cts-navy);
-  color: var(--cts-white);
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.project-ref {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--cts-orange);
-}
-
-.project-sector {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  opacity: 0.9;
-}
-
-.card-image {
-  position: relative;
-  height: 240px;
-  overflow: hidden;
-  border-bottom: 3px solid var(--cts-orange);
-}
-
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s;
-}
-
-.project-card:hover .card-image img {
-  transform: scale(1.05);
-}
-
-.image-badge {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: var(--cts-orange);
-  color: var(--cts-navy-dark);
-  padding: 0.5rem 1rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  border-radius: 4px;
-}
-
-.card-content {
-  padding: 1.5rem;
-}
-
-.project-type {
-  display: inline-block;
-  background: rgba(30, 58, 138, 0.1);
-  color: var(--cts-navy);
-  padding: 0.4rem 1rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-}
-
-.project-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--cts-navy);
-  margin-bottom: 0.75rem;
-  line-height: 1.3;
-}
-
-.project-location {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--cts-gray-dark);
-  font-size: 0.9rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--cts-border);
-}
-
-.project-location i {
-  color: var(--cts-orange);
-}
-
-/* Specs Grid */
-.project-specs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.spec-item {
-  background: var(--cts-gray);
-  padding: 0.75rem;
-  border-radius: 4px;
-  border-left: 3px solid var(--cts-orange);
-}
-
-.spec-label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  color: var(--cts-gray-dark);
-  margin-bottom: 0.25rem;
-  letter-spacing: 0.05em;
-}
-
-.spec-value {
-  font-weight: 600;
-  color: var(--cts-navy);
-  font-size: 0.9rem;
-}
-
-/* Services */
-.services-section {
-  margin-top: 1rem;
-}
-
-.services-title {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  color: var(--cts-gray-dark);
-  margin-bottom: 0.75rem;
-  font-weight: 600;
-}
-
-.services-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.service-tag {
-  background: var(--cts-white);
-  border: 1px solid var(--cts-border);
-  color: var(--cts-navy);
-  padding: 0.4rem 0.75rem;
-  font-size: 0.8rem;
-  border-radius: 20px;
-  transition: all 0.2s;
-}
-
-.service-tag:hover {
-  background: var(--cts-navy);
-  color: var(--cts-white);
-  border-color: var(--cts-navy);
-}
-
-/* Status Bar */
-.status-bar {
-  background: var(--cts-gray);
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid var(--cts-border);
-}
-
-.status-label {
-  font-size: 0.8rem;
-  color: var(--cts-gray-dark);
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-.status-badge {
-  background: #10b981;
-  color: white;
-  padding: 0.4rem 1rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.status-badge::before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  background: white;
-  border-radius: 50%;
-}
-
-/* Footer */
-.main-footer {
-  background: var(--cts-navy);
-  color: var(--cts-white);
-  margin-top: 4rem;
-  border-top: 4px solid var(--cts-orange);
-}
-
-.footer-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 3rem;
-}
-
-.footer-col h4 {
-  color: var(--cts-orange);
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.footer-col p, .footer-col a {
-  color: rgba(255,255,255,0.8);
-  text-decoration: none;
-  line-height: 1.8;
-  font-size: 0.9rem;
-}
-
-.footer-col a:hover {
-  color: var(--cts-orange);
-}
-
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.footer-logo-icon {
-  width: 50px;
-  height: 50px;
-  background: var(--cts-white);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--cts-navy);
-  font-weight: 700;
-  border: 3px solid var(--cts-orange);
-}
-
-.cert-badges {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.cert-badge {
-  background: rgba(255,255,255,0.1);
-  padding: 0.5rem 1rem;
-  font-size: 0.7rem;
-  text-align: center;
-  border-radius: 4px;
-  border: 1px solid rgba(255,255,255,0.2);
-}
-
-.footer-bottom {
-  background: var(--cts-navy-dark);
-  padding: 1.5rem 2rem;
-  text-align: center;
-  color: rgba(255,255,255,0.6);
-  font-size: 0.875rem;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .projects-container {
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  }
-  
-  .footer-container {
-    grid-template-columns: 1fr 1fr;
-  }
-  
-  .hero-stats {
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .header-container {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .nav-container {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .nav-link {
-    padding: 1rem;
-    font-size: 0.875rem;
-  }
-  
-  .projects-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .footer-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  
-  .hero-content h2 {
-    font-size: 2rem;
-  }
-  
-  .hero-stats {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-}
-</style>
 </head>
 <body>
-
-<!-- Header -->
-<header class="main-header">
-  <div class="header-container">
+<header>
+  <nav>
     <a href="index.html" class="logo">
-      <div class="logo-icon">CTS</div>
-      <div class="logo-text">
-        <h1>CTS GROUP</h1>
-        <span>Building Services Engineers</span>
-      </div>
+      <img src="ctslogop2.jpg" alt="CTS Group Logo">
+      <span>CTS GROUP</span>
     </a>
-  </div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="careers.html">Careers</a></li>
+    </ul>
+  </nav>
 </header>
 
-<!-- Navigation -->
-<nav class="main-nav">
-  <div class="nav-container">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="projects.html" class="nav-link active">Projects</a>
-    <a href="team.html" class="nav-link">Team</a>
-    <a href="careers.html" class="nav-link">Careers</a>
+<div class="breadcrumb">
+  <div class="breadcrumb-content">
+    <a href="index.html">Home</a> / Projects
   </div>
-</nav>
+</div>
 
-<!-- Hero Section -->
-<section class="hero-section">
-  <div class="hero-content">
-    <h2>Our Projects</h2>
-    <p>Recently completed electrical, mechanical, and air conditioning installations demonstrating our expertise across commercial and retail sectors in Ireland.</p>
-    
-    <div class="hero-stats">
-      <div class="stat-box">
-        <span class="stat-number">7</span>
-        <span class="stat-label">Projects</span>
-      </div>
-      <div class="stat-box">
-        <span class="stat-number">5</span>
-        <span class="stat-label">Counties</span>
-      </div>
-      <div class="stat-box">
-        <span class="stat-number">2021</span>
-        <span class="stat-label">Since</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Filter Section -->
-<section class="filter-section">
-  <div class="filter-container">
-    <span class="filter-label">Filter by:</span>
-    <button class="filter-btn active">All Projects</button>
-    <button class="filter-btn">Electrical</button>
-    <button class="filter-btn">Mechanical</button>
-    <button class="filter-btn">Air Conditioning</button>
-    <button class="filter-btn">Retail</button>
-  </div>
-</section>
-
-<!-- Projects Grid -->
-<div class="projects-container">
-
-  <!-- Project 1: Pallet Xpress -->
-  <article class="project-card">
-    <div class="card-header">
-      <span class="project-ref">REF: CTS-2022-001</span>
-      <span class="project-sector">Industrial</span>
-    </div>
-    <div class="card-image">
-      <img src="palletexp1.jpg" alt="Pallet Xpress Phase 2">
-      <span class="image-badge">Completed</span>
-    </div>
-    <div class="card-content">
-      <span class="project-type">Electrical Installation</span>
-      <h3 class="project-title">Pallet Xpress Phase 2</h3>
-      <div class="project-location">
-        <i class="fas fa-map-marker-alt"></i>
-        <span>Industrial Estate • September 2022</span>
+<main>
+  <section style="padding-top:3rem;">
+    <div class="container">
+      <div class="section-header">
+        <h1>Our Projects</h1>
+        <p>Recently completed electrical, mechanical, and air conditioning installations demonstrating our expertise across commercial and retail sectors</p>
       </div>
       
-      <div class="project-specs">
-        <div class="spec-item">
-          <div class="spec-label">Duration</div>
-          <div class="spec-value">16 Weeks</div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-label">System</div>
-          <div class="spec-value">42kW PV Upgrade</div>
-        </div>
-      </div>
-
-      <div class="services-section">
-        <div class="services-title">Key Services</div>
-        <div class="services-grid">
-          <span class="service-tag">PV Installation</span>
-          <span class="service-tag">Fire Alarms</span>
-          <span class="service-tag">Lightning Protection</span>
-          <span class="service-tag">Data Wiring</span>
-          <span class="service-tag">Distribution</span>
-        </div>
-      </div>
-    </div>
-    <div class="status-bar">
-      <span class="status-label">Project Status</span>
-      <span class="status-badge">Completed</span>
-    </div>
-  </article>
-
-  <!-- Project 2: Lidl Wexford -->
-  <article class="project-card">
-    <div class="card-header">
-      <span class="project-ref">REF: CTS-2022-002</span>
-      <span class="project-sector">Retail</span>
-    </div>
-    <div class="card-image">
-      <img src="lidlwp1.jpg" alt="Lidl Wexford">
-      <span class="image-badge">Completed</span>
-    </div>
-    <div class="card-content">
-      <span class="project-type">Mechanical & Electrical</span>
-      <h3 class="project-title">Lidl Wexford</h3>
-      <div class="project-location">
-        <i class="fas fa-map-marker-alt"></i>
-        <span>Co. Wexford • Retail Environment</span>
-      </div>
-      
-      <div class="project-specs">
-        <div class="spec-item">
-          <div class="spec-label">Services</div>
-          <div class="spec-value">M&E Works</div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-label">Systems</div>
-          <div class="spec-value">HVAC / Electrical</div>
+      <!-- Project 1: Pallet Xpress Phase 2 -->
+      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
+        <div style="display:grid; grid-template-columns:1fr 2fr; gap:2rem; padding:2rem;">
+          <div>
+            <img src="palletexp1.jpg" alt="Pallet Xpress Phase 2" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
+            <img src="palletexp2.jpg" alt="Pallet Xpress Installation" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
+          </div>
+          <div>
+            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Electrical Installation</span>
+            <h2 style="margin-bottom:1rem;">Pallet Xpress Phase 2</h2>
+            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
+              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>05.09.22</span>
+            </div>
+            
+            <h4 style="font-size:0.9rem; margin:1rem 0 0.5rem;">Electrical Installation:</h4>
+            <ul style="font-size:0.85rem; padding-left:1.5rem; color:var(--cts-gray); margin:0 0 1rem; display:grid; grid-template-columns:1fr 1fr; gap:0.25rem;">
+              <li>Prelims</li>
+              <li>Earthing & Bonding</li>
+              <li>Distribution board Installation</li>
+              <li>Sub Mains Cables Installation</li>
+              <li>Containment Installation</li>
+              <li>General Socket Installation</li>
+              <li>Site power - Barriers, hut, etc</li>  
+              <li>Hand Dryer wiring only</li>
+              <li>Mechanical Wiring</li>
+              <li>Power to Warehouse - Roller Door & Dock Leveller</li>
+              <li>Lighting Installation</li>
+              <li>External Carpark Lighting</li>
+              <li>Data Wiring Installation</li>
+              <li>Fire alarm Installation</li>
+              <li>AOV Wiring</li>
+              <li>Lightning Protection Installation</li>
+              <li>Intruder Alarm Wiring</li>
+              <li>PV Panel Installation</li>
+            </ul>
+            
+            <h4 style="font-size:0.9rem; margin:1rem 0 0.5rem;">Additional Works:</h4>
+            <ul style="font-size:0.85rem; padding-left:1.5rem; color:var(--cts-gray); margin:0; display:grid; grid-template-columns:1fr 1fr; gap:0.25rem;">
+              <li>Additional circuits for future panel heaters</li>
+              <li>Upgrade PV System from 23kW to 42kW</li>
+              <li>Less supply of Lighting poles</li>
+              <li>Hire of Large Teleporter for PV works</li>
+              <li>Additional works to Fuse Boards (new PV regulations)</li>
+              <li>Install multicore cable from PV to board</li>
+              <li>Monitoring of Fire alarm by GSM</li>
+              <li>Wiring of Additional Heat Recovery Units</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div class="services-section">
-        <div class="services-title">Key Services</div>
-        <div class="services-grid">
-          <span class="service-tag">Emergency Power</span>
-          <span class="service-tag">AC Units</span>
-          <span class="service-tag">CCTV</span>
-          <span class="service-tag">Access Control</span>
+      <!-- Project 2: Lidl Wexford -->
+      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
+        <div style="display:grid; grid-template-columns:2fr 1fr; gap:2rem; padding:2rem;">
+          <div>
+            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Mechanical & Electrical</span>
+            <h2 style="margin-bottom:1rem;">Lidl Wexford – M&E Works</h2>
+            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
+              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-map-marker-alt" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Wexford</span>
+            </div>
+            
+            <p style="margin-bottom:1rem;">CTS Group are pleased to confirm the successful completion of the Mechanical and Electrical works for this project. The original M&E contract value was €700,000.00, with the final account agreed following the omission of PC sums within the electrical tender and the removal of the hose reel allowance in the mechanical tender, along with a number of client-requested variations and additional works carried out during the construction phase.</p>
+            
+            <h4 style="font-size:0.9rem; margin:1rem 0 0.5rem;">Additional Works Included:</h4>
+            <ul style="font-size:0.85rem; padding-left:1.5rem; color:var(--cts-gray); margin:0; display:grid; grid-template-columns:1fr 1fr; gap:0.25rem;">
+              <li>Emergency call-out attendance (generator fault)</li>
+              <li>Temporary power to freezers and lifts</li>
+              <li>Temporary ESB supply with meter cabinet</li>
+              <li>Additional car park pole lighting</li>
+              <li>Relocation of M&E services</li>
+              <li>Hand dryers & disabled refuge points</li>
+              <li>Warehouse workstations & alcohol barriers</li>
+              <li>CCTV power supplies & Dixie baler</li>
+              <li>AC unit in warehouse</li>
+              <li>Access control wiring</li>
+              <li>Trolley guard power provision</li>
+              <li>HVDS ducting alterations</li>
+            </ul>
+          </div>
+          <div>
+            <img src="lidlwp1.jpg" alt="Lidl Wexford" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
+            <img src="lidlwp2.jpg" alt="Lidl Wexford Installation" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
+          </div>
         </div>
       </div>
-    </div>
-    <div class="status-bar">
-      <span class="status-label">Project Status</span>
-      <span class="status-badge">Completed</span>
-    </div>
-  </article>
 
-  <!-- Project 3: VHI Limerick -->
-  <article class="project-card">
-    <div class="card-header">
-      <span class="project-ref">REF: CTS-2022-003</span>
-      <span class="project-sector">
+      <!-- Project 3: State Street Drogheda (NEW) -->
+      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
+        <div style="display:grid; grid-template-columns:1fr 2fr; gap:2rem; padding:2rem;">
+          <div>
+            <img src="statep1.jpg" alt="State Street Drogheda" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
+            <img src="statep2.jpg" alt="State Street Installation" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
+          </div>
+          <div>
+            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Mechanical & Electrical</span>
+            <h2 style="margin-bottom:1rem;">State Street Drogheda – M&E Works</h2>
+            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
+              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-map-marker-alt" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Drogheda, Co. Louth</span>
+            </div>
+            
+            <p style="margin-bottom:1rem;">CTS Group delivered the mechanical and electrical works for the State Street commercial facility in Drogheda. The project involved the full installation of electrical distribution, lighting, small power, fire alarm systems, cable containment, and associated protective and communications services.</p>
+            
+            <h4 style="font-size:0.9rem; margin:1rem 0 0.5rem;">Electrical Works:</h4>
+            <ul style="font-size:0.85rem; padding-left:1.5rem; color:var(--cts-gray); margin:0 0 1rem; display:grid; grid-template-columns:1fr 1fr; gap:0.25rem;">
+              <li>Electrical distribution</li>
+              <li>Lighting systems</li>
+              <li>Small power</li>
+              <li>Fire alarm systems</li>
+              <li>Cable containment</li>
+              <li>Protective services</li>
+              <li>Communications services</li>
+            </ul>
+            
+            <h4 style="font-size:0.9rem; margin:1rem 0 0.5rem;">Mechanical Works:</h4>
+            <ul style="font-size:0.85rem; padding-left:1.5rem; color:var(--cts-gray); margin:0 0 1rem; display:grid; grid-template-columns:1fr 1fr; gap:0.25rem;">
+              <li>Space cooling</li>
+              <li>Ventilation systems</li>
+              <li>Heating systems</li>
+              <li>Water services</li>
+              <li>Sanitary ware</li>
+              <li>Plant connections</li>
+            </ul>
+            
+            <h4 style="font-size:0.9rem; margin:1rem 0 0.5rem;">Additional Works:</h4>
+            <ul style="font-size:0.85rem; padding-left:1.5rem; color:var(--cts-gray); margin:0; display:grid; grid-template-columns:1fr 1fr; gap:0.25rem;">
+              <li>Boiler installation</li>
+              <li>Gas pipework</li>
+              <li>Hot water pipework</li>
+              <li>Specialist containment works</li>
+              <li>Dayworks for site changes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Smartply Phase 2 Renewal (NEW) -->
+      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
+        <div style="display:grid; grid-template-columns:2fr 1fr; gap:2rem; padding:2rem;">
+          <div>
+            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Mechanical & Electrical</span>
+            <h2 style="margin-bottom:1rem;">Smartply Phase 2 Renewal Project</h2>
+            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
+              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Completed: 23rd June 2022</span>
+            </div>
+            
+            <p style="margin-bottom:1rem;">CTS Group are pleased to confirm the successful completion of the Mechanical and Electrical works for the Smartply Phase 2 Renewal Project. The scope of works comprised the full mechanical installation associated with the renewal project.</p>
+            
+            <h4 style="font-size:0.9rem; margin:1rem 0 0.5rem;">Core Mechanical Works:</h4>
+            <ul style="font-size:0.85rem; padding-left:1.5rem; color:var(--cts-gray); margin:0 0 1rem; display:grid; grid-template-columns:1fr 1fr; gap:0.25rem;">
+              <li>Preliminaries</li>
+              <li>HVAC systems - MCC Room</li>
+              <li>HVAC systems - Thermal Oil Building</li>
+              <li>HVAC control system provision</li>
+              <li>HVAC control system commissioning</li>
+            </ul>
+            
+            <h4 style="font-size:0.9rem; margin:1rem 0 0.5rem;">Additional Works:</h4>
+            <ul style="font-size:0.85rem; padding-left:1.5rem; color:var(--cts-gray); margin:0; display:grid; grid-template-columns:1fr 1fr; gap:0.25rem;">
+              <li>Mechanical ducting connections at roof level to MCC</li>
+              <li>Specialist commissioning revisit call-outs (Trane)</li>
+              <li>Specialist commissioning revisit call-outs (Control Tech)</li>
+              <li>Coordination works for system functionality</li>
+              <li>Compliance verification works</li>
+            </ul>
+            
+            <p style="font-style:italic; color:var(--cts-blue); font-weight:600; margin-top:1.5rem; padding-top:1rem; border-top:2px solid #e2e8f0; font-size:0.9rem;">
+              "All works were completed to 100% in accordance with project requirements and relevant standards."
+            </p>
+          </div>
+          <div>
+            <img src="SMARTP1.jpg" alt="Smartply Phase 2" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
+            <img src="SMARTP2.jpg" alt="Smartply Installation" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5: VHI Limerick -->
+      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
+        <div style="display:grid; grid-template-columns:1fr 2fr; gap:2rem; padding:2rem;">
+          <div>
+            <img src="vhip1.jpg" alt="VHI Limerick" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
+            <img src="vhip2.jpg" alt="VHI Limerick Installation" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
+          </div>
+          <div>
+            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Air Conditioning</span>
+            <h2 style="margin-bottom:1rem;">VHI Limerick – Air Conditioning Installation & Builders Works</h2>
+            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
+              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-map-marker-alt" style="color:var(--cts-blue); margin-right:0.5rem;"></i>VHI Limerick</span>
+              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Completed: 23rd March 2022</span>
+            </div>
+            
+            <p style="margin-bottom:1rem;">CTS Group are pleased to announce the completion of the air conditioning installation and associated builders works at VHI Limerick. The project included the installation of 16 internal wall-mounted air conditioning units, alongside electrical and mechanical works to support their operation.</p>
+            
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-top:1.5rem;">
+              <div>
+                <h4 style="font-size:0.9rem; margin-bottom:0.5rem;">Builders Works:</h4>
+                <ul style="font-size:0.85rem; padding-left:1rem; color:var(--cts-gray); margin:0;">
+                  <li>Cranage to roof</li>
+                  <li>Openings through walls</li>
+                  <li>Ceiling reinstatement</li>
+                  <li>Fire stopping</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:0.9rem; margin-bottom:0.5rem;">Electrical Works:</h4>
+                <ul style="font-size:0.85rem; padding-left:1rem; color:var(--cts-gray); margin:0;">
+                  <li>3-phase isolator wiring</li>
+                  <li>BC controllers</li>
+                  <li>Fuse board breakers</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:0.9rem; margin-bottom:0.5rem;">Additional:</h4>
+                <ul style="font-size:0.85rem; padding-left:1rem; color:var(--cts-gray); margin:0;">
+                  <li>2 extra AC units</li>
+                  <li>2 panel heaters</li>
+                  <li>New walls in Canteen</li>
+                </ul>
+              </div>
+            </div>
+            
+            <p style="font-style:italic; color:var(--cts-blue); font-weight:600; margin-top:1.5rem; padding-top:1rem; border-top:2px solid #e2e8f0; font-size:0.9rem;">
+              "CTS Group are delighted to have delivered this project efficiently, providing a modern and comfortable environment in full compliance with all safety and building regulations."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6: Sweaty Betty -->
+      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
+        <div style="display:grid; grid-template-columns:2fr 1fr; gap:2rem; padding:2rem;">
+          <div>
+            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Retail Fit-Out</span>
+            <h2 style="margin-bottom:1rem;">Sweaty Betty – Kildare Village</h2>
+            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
+              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-map-marker-alt" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Unit 99, Kildare Village</span>
+              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Completed: 17th October 2022</span>
+            </div>
+            
+            <p style="margin-bottom:1rem;">CTS Group completed additional Electrical Installation works at Unit 99, Kildare Village for Sweaty Betty. The scope of works was based on revised drawings and client requirements issued during the fit-out phase.</p>
+            
+            <p style="margin-bottom:1rem;">The installation included additional lighting circuits to feature light boxes and changing rooms, extra socket outlets and data points to the sales counter and back-of-house areas, including flexible conduit provisions within the floor.</p>
+            
+            <h4 style="font-size:0.9rem; margin:1rem 0 0.5rem;">Key Installations:</h4>
+            <ul style="font-size:0.85rem; padding-left:1.5rem; color:var(--cts-gray); margin:0; display:grid; grid-template-columns:1fr 1fr; gap:0.25rem;">
+              <li>Smoke damper wiring</li>
+              <li>Fire alarm links</li>
+              <li>Audio systems</li>
+              <li>People counters</li>
+              <li>Front-of-house lighting</li>
+              <li>AOV control panel</li>
+              <li>Access control</li>
+              <li>LED mirror lighting</li>
+              <li>AC specification uplift</li>
+            </ul>
+          </div>
+          <div>
+            <img src="sweatybep3.jpg" alt="Sweaty Betty" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
+            <img src="sweatybep2.jpg" alt="Sweaty Betty Installation" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 7: Building 10B & 10C, Parkwest -->
+      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
+        <div style="display:grid; grid-template-columns:1fr 2fr; gap:2rem; padding:2rem;">
+          <div>
+            <img src="parkwp1.jpg" alt="Building 10B & 10C Parkwest" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
+            <img src="parkwp2.jpg" alt="Parkwest Building Interior" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
+          </div>
+          <div>
+            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Refurbishment</span>
+            <h2 style="margin-bottom:1rem;">Building 10B & 10C, Parkwest</h2>
+            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
+              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Completed: February 2021</span>
+            </div>
+            
+            <p style="margin-bottom:1rem;">The refurbishment of Buildings 10B and 10C at Parkwest was completed by CTS Group in February 2021, incorporating a full suite of mechanical, electrical, and associated builders works. The project involved the comprehensive fit-out of the ground floor, first floor, and top floor office areas, delivering modern, efficient, and high-quality workspaces.</p>
+            
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-top:1.5rem;">
+              <div>
+                <h4 style="font-size:0.9rem; margin-bottom:0.5rem;">Builders Works:</h4>
+                <ul style="font-size:0.85rem; padding-left:1rem; color:var(--cts-gray); margin:0;">
+                  <li>Internal demolitions</li>
+                  <li>Raised access flooring</li>
+                  <li>New partitions & ceilings</li>
+                  <li>Joinery and floor finishes</li>
+                  <li>M&E facilitation works</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:0.9rem; margin-bottom:0.5rem;">Mechanical:</h4>
+                <ul style="font-size:0.85rem; padding-left:1rem; color:var(--cts-gray); margin:0;">
+                  <li>Ducted air conditioning</li>
+                  <li>Ground & first floor systems</li>
+                  <li>Fresh air ductwork</li>
+                  <li>Ceiling supply & return grilles</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:0.9rem; margin-bottom:0.5rem;">Electrical:</h4>
+                <ul style="font-size:0.85rem; padding-left:1rem; color:var(--cts-gray); margin:0;">
+                  <li>Strip-out of existing</li>
+                  <li>New distribution boards</li>
+                  <li>LED lighting throughout</li>
+                  <li>Emergency lighting IS3217</li>
+                  <li>Cable containment</li>
+                  <li>Fire alarm alterations</li>
+                </ul>
+              </div>
+            </div>
+            
+            <p style="font-style:italic; color:var(--cts-blue); font-weight:600; margin-top:1.5rem; padding-top:1rem; border-top:2px solid #e2e8f0; font-size:0.9rem;">
+              "All works were delivered in line with current regulations and project requirements."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 8: Lifestyle Sports Tralee -->
+      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
+        <div style="display:grid; grid-template-columns:2fr 1fr; gap:2rem; padding:2rem;">
+          <div>
+            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">M&E Installation</span>
+            <h2 style="margin-bottom:1rem;">Lifestyle Sports Tralee</h2>
+            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
+              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-map-marker-alt" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Tralee, Co. Kerry</span>
+              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>July 2022</span>
+            </div>
+            
+            <p style="margin-bottom:1rem;">CTS Group completed the mechanical and electrical installation works at the Lifestyle Sports store in Tralee in July 2022. The project involved the delivery of new electrical and mechanical services to support the retail fit-out, carried out in line with the project requirements.</p>
+            
+            <h4 style="font-size:0.9rem; margin:1rem 0 0.5rem;">Electrical Works:</h4>
+            <ul style="font-size:0.85rem; padding-left:1.5rem; color:var(--cts-gray); margin:0 0 1rem; display:grid; grid-template-columns:1fr 1fr; gap:0.25rem;">
+              <li>General lighting</li>
+              <li>Emergency lighting</li>
+              <li>Fire alarm systems</li>
+              <li>Till counter wiring</li>
+              <li>General sockets</li>
+            </ul>
+            
+            <h4 style="font-size:0.9rem; margin:1rem 0 0.5rem;">Mechanical Works:</h4>
+            <ul style="font-size:0.85rem; padding-left:1.5rem; color:var(--cts-gray); margin:0; display:grid; grid-template-columns:1fr 1fr; gap:0.25rem;">
+              <li>Ventilation system</li>
+              <li>Specialist ductwork</li>
+              <li>Grilles installation</li>
+              <li>Heat recovery unit</li>
+              <li>VCDs</li>
+              <li>Air conditioning unit</li>
+            </ul>
+            
+            <p style="font-style:italic; color:var(--cts-blue); font-weight:600; margin-top:1.5rem; padding-top:1rem; border-top:2px solid #e2e8f0; font-size:0.9rem;">
+              "All works were delivered to the required standards and coordinated to suit the retail environment."
+            </p>
+          </div>
+          <div>
+            <img src="lifestyletrap1.jpg" alt="Lifestyle Sports Tralee" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
+            <img src="lifestyletrap2.jpg" alt="Lifestyle Sports Interior" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 9: Frank & Honest Café -->
+      <div class="card animate-on-scroll">
+        <div style="display:grid; grid-template-columns:1fr 2fr; gap:2rem; padding:2rem;">
+          <div>
+            <img src="cafep2.jpg" alt="Frank & Honest Café" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
+            <img src="cafep3.jpg" alt="Frank & Honest Café Installation" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
+          </div>
+          <div>
+            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Electrical & Mechanical</span>
+            <h2 style="margin-bottom:1rem;">WIT Arena – Frank & Honest Café</h2>
+            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
+              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-map-marker-alt" style="color:var(--cts-blue); margin-right:0.5rem;"></i>SETU Arena (WIT)</span>
+              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Completed: 30th September 2022</span>
+            </div>
+            
+            <p style="margin-bottom:1rem;">CTS Group successfully completed the Electrical & Mechanical installation for the Frank & Honest Café at SETU Arena. The works included a series of upgrades to enhance the café's functionality and overall environment.</p>
+            
+            <h4 style="font-size:0.9rem; margin:1rem 0 0.5rem;">Key Installations:</h4>
+            <ul style="font-size:0.85rem; padding-left:1.5rem; color:var(--cts-gray); margin:0 0 1.5rem; display:grid; grid-template-columns:1fr 1fr; gap:0.25rem;">
+              <li>Saniflo unit with plumbing</li>
+              <li>New sink with mixer tap</li>
+              <li>CCTV comms cabinet</li>
+              <li>Merry Chef relocation</li>
+              <li>Lighting alterations</li>
+              <li>Switching modifications</li>
+            </ul>
+            
+            <p style="font-style:italic; color:var(--cts-blue); font-weight:600; padding-top:1rem; border-top:2px solid #e2e8f0; font-size:0.9rem;">
+              "CTS Group is proud to have contributed to the improvement of SETU Arena's facilities and wishes the café continued success in serving its visitors."
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><img src="ctslogop2.jpg" alt="CTS Group" style="height:40px; width:auto; margin-bottom:1rem;"> CTS Group</h3>
+        <p>Building services excellence since 1995.</p>
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Waterford Office</h4>
+        <ul>
+          <li>CTS House, Highfield Business Park</li>
+          <li>Portlaw, Co. Waterford</li>
+          <li>T: 051 387931</li>
+          <li>E: info@ctsgroup.ie</li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Dublin Office</h4>
+        <ul>
+          <li>Unit 30, Parkwest Enterprise Centre</li>
+          <li>Lavery Ave, Parkwest, Dublin 12</li>
+          <li>T: 01 2530506</li>
+          <li>E: dublin@ctsgroup.ie</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 CTS Group. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('active');
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, {threshold: 0.1});
+
+document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
+</script>
+</body>
+</html>
