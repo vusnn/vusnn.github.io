@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Industrial & Logistics Projects | CTS Group</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --cts-navy: #1e3a8a;
+  --cts-orange: #f59e0b;
+  --cts-white: #ffffff;
+  --cts-gray: #64748b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+header {
+  background: var(--cts-white);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: var(--cts-navy);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.logo img { height: 50px; }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--cts-gray);
+  font-weight: 500;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--cts-white);
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.category-hero {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  color: var(--cts-white);
+  padding: 4rem 2rem;
+}
+
+.category-hero-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.category-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.projects-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.project-card {
+  background: var(--cts-white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0;
+}
+
+.project-card:nth-child(even) {
+  grid-template-columns: 2fr 1fr;
+}
+
+.project-card:nth-child(even) .project-images {
+  order: 2;
+}
+
+.project-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  background: #f1f5f9;
+}
+
+.project-images img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.project-images img:last-child {
+  height: 150px;
+}
+
+.project-content {
+  padding: 2.5rem;
+}
+
+.project-label {
+  display: inline-block;
+  background: rgba(234, 88, 12, 0.1);
+  color: #ea580c;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-size: 2rem;
+  color: var(--cts-navy);
+  margin-bottom: 1rem;
+}
+
+.project-meta {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--cts-gray);
+  font-size: 0.95rem;
+}
+
+.meta-item i {
+  color: var(--cts-orange);
+}
+
+.project-description {
+  color: #475569;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.project-details h4 {
+  color: var(--cts-navy);
+  margin: 1.5rem 0 0.75rem;
+  font-size: 1rem;
+}
+
+.project-details ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #475569;
+  padding-left: 1.5rem;
+}
+
+.value-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--cts-navy);
+  color: var(--cts-white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 1.5rem;
+}
+
+footer {
+  background: var(--cts-navy);
+  color: var(--cts-white);
+  padding: 3rem 2rem 1rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+@media (max-width: 968px) {
+  .project-card,
+  .project-card:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-card:nth-child(even) .project-images {
+    order: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="../index.html" class="logo">
+      <img src="../ctslogop2.jpg" alt="CTS Group Logo">
+      <span>CTS GROUP</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../projects.html">Projects</a></li>
+      <li><a href="../team.html">Team</a></li>
+      <li><a href="../careers.html">Careers</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="category-hero">
+  <div class="category-hero-content">
+    <a href="../projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to All Projects</a>
+    <h1>Industrial & Logistics</h1>
+    <p>Warehouse facilities, distribution centres, and manufacturing plants delivering robust, efficient, and scalable infrastructure solutions.</p>
+  </div>
+</section>
+
+<div class="projects-container">
+
+  <!-- Project 1: Pallet Xpress Phase 2 -->
+  <div class="project-card">
+    <div class="project-images">
+      <img src="../palletexp1.jpg" alt="Pallet Xpress Phase 2">
+      <img src="../palletexp2.jpg" alt="Pallet Xpress Installation">
+    </div>
+    <div class="project-content">
+      <span class="project-label">Electrical Installation</span>
+      <h2 class="project-title">Pallet Xpress – Phase 2</h2>
+      <div class="project-meta">
+        <span class="meta-item"><i class="fas fa-calendar"></i> September 2022</span>
+        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Dublin</span>
+      </div>
+      <p class="project-description">CTS Group completed a comprehensive electrical installation for the Phase 2 expansion of the Pallet Xpress logistics facility, delivering full power distribution and life-safety systems across all warehouse and external areas.</p>
+      
+      <div class="project-details">
+        <h4>Electrical Infrastructure:</h4>
+        <ul>
+          <li>Main and sub-distribution boards</li>
+          <li>Sub-mains cabling and containment</li>
+          <li>Roller shutter and dock leveller supplies</li>
+          <li>Full earthing and bonding</li>
+          <li>Internal warehouse lighting</li>
+          <li>External car park lighting</li>
+          <li>Fire alarm and AOV wiring</li>
+          <li>Lightning protection</li>
+          <li>Intruder alarm systems</li>
+          <li>Photovoltaic installation and upgrade</li>
+        </ul>
+      </div>
+      
+      <span class="value-tag"><i class="fas fa-euro-sign"></i> Contract Value: €850,000</span>
+    </div>
+  </div>
+
+  <!-- Project 2: Smartply Phase 2 -->
+  <div class="project-card">
+    <div class="project-content">
+      <span class="project-label">Mechanical & Electrical Installation</span>
+      <h2 class="project-title">Smartply Phase 2 Renewal Project</h2>
+      <div class="project-meta">
+        <span class="meta-item"><i class="fas fa-calendar"></i> June 2022</span>
+        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Waterford</span>
+      </div>
+      <p class="project-description">CTS Group delivered HVAC and associated mechanical and electrical services for the Smartply Phase 2 industrial renewal works, requiring specialist knowledge of industrial process environments and careful integration with existing operational infrastructure.</p>
+      
+      <div class="project-details">
+        <h4>HVAC & Mechanical Services:</h4>
+        <ul>
+          <li>MCC room installations</li>
+          <li>Thermal Oil Building services</li>
+          <li>Roof-level ducting</li>
+          <li>Controls integration</li>
+          <li>Specialist commissioning support</li>
+          <li>Industrial production environment optimisation</li>
+        </ul>
+      </div>
+      
+      <span class="value-tag"><i class="fas fa-euro-sign"></i> Contract Value: €211,861.73</span>
+    </div>
+    <div class="project-images">
+      <img src="../SMARTP1.jpg" alt="Smartply Phase 2">
+      <img src="../SMARTP2.jpg" alt="Smartply Installation">
+    </div>
+  </div>
+
+  <!-- Project 3: Aramex Distribution Facility -->
+  <div class="project-card">
+    <div class="project-images">
+      <img src="../aramex1.jpg" alt="Aramex Distribution Facility">
+      <img src="../aramex2.jpg" alt="Aramex Installation">
+    </div>
+    <div class="project-content">
+      <span class="project-label">Electrical Infrastructure Upgrade</span>
+      <h2 class="project-title">Aramex Distribution Facility – Ballyboughal</h2>
+      <div class="project-meta">
+        <span class="meta-item"><i class="fas fa-calendar"></i> February 2023</span>
+        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Ballyboughal, Co. Dublin</span>
+      </div>
+      <p class="project-description">CTS Group delivered a major electrical infrastructure upgrade to the Aramex distribution facility, significantly improving the operational resilience and capacity of the site's electrical systems.</p>
+      
+      <div class="project-details">
+        <h4>Upgrade Works:</h4>
+        <ul>
+          <li>New metering and MCCB installations</li>
+          <li>Main and sub-distribution boards</li>
+          <li>Generator interface provisions</li>
+          <li>Sub-mains cabling and circuit transfers</li>
+          <li>Integration with existing site services</li>
+          <li>Full emergency lighting upgrade</li>
+          <li>Compliance with current standards</li>
+        </ul>
+      </div>
+      
+      <span class="value-tag"><i class="fas fa-euro-sign"></i> Contract Value: €177,693.81</span>
+    </div>
+  </div>
+
+  <!-- Project 4: Midland Steel -->
+  <div class="project-card">
+    <div class="project-content">
+      <span class="project-label">Electrical & Mechanical Installation</span>
+      <h2 class="project-title">Midland Steel – Electrical & Mechanical Installation</h2>
+      <div class="project-meta">
+        <span class="meta-item"><i class="fas fa-calendar"></i> January 2025</span>
+        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Midlands</span>
+      </div>
+      <p class="project-description">CTS Group delivered a comprehensive mechanical and electrical installation across the Midland Steel facility, providing a fully integrated M&E package for a large-scale industrial building combining robust infrastructure with advanced life-safety systems.</p>
+      
+      <div class="project-details">
+        <h4>Electrical Installation:</h4>
+        <ul>
+          <li>MV and LV distribution</li>
+          <li>Submains, earthing and bonding</li>
+          <li>Site, general, emergency and feature lighting</li>
+          <li>General services and containment</li>
+          <li>Fire alarm, CCTV, intruder alarm</li>
+          <li>Access control and disabled alarms</li>
+          <li>Data cabling and lightning protection</li>
+          <li>Void smoke detectors and feature lighting</li>
+          <li>Board alterations and pole lights</li>
+        </ul>
+      </div>
+      
+      <div class="project-details">
+        <h4>Mechanical Installation:</h4>
+        <ul>
+          <li>Full plantroom installation</li>
+          <li>Water services</li>
+          <li>Above-ground soils and waste</li>
+          <li>Ventilation and air conditioning</li>
+          <li>Plumbing works including coffee machines</li>
+          <li>Water boilers, washing machines and external taps</li>
+        </ul>
+      </div>
+      
+      <span class="value-tag"><i class="fas fa-euro-sign"></i> Total M&E: €1,588,301.73</span>
+    </div>
+    <div class="project-images">
+      <img src="../midland1.jpg" alt="Midland Steel">
+      <img src="../midland2.jpg" alt="Midland Steel Installation">
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div style="max-width: 1400px; margin: 0 auto;">
+    <p>&copy; 2024 CTS Group. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
