@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retail & Commercial Projects | CTS Group</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --cts-navy: #1e3a8a;
+  --cts-orange: #f59e0b;
+  --cts-white: #ffffff;
+  --cts-gray: #64748b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: var(--cts-white);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: var(--cts-navy);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.logo img { height: 50px; }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--cts-gray);
+  font-weight: 500;
+}
+
+.nav-links a:hover { color: var(--cts-navy); }
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--cts-navy);
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+/* Hero */
+.category-hero {
+  background: linear-gradient(135deg, var(--cts-navy) 0%, #3730a3 100%);
+  color: var(--cts-white);
+  padding: 4rem 2rem;
+}
+
+.category-hero-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.category-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.category-hero p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 700px;
+}
+
+/* Projects Container */
+.projects-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.project-card {
+  background: var(--cts-white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0;
+}
+
+.project-card:nth-child(even) {
+  grid-template-columns: 2fr 1fr;
+}
+
+.project-card:nth-child(even) .project-images {
+  order: 2;
+}
+
+.project-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  background: #f1f5f9;
+}
+
+.project-images img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.project-images img:last-child {
+  height: 150px;
+}
+
+.project-content {
+  padding: 2.5rem;
+}
+
+.project-label {
+  display: inline-block;
+  background: rgba(30, 58, 138, 0.1);
+  color: var(--cts-navy);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-size: 2rem;
+  color: var(--cts-navy);
+  margin-bottom: 1rem;
+}
+
+.project-meta {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--cts-gray);
+  font-size: 0.95rem;
+}
+
+.meta-item i {
+  color: var(--cts-orange);
+}
+
+.project-description {
+  color: #475569;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.project-details h4 {
+  color: var(--cts-navy);
+  margin: 1.5rem 0 0.75rem;
+  font-size: 1rem;
+}
+
+.project-details ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #475569;
+  padding-left: 1.5rem;
+}
+
+.value-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--cts-navy);
+  color: var(--cts-white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 1.5rem;
+}
+
+/* Footer */
+footer {
+  background: var(--cts-navy);
+  color: var(--cts-white);
+  padding: 3rem 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  opacity: 0.6;
+}
+
+@media (max-width: 968px) {
+  .project-card,
+  .project-card:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-card:nth-child(even) .project-images {
+    order: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="../index.html" class="logo">
+      <img src="../ctslogop2.jpg" alt="CTS Group Logo">
+      <span>CTS GROUP</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../projects.html">Projects</a></li>
+      <li><a href="../team.html">Team</a></li>
+      <li><a href="../careers.html">Careers</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="category-hero">
+  <div class="category-hero-content">
+    <a href="../projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to All Projects</a>
+    <h1>Retail & Commercial</h1>
+    <p>Supermarkets, retail fit-outs, and commercial developments delivering modern, efficient, and customer-focused environments.</p>
+  </div>
+</section>
+
+<div class="projects-container">
+
+  <!-- Project 1: Wicklow LIDL -->
+  <div class="project-card">
+    <div class="project-images">
+      <img src="../wicklowlidl1.jpg" alt="Wicklow LIDL">
+      <img src="../wicklowlidl2.jpg" alt="Wicklow LIDL Installation">
+    </div>
+    <div class="project-content">
+      <span class="project-label">Mechanical & Electrical Installation</span>
+      <h2 class="project-title">Wicklow LIDL</h2>
+      <div class="project-meta">
+        <span class="meta-item"><i class="fas fa-calendar"></i> 2022</span>
+        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Wicklow</span>
+      </div>
+      <p class="project-description">CTS Group delivered the complete mechanical and electrical installation for the Wicklow LIDL development, providing a fully integrated services solution for a modern retail environment. The project encompassed all aspects of power distribution, mechanical services and life-safety systems required for the operational opening of the store.</p>
+      
+      <div class="project-details">
+        <h4>Key Systems Installed:</h4>
+        <ul>
+          <li>Main and sub-distribution boards</li>
+          <li>General and small power installations</li>
+          <li>Temporary power and generator support</li>
+          <li>External car park lighting</li>
+          <li>Full HVAC and air conditioning</li>
+          <li>Plant-level ducting modifications</li>
+          <li>Emergency lighting</li>
+          <li>CCTV and access control</li>
+          <li>Disabled refuge points</li>
+          <li>Power to balers and specialist equipment</li>
+        </ul>
+      </div>
+      
+      <span class="value-tag"><i class="fas fa-euro-sign"></i> Contract Value: €700,000</span>
+    </div>
+  </div>
+
+  <!-- Project 2: Lidl Newcastle -->
+  <div class="project-card">
+    <div class="project-content">
+      <span class="project-label">Mechanical & Electrical Installation</span>
+      <h2 class="project-title">Lidl Newcastle</h2>
+      <div class="project-meta">
+        <span class="meta-item"><i class="fas fa-calendar"></i> October 2024</span>
+        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Newcastle, Co. Dublin</span>
+      </div>
+      <p class="project-description">CTS Group delivered the mechanical and electrical fit-out for the Lidl store in Newcastle, encompassing air conditioning, ductwork, power distribution, lighting, fire alarm and CCTV, with design updates and site-specific adjustments incorporated throughout.</p>
+      
+      <div class="project-details">
+        <h4>Scope of Works:</h4>
+        <ul>
+          <li>Adjustments to AHU attenuators and HVDS ductwork</li>
+          <li>Additional ducting as requested at submittal stage</li>
+          <li>Cabling for car chargers and staff units</li>
+          <li>Trolley bay lighting</li>
+          <li>Additional sockets and data points for Mat Terminal</li>
+          <li>Fire alarm and CCTV wiring</li>
+          <li>Additional exit signs and power to refrigeration</li>
+          <li>Lighting and containment relocations</li>
+          <li>Mezzanine, ramp lighting and door fob wiring</li>
+        </ul>
+      </div>
+      
+      <span class="value-tag"><i class="fas fa-euro-sign"></i> Contract Value: €934,236.15</span>
+    </div>
+    <div class="project-images">
+      <img src="../lidlnewcastle1.jpg" alt="Lidl Newcastle">
+      <img src="../lidlnewcastle2.jpg" alt="Lidl Newcastle Installation">
+    </div>
+  </div>
+
+  <!-- Project 3: Lidl Enfield -->
+  <div class="project-card">
+    <div class="project-images">
+      <img src="../lidlenfield1.jpg" alt="Lidl Enfield">
+      <img src="../lidlenfield2.jpg" alt="Lidl Enfield Installation">
+    </div>
+    <div class="project-content">
+      <span class="project-label">Electrical & Mechanical Installation</span>
+      <h2 class="project-title">Lidl Enfield – Final Account</h2>
+      <div class="project-meta">
+        <span class="meta-item"><i class="fas fa-calendar"></i> February 2025</span>
+        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Enfield, Co. Meath</span>
+      </div>
+      <p class="project-description">CTS Group completed the electrical and mechanical installation for the Lidl store in Enfield, with all systems tailored to site-specific conditions including structural adaptations required due to purlin configurations differing from standard Lidl stores.</p>
+      
+      <div class="project-details">
+        <h4>Variations & Additional Works:</h4>
+        <ul>
+          <li>Additional pole lights and PA speaker relocation</li>
+          <li>Additional meter installation</li>
+          <li>Generator installation and post-storm fault finding</li>
+          <li>DRS room modifications</li>
+          <li>Access control service relocations</li>
+          <li>Additional sockets across multiple locations</li>
+          <li>IT cabinet assembly</li>
+          <li>Storm damage repair to Lidl logo lighting</li>
+          <li>Forty-eight double Unistrut high-level brackets</li>
+          <li>Water softener and DRS room fan</li>
+        </ul>
+      </div>
+      
+      <span class="value-tag"><i class="fas fa-euro-sign"></i> Contract Value: €907,093.68</span>
+    </div>
+  </div>
+
+  <!-- Project 4: Donnybrook Fair -->
+  <div class="project-card">
+    <div class="project-content">
+      <span class="project-label">Mixed-Use Retail & Food Facility</span>
+      <h2 class="project-title">Donnybrook Fair – Morehampton Road</h2>
+      <div class="project-meta">
+        <span class="meta-item"><i class="fas fa-calendar"></i> December 2024</span>
+        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Morehampton Road, Dublin</span>
+      </div>
+      <p class="project-description">CTS Group completed a full mechanical and electrical fit-out for the Donnybrook Fair mixed-use retail and food facility, delivering a fully operational and compliant facility integrating all M&E systems, life-safety installations and client-driven variations.</p>
+      
+      <div class="project-details">
+        <h4>Mechanical & Electrical Works:</h4>
+        <ul>
+          <li>Strip-out of existing services</li>
+          <li>Full water services and soils/waste installation</li>
+          <li>Ventilation with heat recovery units</li>
+          <li>Gas works and detection systems</li>
+          <li>Main board alterations and cable containment</li>
+          <li>General power, lighting and emergency lighting</li>
+          <li>Data wiring and signage wiring</li>
+          <li>Fire alarm, CCTV, PA and intruder alarm</li>
+          <li>Access control and seasonal Christmas installation</li>
+        </ul>
+      </div>
+      
+      <span class="value-tag"><i class="fas fa-euro-sign"></i> Contract Value: €374,497.57</span>
+    </div>
+    <div class="project-images">
+      <img src="../donnybrook1.jpg" alt="Donnybrook Fair">
+      <img src="../donnybrook2.jpg" alt="Donnybrook Fair Installation">
+    </div>
+  </div>
+
+  <!-- Project 5: Market Place Ballymun -->
+  <div class="project-card">
+    <div class="project-images">
+      <img src="../marketplace1.jpg" alt="Market Place Ballymun">
+      <img src="../marketplace2.jpg" alt="Market Place Installation">
+    </div>
+    <div class="project-content">
+      <span class="project-label">Retail & Food Facility</span>
+      <h2 class="project-title">Market Place – Ballymun</h2>
+      <div class="project-meta">
+        <span class="meta-item"><i class="fas fa-calendar"></i> May 2024</span>
+        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Ballymun, Dublin</span>
+      </div>
+      <p class="project-description">CTS Group delivered a full mechanical and electrical fit-out for the Market Place retail and food facility, covering office, butchery, seafood, demo kitchen, coffee, cigarette, alcohol and retail areas with associated external works.</p>
+      
+      <div class="project-details">
+        <h4>Specialist Areas Covered:</h4>
+        <ul>
+          <li>Phased fit-out across all departments</li>
+          <li>Temporary and permanent refrigeration supplies</li>
+          <li>Power and data to displays, TVs, reception</li>
+          <li>Entrance gates and insectocutors</li>
+          <li>Panel heaters and trunking alterations</li>
+          <li>Fire alarm devices and sub-boards</li>
+          <li>Chlorination and washing machine room</li>
+          <li>Dishwasher ventilation and pump works</li>
+          <li>Specialist food preparation areas</li>
+        </ul>
+      </div>
+      
+      <span class="value-tag"><i class="fas fa-euro-sign"></i> Contract Value: €201,810.47</span>
+    </div>
+  </div>
+
+  <!-- Project 6: SuperValu Clonakilty -->
+  <div class="project-card">
+    <div class="project-content">
+      <span class="project-label">Full M&E Installation & Refurbishment</span>
+      <h2 class="project-title">SuperValu Clonakilty</h2>
+      <div class="project-meta">
+        <span class="meta-item"><i class="fas fa-calendar"></i> September 2025</span>
+        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Clonakilty, Co. Cork</span>
+      </div>
+      <p class="project-description">CTS Group completed a full mechanical and electrical fit-out and refurbishment for SuperValu Clonakilty, delivered across multiple phases covering the full supermarket floor and specialist departments.</p>
+      
+      <div class="project-details">
+        <h4>Departments & Systems:</h4>
+        <ul>
+          <li>Off Licence, Frozen Food, Seafood</li>
+          <li>Coffee, Deli, Butchery, Bakery</li>
+          <li>Street Food and Kiosk</li>
+          <li>Distribution boards and commissioning</li>
+          <li>Cable containment alterations</li>
+          <li>Gas detection system wiring</li>
+          <li>Refrigeration panels and temporary supplies</li>
+          <li>Extract ductwork and fans</li>
+          <li>New suppression system installation</li>
+          <li>Sushi Bar and seasonal installations</li>
+        </ul>
+      </div>
+      
+      <span class="value-tag"><i class="fas fa-euro-sign"></i> Contract Value: €297,813.63</span>
+    </div>
+    <div class="project-images">
+      <img src="../supervalu1.jpg" alt="SuperValu Clonakilty">
+      <img src="../supervalu2.jpg" alt="SuperValu Installation">
+    </div>
+  </div>
+
+  <!-- Project 7: Eason's Dungarvan -->
+  <div class="project-card">
+    <div class="project-images">
+      <img src="../easons1.jpg" alt="Eason's Dungarvan">
+      <img src="../easons2.jpg" alt="Eason's Installation">
+    </div>
+    <div class="project-content">
+      <span class="project-label">Electrical Installation</span>
+      <h2 class="project-title">Eason's – Dungarvan</h2>
+      <div class="project-meta">
+        <span class="meta-item"><i class="fas fa-calendar"></i> December 2024</span>
+        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Dungarvan, Co. Waterford</span>
+      </div>
+      <p class="project-description">CTS Group delivered the electrical installation works for the Eason's retail fit-out, carried out across new and existing areas including the canteen, storeroom and circulation spaces.</p>
+      
+      <div class="project-details">
+        <h4>Electrical Works:</h4>
+        <ul>
+          <li>Recessed trio lights and LED panels</li>
+          <li>Track-mounted spotlights and LED strips</li>
+          <li>Exit and emergency lights</li>
+          <li>Strip-out of old trough and wall washer lights</li>
+          <li>Power and data to new tills</li>
+          <li>Roller shutter switch relocation</li>
+          <li>Signage wiring and connection of individual letters</li>
+          <li>Fire alarm to new rooms</li>
+          <li>Storeroom, canteen and new room lighting</li>
+          <li>Music speaker relocation and ceiling alterations</li>
+        </ul>
+      </div>
+      
+      <span class="value-tag"><i class="fas fa-euro-sign"></i> Contract Value: €28,277.00</span>
+    </div>
+  </div>
+
+  <!-- Project 8: Spar Callan Co-op -->
+  <div class="project-card">
+    <div class="project-content">
+      <span class="project-label">Mechanical & Electrical Fit-Out</span>
+      <h2 class="project-title">Spar Callan Co-op</h2>
+      <div class="project-meta">
+        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Callan, Co. Kilkenny</span>
+      </div>
+      <p class="project-description">CTS Group completed a combined mechanical and electrical fit-out for the Spar Callan Co-op, focusing on plumbing services to coffee machine and ice cream areas, alongside core electrical installation with daywork variations.</p>
+      
+      <div class="project-details">
+        <h4>Works Completed:</h4>
+        <ul>
+          <li>Electrical daywork variations</li>
+          <li>Callouts and relocation of supplies</li>
+          <li>New power and data to hot counters, chillers and screens</li>
+          <li>PA system relocation</li>
+          <li>Wiring for freezers and tills</li>
+          <li>Internal and external signage wiring</li>
+          <li>Plumbing to coffee machine and ice cream area</li>
+        </ul>
+      </div>
+      
+      <span class="value-tag"><i class="fas fa-euro-sign"></i> Contract Value: €30,288.50</span>
+    </div>
+    <div class="project-images">
+      <img src="../spar1.jpg" alt="Spar Callan">
+      <img src="../spar2.jpg" alt="Spar Installation">
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-container">
+    <div style="max-width: 1400px; margin: 0 auto; text-align: center;">
+      <p>&copy; 2024 CTS Group. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
