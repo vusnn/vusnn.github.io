@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hospitality Projects | CTS Group</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --cts-navy: #1e3a8a;
+  --cts-orange: #f59e0b;
+  --cts-white: #ffffff;
+  --cts-gray: #64748b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+header {
+  background: var(--cts-white);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: var(--cts-navy);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.logo img { height: 50px; }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--cts-gray);
+  font-weight: 500;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--cts-white);
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.category-hero {
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  color: var(--cts-white);
+  padding: 4rem 2rem;
+}
+
+.category-hero-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.category-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.projects-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.project-card {
+  background: var(--cts-white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0;
+}
+
+.project-card:nth-child(even) {
+  grid-template-columns: 2fr 1fr;
+}
+
+.project-card:nth-child(even) .project-images {
+  order: 2;
+}
+
+.project-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  background: #f1f5f9;
+}
+
+.project-images img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.project-images img:last-child {
+  height: 150px;
+}
+
+.project-content {
+  padding: 2.5rem;
+}
+
+.project-label {
+  display: inline-block;
+  background: rgba(124, 58, 237, 0.1);
+  color: #7c3aed;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-size: 2rem;
+  color: var(--cts-navy);
+  margin-bottom: 1rem;
+}
+
+.project-meta {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--cts-gray);
+  font-size: 0.95rem;
+}
+
+.meta-item i {
+  color: var(--cts-orange);
+}
+
+.project-description {
+  color: #475569;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.project-details h4 {
+  color: var(--cts-navy);
+  margin: 1.5rem 0 0.75rem;
+  font-size: 1rem;
+}
+
+.project-details ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #475569;
+  padding-left: 1.5rem;
+}
+
+.value-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--cts-navy);
+  color: var(--cts-white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 1.5rem;
+}
+
+footer {
+  background: var(--cts-navy);
+  color: var(--cts-white);
+  padding: 3rem 2rem 1rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+@media (max-width: 968px) {
+  .project-card,
+  .project-card:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-card:nth-child(even) .project-images {
+    order: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="../index.html" class="logo">
+      <img src="../ctslogop2.jpg" alt="CTS Group Logo">
+      <span>CTS GROUP</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../projects.html">Projects</a></li>
+      <li><a href="../team.html">Team</a></li>
+      <li><a href="../careers.html">Careers</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="category-hero">
+  <div class="category-hero-content">
+    <a href="../projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to All Projects</a>
+    <h1>Hospitality</h1>
+    <p>Hotels, restaurants, and cafés delivering exceptional guest experiences through reliable, efficient, and modern building services.</p>
+  </div>
+</section>
+
+<div class="projects-container">
+
+  <!-- Project 1: Osprey Hotel -->
+  <div class="project-card">
+    <div class="project-images">
+      <img src="../osprey1.jpg" alt="Osprey Hotel">
+      <img src="../osprey2.jpg" alt="Osprey Hotel Boilerhouse">
+    </div>
+    <div class="project-content">
+      <span class="project-label">Boilerhouse Upgrade</span>
+      <h2 class="project-title">Osprey Hotel – Boilerhouse Upgrade</h2>
+      <div class="project-meta">
+        <span class="meta-item"><i class="fas fa-calendar"></i> November 2024</span>
+        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Naas, Co. Kildare</span>
+      </div>
+      <p class="project-description">CTS Group completed a full boilerhouse upgrade at the Osprey Hotel, delivering a modernised plant facility integrating high-efficiency boilers, a CHP unit, hot water cylinders, pipework, flues and pumps together with all associated mechanical and electrical works.</p>
+      
+      <div class="project-details">
+        <h4>Mechanical Works:</h4>
+        <ul>
+          <li>Two new boilers with full pipework and flues</li>
+          <li>Four hot water cylinders and circulating pumps</li>
+          <li>Pipework insulation for boilers, cylinders and CHP</li>
+          <li>Exhaust air and flue works</li>
+          <li>CHP ventilation and silencer installation</li>
+          <li>Custom flue pieces</li>
+        </ul>
+      </div>
+      
+      <div class="project-details">
+        <h4>Electrical & Controls:</h4>
+        <ul>
+          <li>MCCB and shunt trip installations</li>
+          <li>BMS and control wiring</li>
+          <li>Cat6 installation</li>
+          <li>Data logger reporting</li>
+          <li>Additional pumps and pipework modifications</li>
+          <li>Auto-fill unit for heat exchanger</li>
+        </ul>
+      </div>
+      
+      <span class="value-tag"><i class="fas fa-euro-sign"></i> Contract Value: €535,890.50</span>
+    </div>
+  </div>
+
+  <!-- Project 2: Viking Hotel -->
+  <div class="project-card">
+    <div class="project-content">
+      <span class="project-label">Ensuite & Bedroom Upgrades</span>
+      <h2 class="project-title">Viking Hotel – Multiple Phase Upgrades</h2>
+      <div class="project-meta">
+        <span class="meta-item"><i class="fas fa-calendar"></i> 2024-2025</span>
+        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Waterford</span>
+      </div>
+      <p class="project-description">CTS Group carried out comprehensive plumbing and electrical upgrades across multiple floors of the Viking Hotel, delivered within a live hotel environment with careful scheduling to minimise disruption.</p>
+      
+      <div class="project-details">
+        <h4>Level 3 Ensuite Upgrade (May 2024):</h4>
+        <ul>
+          <li>Full plumbing fit-out of ensuite bathrooms (rooms 301-339)</li>
+          <li>Valve set replacements across entire floor</li>
+          <li>Waste pipe alterations in multiple rooms</li>
+          <li>LPHW heating system works</li>
+          <li>Circulating pump replacement</li>
+        </ul>
+      </div>
+      
+      <div class="project-details">
+        <h4>Level 1 & 2 Bedroom Upgrade (September 2025):</h4>
+        <ul>
+          <li>57 room upgrades (double, triple, family, accessible)</li>
+          <li>Corridor lighting upgrades</li>
+          <li>Distribution board modifications</li>
+          <li>Bedroom data alterations and TV splitter installation</li>
+          <li>Vin-card rewiring and lighting modifications</li>
+          <li>Towel rails, shaver circuits and underfloor heating</li>
+        </ul>
+      </div>
+      
+      <span class="value-tag"><i class="fas fa-euro-sign"></i> Total Value: €503,507.99</span>
+    </div>
+    <div class="project-images">
+      <img src="../viking1.jpg" alt="Viking Hotel">
+      <img src="../viking2.jpg" alt="Viking Hotel Upgrade">
+    </div>
+  </div>
+
+  <!-- Project 3: Pembroke Hotel -->
+  <div class="project-card">
+    <div class="project-images">
+      <img src="../pembroke1.jpg" alt="Pembroke Hotel">
+      <img src="../pembroke2.jpg" alt="Pembroke Hotel Installation">
+    </div>
+    <div class="project-content">
+      <span class="project-label">Electrical Installation</span>
+      <h2 class="project-title">Pembroke Hotel – 4th & 5th Floor</h2>
+      <div class="project-meta">
+        <span class="meta-item"><i class="fas fa-calendar"></i> August 2025</span>
+        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Dublin</span>
+      </div>
+      <p class="project-description">CTS Group completed the electrical installation works for the 4th and 5th floor upgrade at the Pembroke Hotel, covering bedrooms, suites, corridors, plant areas and associated service installations across both floors.</p>
+      
+      <div class="project-details">
+        <h4>Electrical Works:</h4>
+        <ul>
+          <li>Cable containment and distribution boards</li>
+          <li>General and emergency lighting</li>
+          <li>Socket outlets and sub-distribution boards</li>
+          <li>Fire alarm wiring to new and existing points</li>
+          <li>CCTV camera and intruder alarm installation</li>
+          <li>Larger distribution boards and lighting controls</li>
+          <li>PIRs, LED strips, dimmers and pendant lights</li>
+          <li>Door hold magnets and access control</li>
+          <li>Bedroom air conditioning and extract fans</li>
+          <li>Plantroom power to heat pumps and boilers</li>
+        </ul>
+      </div>
+      
+      <span class="value-tag"><i class="fas fa-euro-sign"></i> Contract Value: €366,704.59</span>
+    </div>
+  </div>
+
+  <!-- Project 4: Nando's Restaurant -->
+  <div class="project-card">
+    <div class="project-content">
+      <span class="project-label">Electrical Installation</span>
+      <h2 class="project-title">Nando's Restaurant – Limerick</h2>
+      <div class="project-meta">
+        <span class="meta-item"><i class="fas fa-calendar"></i> September 2023</span>
+        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Limerick</span>
+      </div>
+      <p class="project-description">CTS Group delivered the full electrical fit-out for the Nando's restaurant development in Limerick, covering all power, lighting, catering and data systems required for a busy commercial restaurant environment.</p>
+      
+      <div class="project-details">
+        <h4>Electrical Systems:</h4>
+        <ul>
+          <li>General and emergency lighting</li>
+          <li>Full power distribution including clean power supplies</li>
+          <li>Catering equipment wiring</li>
+          <li>Mechanical equipment connections for kitchen plant</li>
+          <li>Full data systems installation</li>
+          <li>Front and back of house coverage</li>
+        </ul>
+      </div>
+      
+      <span class="value-tag"><i class="fas fa-euro-sign"></i> Contract Value: €126,824.89</span>
+    </div>
+    <div class="project-images">
+      <img src="../nandos1.jpg" alt="Nando's Restaurant Limerick">
+      <img src="../nandos2.jpg" alt="Nando's Installation">
+    </div>
+  </div>
+
+  <!-- Project 5: Frank & Honest Café -->
+  <div class="project-card">
+    <div class="project-images">
+      <img src="../cafep2.jpg" alt="Frank & Honest Café">
+      <img src="../cafep3.jpg" alt="Frank & Honest Café Installation">
+    </div>
+    <div class="project-content">
+      <span class="project-label">Mechanical & Electrical Installation</span>
+      <h2 class="project-title">WIT Arena – Frank & Honest Café</h2>
+      <div class="project-meta">
+        <span class="meta-item"><i class="fas fa-calendar"></i> September 2022</span>
+        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> SETU Arena, Waterford</span>
+      </div>
+      <p class="project-description">CTS Group completed the mechanical and electrical installation for the Frank & Honest Café at SETU Arena, delivering upgrades to enhance functionality and customer experience within a live venue environment.</p>
+      
+      <div class="project-details">
+        <h4>Mechanical Works:</h4>
+        <ul>
+          <li>Saniflo installation</li>
+          <li>Plumbing and sanitary upgrades</li>
+          <li>Kitchen equipment relocation</li>
+        </ul>
+      </div>
+      
+      <div class="project-details">
+        <h4>Electrical & Communications:</h4>
+        <ul>
+          <li>Lighting alterations</li>
+          <li>Power and switching modifications</li>
+          <li>CCTV and communications upgrades</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 6: Waterford City Ford -->
+  <div class="project-card">
+    <div class="project-content">
+      <span class="project-label">Showroom & Workshop Fit-Out</span>
+      <h2 class="project-title">Waterford City Ford – New Showroom</h2>
+      <div class="project-meta">
+        <span class="meta-item"><i class="fas fa-calendar"></i> April 2024</span>
+        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Waterford</span>
+      </div>
+      <p class="project-description">CTS Group completed the full mechanical and electrical fit-out for the new Waterford City Ford showroom, workshop, valet building and office areas, delivering a modern, fully operational facility.</p>
+      
+      <div class="project-details">
+        <h4>Electrical Works:</h4>
+        <ul>
+          <li>Distribution boards and sub-mains cabling</li>
+          <li>Cable containment and general power</li>
+          <li>Workshop, showroom and office power</li>
+          <li>Mechanical wiring</li>
+          <li>Lighting and emergency lighting</li>
+          <li>Fire alarm and data wiring</li>
+          <li>Earthing and bonding</li>
+          <li>Electric heating to workshop</li>
+          <li>CCTV and intruder alarm</li>
+        </ul>
+      </div>
+      
+      <div class="project-details">
+        <h4>Mechanical Works:</h4>
+        <ul>
+          <li>Water services and soils/wastes</li>
+          <li>Ventilation and air conditioning</li>
+          <li>Sanitary ware supply</li>
+          <li>Pole lights, fans and destrat units</li>
+          <li>Lift wiring</li>
+        </ul>
+      </div>
+      
+      <span class="value-tag"><i class="fas fa-euro-sign"></i> Total M&E: €341,849.99</span>
+    </div>
+    <div class="project-images">
+      <img src="../ford1.jpg" alt="Waterford City Ford">
+      <img src="../ford2.jpg" alt="Ford Showroom Installation">
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div style="max-width: 1400px; margin: 0 auto;">
+    <p>&copy; 2024 CTS Group. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
