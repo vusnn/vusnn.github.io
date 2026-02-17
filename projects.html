@@ -3,12 +3,413 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Explore CTS Group's portfolio of completed building services projects across Ireland.">
 <title>Our Projects | CTS Group Portfolio</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --cts-navy: #1e3a8a;
+  --cts-orange: #f59e0b;
+  --cts-white: #ffffff;
+  --cts-gray: #64748b;
+  --cts-light: #f8fafc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--cts-light);
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: var(--cts-white);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: var(--cts-navy);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--cts-gray);
+  font-weight: 500;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--cts-navy);
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--cts-orange);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--cts-navy);
+}
+
+/* Hero Section */
+.projects-hero {
+  background: linear-gradient(135deg, var(--cts-navy) 0%, #1e40af 100%);
+  color: var(--cts-white);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.projects-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.projects-hero p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Stats Bar */
+.stats-bar {
+  background: var(--cts-white);
+  padding: 2rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.stats-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 2.5rem;
+  color: var(--cts-navy);
+  margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+  color: var(--cts-gray);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+/* Category Grid */
+.categories-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  color: var(--cts-navy);
+  margin-bottom: 1rem;
+}
+
+.section-title p {
+  color: var(--cts-gray);
+  font-size: 1.125rem;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.category-card {
+  background: var(--cts-white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  border: 2px solid transparent;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: var(--cts-orange);
+}
+
+.category-image {
+  height: 200px;
+  background: linear-gradient(135deg, var(--cts-navy) 0%, #3b82f6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cts-white);
+  font-size: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></svg>');
+  background-size: 100px;
+  opacity: 0.5;
+}
+
+.category-content {
+  padding: 2rem;
+}
+
+.category-content h3 {
+  font-size: 1.5rem;
+  color: var(--cts-navy);
+  margin-bottom: 0.75rem;
+}
+
+.category-content p {
+  color: var(--cts-gray);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.project-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(30, 58, 138, 0.1);
+  color: var(--cts-navy);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.view-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--cts-orange);
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* Recent Projects Preview */
+.recent-section {
+  background: var(--cts-white);
+  padding: 4rem 2rem;
+}
+
+.recent-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.recent-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.recent-card {
+  background: var(--cts-light);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border-left: 4px solid var(--cts-orange);
+}
+
+.recent-card h4 {
+  color: var(--cts-navy);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.recent-card p {
+  color: var(--cts-gray);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.recent-card .value {
+  color: var(--cts-navy);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+  background: var(--cts-navy);
+  color: var(--cts-white);
+  padding: 3rem 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+}
+
+.footer-brand img {
+  height: 50px;
+  margin-bottom: 1rem;
+  filter: brightness(0) invert(1);
+}
+
+.footer-brand p {
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cts-white);
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.social-links a:hover {
+  background: var(--cts-orange);
+}
+
+.footer-links h4 {
+  margin-bottom: 1rem;
+  color: var(--cts-orange);
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .recent-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .projects-hero h1 {
+    font-size: 2rem;
+  }
+}
+</style>
 </head>
 <body>
+
 <header>
   <nav>
     <a href="index.html" class="logo">
@@ -30,386 +431,206 @@
   </nav>
 </header>
 
-<div class="breadcrumb">
-  <div class="breadcrumb-content">
-    <a href="index.html">Home</a> / Projects
-  </div>
-</div>
+<section class="projects-hero">
+  <h1>Our Project Portfolio</h1>
+  <p>Delivering excellence across retail, industrial, healthcare, education, hospitality and commercial sectors throughout Ireland</p>
+</section>
 
-<main>
-  <section style="padding-top:3rem;">
-    <div class="container">
-      <div class="section-header">
-        <h1>Our Projects</h1>
-        <p>Recently completed electrical, mechanical, and air conditioning installations demonstrating our expertise across commercial and retail sectors</p>
-      </div>
-      
-      <!-- Project 1: Wicklow LIDL -->
-      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
-        <div style="display:grid; grid-template-columns:1fr 2fr; gap:2rem; padding:2rem;">
-          <div>
-            <img src="wicklowlidl1.jpg" alt="Wicklow LIDL" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
-            <img src="wicklowlidl2.jpg" alt="Wicklow LIDL Installation" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
-          </div>
-          <div>
-            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Mechanical & Electrical Installation</span>
-            <h2 style="margin-bottom:1rem;">Wicklow LIDL</h2>
-            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>2022</span>
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-euro-sign" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Final Project Value: €700,000</span>
-            </div>
-            
-            <p style="margin-bottom:1rem;">CTS Group successfully completed the full mechanical and electrical installation for the Wicklow LIDL development. The project comprised the delivery of all core M&E services required to support the operation of a modern retail facility, with works coordinated throughout the construction phase to suit operational and client requirements.</p>
-            
-            <p style="margin-bottom:1rem;">The scope included complete electrical and mechanical services installations, emergency and temporary power provisions, generator support works, external car park lighting, and the coordination and relocation of services to suit warehouse and store layouts. Mechanical and electrical services were also installed to specialist equipment including balers, air conditioning units, CCTV systems, access control, disabled refuge points, and warehouse workstations. Plant-level ducting alterations were completed to accommodate the HVDS system.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 2: Pallet Xpress – Phase 2 -->
-      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
-        <div style="display:grid; grid-template-columns:2fr 1fr; gap:2rem; padding:2rem;">
-          <div>
-            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Electrical Installation</span>
-            <h2 style="margin-bottom:1rem;">Pallet Xpress – Phase 2</h2>
-            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>September 2022</span>
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-euro-sign" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Final Electrical Contract Value: €850,000</span>
-            </div>
-            
-            <p style="margin-bottom:1rem;">CTS Group delivered a comprehensive electrical installation for the Pallet Xpress Phase 2 development, providing a complete power, lighting, and life-safety solution across warehouse and external areas.</p>
-            
-            <p style="margin-bottom:1rem;">Works included full earthing and bonding, main and sub-distribution boards, sub-mains cabling, containment systems, general and specialist power installations, roller shutter and dock leveller supplies, internal and external lighting, car park lighting, fire alarm and AOV wiring, data systems, lightning protection, intruder alarm wiring, and photovoltaic (PV) installation. The PV system was upgraded to provide increased capacity, with associated distribution board modifications completed to comply with updated regulations.</p>
-            
-            <p style="margin-bottom:1rem;">The project was delivered in full compliance with current standards and project specifications.</p>
-          </div>
-          <div>
-            <img src="palletexp1.jpg" alt="Pallet Xpress Phase 2" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
-            <img src="palletexp2.jpg" alt="Pallet Xpress Installation" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3: WIT Arena – Frank & Honest Café -->
-      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
-        <div style="display:grid; grid-template-columns:1fr 2fr; gap:2rem; padding:2rem;">
-          <div>
-            <img src="cafep2.jpg" alt="WIT Arena Frank & Honest Café" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
-            <img src="cafep3.jpg" alt="Frank & Honest Café Installation" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
-          </div>
-          <div>
-            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Mechanical & Electrical Installation</span>
-            <h2 style="margin-bottom:1rem;">WIT Arena – Frank & Honest Café</h2>
-            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>September 2022</span>
-            </div>
-            
-            <p style="margin-bottom:1rem;">CTS Group completed the mechanical and electrical installation for the Frank & Honest Café at SETU Arena, delivering upgrades to enhance functionality and customer experience.</p>
-            
-            <p style="margin-bottom:1rem;">The works included the installation of a Saniflo unit with associated plumbing and electrical services, new sanitary fittings, upgrades to communications infrastructure to support CCTV, relocation of kitchen equipment, and alterations to lighting and switching systems. All works were completed in coordination with the client and operational requirements of the venue.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 4: VHI Limerick -->
-      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
-        <div style="display:grid; grid-template-columns:2fr 1fr; gap:2rem; padding:2rem;">
-          <div>
-            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Air Conditioning, Electrical & Builders Works</span>
-            <h2 style="margin-bottom:1rem;">VHI Limerick</h2>
-            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>2022</span>
-            </div>
-            
-            <p style="margin-bottom:1rem;">CTS Group delivered a complete air conditioning installation for the VHI facility in Limerick, including all associated electrical and builders' works.</p>
-            
-            <p style="margin-bottom:1rem;">The project involved the supply and installation of multiple wall-mounted air conditioning units and external condensers, cranage of rooftop plant, formation of roof and wall penetrations, electrical wiring to all systems and controllers, fire stopping, ceiling removal and reinstatement, and additional heating installations. Associated builders' works included the construction of new internal walls to suit revised layouts.</p>
-          </div>
-          <div>
-            <img src="managementp1.jpg" alt="VHI Limerick" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
-            <img src="managementp2.jpg" alt="VHI Limerick Installation" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 5: Sweaty Betty – Kildare Village -->
-      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
-        <div style="display:grid; grid-template-columns:1fr 2fr; gap:2rem; padding:2rem;">
-          <div>
-            <img src="sweatybep3.jpg" alt="Sweaty Betty Kildare Village" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
-            <img src="sweatybep2.jpg" alt="Sweaty Betty Installation" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
-          </div>
-          <div>
-            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Electrical Installation</span>
-            <h2 style="margin-bottom:1rem;">Sweaty Betty – Kildare Village</h2>
-            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>October 2022</span>
-            </div>
-            
-            <p style="margin-bottom:1rem;">CTS Group completed additional electrical installation works as part of the Sweaty Betty retail fit-out, based on revised drawings and evolving client requirements.</p>
-            
-            <p style="margin-bottom:1rem;">The works included additional lighting circuits, feature lighting installations, power and data to sales counters and back-of-house areas, wiring for smoke dampers and control panels, audio systems, people counters, access control, and AOV control panels. Specialist front-of-house lighting and LED mirror feature lighting were also installed, along with an uplift to the air conditioning specification.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 6: Smartply Phase 2 Renewal Project -->
-      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
-        <div style="display:grid; grid-template-columns:2fr 1fr; gap:2rem; padding:2rem;">
-          <div>
-            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Mechanical & Electrical Installation</span>
-            <h2 style="margin-bottom:1rem;">Smartply Phase 2 Renewal Project</h2>
-            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>June 2022</span>
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-euro-sign" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Final Project Value (incl. VAT): €211,861.73</span>
-            </div>
-            
-            <p style="margin-bottom:1rem;">CTS Group successfully completed the mechanical and electrical works for the Smartply Phase 2 Renewal Project, delivering critical HVAC services to support the renewal works.</p>
-            
-            <p style="margin-bottom:1rem;">The scope included HVAC installations within the MCC Room and Thermal Oil Building, full controls integration, roof-level ducting connections, and specialist commissioning works. Additional coordination and commissioning support ensured full system performance and compliance with project requirements.</p>
-          </div>
-          <div>
-            <img src="SMARTP1.jpg" alt="Smartply Phase 2" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
-            <img src="SMARTP2.jpg" alt="Smartply Installation" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 7: State Street, Drogheda -->
-      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
-        <div style="display:grid; grid-template-columns:1fr 2fr; gap:2rem; padding:2rem;">
-          <div>
-            <img src="statep1.jpg" alt="State Street Drogheda" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
-            <img src="statep2.jpg" alt="State Street Installation" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
-          </div>
-          <div>
-            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Full Mechanical & Electrical Installation</span>
-            <h2 style="margin-bottom:1rem;">State Street, Drogheda</h2>
-            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>2022</span>
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-euro-sign" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Final Project Value: €828,948.63</span>
-            </div>
-            
-            <p style="margin-bottom:1rem;">CTS Group delivered a fully coordinated mechanical and electrical installation for this large-scale commercial office development.</p>
-            
-            <p style="margin-bottom:1rem;">The works included complete electrical services from mains distribution through to lighting, power, emergency lighting, fire alarm, communications, and mechanical wiring. Mechanical services comprised heating, cooling, ventilation, water services, controls, and sanitary ware. All systems were fully tested, commissioned, and handed over to the client.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 8: Buildings 10B & 10C, Parkwest -->
-      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
-        <div style="display:grid; grid-template-columns:2fr 1fr; gap:2rem; padding:2rem;">
-          <div>
-            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Mechanical, Electrical & Builders Works</span>
-            <h2 style="margin-bottom:1rem;">Buildings 10B & 10C, Parkwest</h2>
-            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>February 2021</span>
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-euro-sign" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Final Project Value (incl. VAT): €513,991.03</span>
-            </div>
-            
-            <p style="margin-bottom:1rem;">CTS Group completed the refurbishment and fit-out of Buildings 10B and 10C at Parkwest, delivering modern office accommodation across multiple floors.</p>
-            
-            <p style="margin-bottom:1rem;">Works included internal demolitions, raised access flooring, partitions, ceilings, joinery, finishes, and full mechanical and electrical installations. Mechanical works comprised new ducted air conditioning systems with fresh air distribution, while electrical works included new distribution boards, LED lighting, emergency lighting, containment systems, power supplies, and fire alarm alterations with full recommissioning.</p>
-          </div>
-          <div>
-            <img src="parkwp1.jpg" alt="Buildings 10B & 10C Parkwest" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
-            <img src="parkwp2.jpg" alt="Parkwest Interior" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 9: Lifestyle Sports, Tralee -->
-      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
-        <div style="display:grid; grid-template-columns:1fr 2fr; gap:2rem; padding:2rem;">
-          <div>
-            <img src="lifestyletrap1.jpg" alt="Lifestyle Sports Tralee" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
-            <img src="lifestyletrap2.jpg" alt="Lifestyle Sports Interior" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
-          </div>
-          <div>
-            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Mechanical & Electrical Installation</span>
-            <h2 style="margin-bottom:1rem;">Lifestyle Sports, Tralee</h2>
-            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>July 2022</span>
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-euro-sign" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Final Project Value (incl. VAT): €188,171.13</span>
-            </div>
-            
-            <p style="margin-bottom:1rem;">CTS Group delivered the mechanical and electrical services for the Lifestyle Sports retail fit-out in Tralee.</p>
-            
-            <p style="margin-bottom:1rem;">Electrical works included general and emergency lighting, fire alarm systems, power to till counters, and general socket installations. Mechanical works comprised ventilation systems, ductwork, grilles, heat recovery units, VCDs, and air conditioning installations, all coordinated to suit the retail environment.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 10: Urlingford Fire Station -->
-      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
-        <div style="display:grid; grid-template-columns:2fr 1fr; gap:2rem; padding:2rem;">
-          <div>
-            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Mechanical & Electrical Installation</span>
-            <h2 style="margin-bottom:1rem;">Urlingford Fire Station</h2>
-            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>2023</span>
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-euro-sign" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Total M&E Value: €148,598.50</span>
-            </div>
-            
-            <p style="margin-bottom:1rem;">CTS Group delivered the full mechanical and electrical installation for Urlingford Fire Station in accordance with emergency service operational requirements.</p>
-            
-            <p style="margin-bottom:1rem;">Mechanical works included heating plant installation, LPHW pipework, water services, ventilation systems, drainage, and fire-fighting services. Electrical works comprised distribution boards, containment, power, lighting, emergency lighting, data, fire alarm, CCTV, access control, intruder alarm, disabled WC alarms, and lightning protection provisions.</p>
-          </div>
-          <div>
-            <img src="UrlingP.jpg" alt="Urlingford Fire Station" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
-            <img src="Urling2.jpg" alt="Urlingford Installation" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 11: Calvin Klein – Retail Fit-Out -->
-      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
-        <div style="display:grid; grid-template-columns:1fr 2fr; gap:2rem; padding:2rem;">
-          <div>
-            <img src="ckP1.jpg" alt="Calvin Klein Retail Fit-Out" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
-            <img src="ck2.jpg" alt="Calvin Klein Installation" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
-          </div>
-          <div>
-            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Mechanical & Electrical Installation</span>
-            <h2 style="margin-bottom:1rem;">Calvin Klein – Retail Fit-Out</h2>
-            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>2023</span>
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-euro-sign" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Final Project Value (excl. VAT): €303,247.00</span>
-            </div>
-            
-            <p style="margin-bottom:1rem;">CTS Group completed the full mechanical and electrical installation for the Calvin Klein retail store.</p>
-            
-            <p style="margin-bottom:1rem;">Electrical works included strip-out, new distribution systems, power and lighting installations, emergency lighting, communications, fire alarm and disabled alarm systems, and full commissioning. Mechanical works comprised water services, soils and wastes, ventilation, and mechanical cooling systems. Additional works ensured compliance with accessibility standards and specialist retail requirements.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 12: Aramex Distribution Facility, Ballyboughal -->
-      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
-        <div style="display:grid; grid-template-columns:2fr 1fr; gap:2rem; padding:2rem;">
-          <div>
-            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Electrical Infrastructure Upgrade</span>
-            <h2 style="margin-bottom:1rem;">Aramex Distribution Facility, Ballyboughal</h2>
-            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>February 2023</span>
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-euro-sign" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Final Electrical Value: €177,693.81</span>
-            </div>
-            
-            <p style="margin-bottom:1rem;">CTS Group delivered a significant electrical upgrade across the Aramex logistics facility, improving resilience and capacity across warehouse and office areas.</p>
-            
-            <p style="margin-bottom:1rem;">Works included new metering arrangements, main and sub-distribution boards, extensive sub-mains cabling, generator interfaces, circuit transfers, testing, and a full emergency lighting upgrade throughout the facility.</p>
-          </div>
-          <div>
-            <img src="aramex1.jpg" alt="Aramex Distribution Facility" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
-            <img src="aramex2.jpg" alt="Aramex Installation" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 13: Nando's Restaurant, Limerick -->
-      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
-        <div style="display:grid; grid-template-columns:1fr 2fr; gap:2rem; padding:2rem;">
-          <div>
-            <img src="nandos1.jpg" alt="Nando's Restaurant Limerick" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
-            <img src="nandos2.jpg" alt="Nando's Installation" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
-          </div>
-          <div>
-            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Electrical Installation</span>
-            <h2 style="margin-bottom:1rem;">Nando's Restaurant, Limerick</h2>
-            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>September 2023</span>
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-euro-sign" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Final Electrical Value: €126,824.89</span>
-            </div>
-            
-            <p style="margin-bottom:1rem;">CTS Group completed the full electrical installation for the Nando's restaurant fit-out in Limerick.</p>
-            
-            <p style="margin-bottom:1rem;">The works included power, lighting, emergency lighting, data systems, clean power supplies, and specialist wiring for catering and mechanical equipment. All systems were installed, tested, commissioned, and handed over to deliver a fully operational restaurant.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 14: Old Gael Scoil, Ballincollig -->
-      <div class="card animate-on-scroll" style="margin-bottom:3rem;">
-        <div style="display:grid; grid-template-columns:2fr 1fr; gap:2rem; padding:2rem;">
-          <div>
-            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Electrical Installation</span>
-            <h2 style="margin-bottom:1rem;">Old Gael Scoil, Ballincollig</h2>
-            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>January 2024</span>
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-euro-sign" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Final Electrical Value: €324,962.82</span>
-            </div>
-            
-            <p style="margin-bottom:1rem;">CTS Group delivered a comprehensive electrical installation for Old Gael Scoil, Ballincollig, providing a modern, safe, and compliant educational environment.</p>
-            
-            <p style="margin-bottom:1rem;">Works included new distribution boards, sub-mains cabling, containment systems, power and socket installations, electric heating, internal and external lighting, emergency lighting, fire alarm systems, CCTV, access control, Wi-Fi and TV wiring, generator connections, and ESB infrastructure.</p>
-          </div>
-          <div>
-            <img src="gaelscoil1.jpg" alt="Old Gael Scoil Ballincollig" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
-            <img src="gaelscoil2.jpg" alt="Gael Scoil Installation" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 15: Boot Road Primary Care Centre -->
-      <div class="card animate-on-scroll">
-        <div style="display:grid; grid-template-columns:1fr 2fr; gap:2rem; padding:2rem;">
-          <div>
-            <img src="bootroad1.jpg" alt="Boot Road Primary Care Centre" style="border-radius:0.5rem; width:100%; height:200px; object-fit:cover; margin-bottom:1rem;">
-            <img src="bootroad2.jpg" alt="Boot Road Installation" style="border-radius:0.5rem; width:100%; height:150px; object-fit:cover;">
-          </div>
-          <div>
-            <span class="card-label" style="position:static; display:inline-block; margin-bottom:1rem;">Mechanical Installation</span>
-            <h2 style="margin-bottom:1rem;">Boot Road Primary Care Centre</h2>
-            <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-calendar" style="color:var(--cts-blue); margin-right:0.5rem;"></i>November 2023</span>
-              <span style="font-size:0.875rem; color:var(--cts-gray);"><i class="fas fa-euro-sign" style="color:var(--cts-blue); margin-right:0.5rem;"></i>Final Project Value: €2.19m</span>
-            </div>
-            
-            <p style="margin-bottom:1rem;">CTS Group delivered the full mechanical services installation for the Boot Road Primary Care Centre, supporting clinical, GP, and support spaces.</p>
-            
-            <p style="margin-bottom:1rem;">The works included plantroom installation, heating and LPHW systems, water services, drainage, ventilation, air conditioning, protective services, rainwater systems, and full BMS controls. The project required extensive coordination and phased delivery to meet healthcare operational standards.</p>
-          </div>
-        </div>
-      </div>
-
+<section class="stats-bar">
+  <div class="stats-container">
+    <div class="stat-item">
+      <h3>30+</h3>
+      <p>Completed Projects</p>
     </div>
-  </section>
-</main>
+    <div class="stat-item">
+      <h3>€15M+</h3>
+      <p>Project Value</p>
+    </div>
+    <div class="stat-item">
+      <h3>6</h3>
+      <p>Sectors</p>
+    </div>
+    <div class="stat-item">
+      <h3>2021</h3>
+      <p>Established Track Record</p>
+    </div>
+  </div>
+</section>
+
+<section class="categories-section">
+  <div class="section-title">
+    <h2>Project Categories</h2>
+    <p>Browse our work by sector</p>
+  </div>
+  
+  <div class="category-grid">
+    
+    <!-- Category 1: Retail & Commercial -->
+    <a href="projects/retail-commercial.html" class="category-card">
+      <div class="category-image">
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+      <div class="category-content">
+        <h3>Retail & Commercial</h3>
+        <p>Supermarkets, retail fit-outs, and commercial developments including Lidl, SuperValu, Donnybrook Fair and specialist retail environments.</p>
+        <span class="project-count">
+          <i class="fas fa-folder"></i> 8 Projects
+        </span>
+        <div class="view-link">
+          View Projects <i class="fas fa-arrow-right"></i>
+        </div>
+      </div>
+    </a>
+
+    <!-- Category 2: Industrial & Logistics -->
+    <a href="projects/industrial-logistics.html" class="category-card">
+      <div class="category-image">
+        <i class="fas fa-industry"></i>
+      </div>
+      <div class="category-content">
+        <h3>Industrial & Logistics</h3>
+        <p>Warehouse facilities, distribution centres, and manufacturing plants including Pallet Xpress, Aramex, Smartply and Midland Steel.</p>
+        <span class="project-count">
+          <i class="fas fa-folder"></i> 4 Projects
+        </span>
+        <div class="view-link">
+          View Projects <i class="fas fa-arrow-right"></i>
+        </div>
+      </div>
+    </a>
+
+    <!-- Category 3: Healthcare & Education -->
+    <a href="projects/healthcare-education.html" class="category-card">
+      <div class="category-image">
+        <i class="fas fa-hospital"></i>
+      </div>
+      <div class="category-content">
+        <h3>Healthcare & Education</h3>
+        <p>Primary care centres, schools, and colleges including Boot Road, Blackwater School, Caritas College and Old Gael Scoil.</p>
+        <span class="project-count">
+          <i class="fas fa-folder"></i> 5 Projects
+        </span>
+        <div class="view-link">
+          View Projects <i class="fas fa-arrow-right"></i>
+        </div>
+      </div>
+    </a>
+
+    <!-- Category 4: Hospitality -->
+    <a href="projects/hospitality.html" class="category-card">
+      <div class="category-image">
+        <i class="fas fa-utensils"></i>
+      </div>
+      <div class="category-content">
+        <h3>Hospitality</h3>
+        <p>Hotels, restaurants, and cafés including Osprey Hotel, Viking Hotel, Nando's, Pembroke Hotel and Frank & Honest Café.</p>
+        <span class="project-count">
+          <i class="fas fa-folder"></i> 6 Projects
+        </span>
+        <div class="view-link">
+          View Projects <i class="fas fa-arrow-right"></i>
+        </div>
+      </div>
+    </a>
+
+    <!-- Category 5: Public & Community -->
+    <a href="projects/public-community.html" class="category-card">
+      <div class="category-image">
+        <i class="fas fa-landmark"></i>
+      </div>
+      <div class="category-content">
+        <h3>Public & Community</h3>
+        <p>Fire stations, libraries, theatres and civic buildings including Urlingford Fire Station and Briary Gap Library & Theatre.</p>
+        <span class="project-count">
+          <i class="fas fa-folder"></i> 2 Projects
+        </span>
+        <div class="view-link">
+          View Projects <i class="fas fa-arrow-right"></i>
+        </div>
+      </div>
+    </a>
+
+    <!-- Category 6: Office & Corporate -->
+    <a href="projects/office-corporate.html" class="category-card">
+      <div class="category-image">
+        <i class="fas fa-building"></i>
+      </div>
+      <div class="category-content">
+        <h3>Office & Corporate</h3>
+        <p>Commercial office fit-outs and corporate headquarters including State Street Drogheda, Parkwest and NCCA Offices.</p>
+        <span class="project-count">
+          <i class="fas fa-folder"></i> 4 Projects
+        </span>
+        <div class="view-link">
+          View Projects <i class="fas fa-arrow-right"></i>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="recent-section">
+  <div class="recent-container">
+    <div class="section-title">
+      <h2>Recently Completed</h2>
+      <p>Our latest project deliveries</p>
+    </div>
+    
+    <div class="recent-grid">
+      <div class="recent-card">
+        <h4>SuperValu Clonakilty</h4>
+        <p>Full M&E Installation</p>
+        <span class="value">€297,814</span>
+      </div>
+      <div class="recent-card">
+        <h4>Caritas College</h4>
+        <p>Full M&E Installation</p>
+        <span class="value">€1,478,478</span>
+      </div>
+      <div class="recent-card">
+        <h4>Midland Steel</h4>
+        <p>M&E Installation</p>
+        <span class="value">€1,588,302</span>
+      </div>
+      <div class="recent-card">
+        <h4>Lidl Enfield</h4>
+        <p>M&E Final Account</p>
+        <span class="value">€907,094</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <h3><img src="ctslogop2.jpg" alt="CTS Group" style="height:40px; width:auto; margin-bottom:1rem;"> CTS Group</h3>
-        <p>Building services excellence since 1995.</p>
-        <div class="social-links">
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        </div>
-      </div>
-      <div class="footer-links">
-        <h4>Waterford Office</h4>
-        <ul>
-          <li>CTS House, Highfield Business Park</li>
-          <li>Portlaw, Co. Waterford</li>
-          <li>T: 051 387931</li>
-          <li>E: info@ctsgroup.ie</li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Dublin Office</h4>
-        <ul>
-          <li>Unit 30, Parkwest Enterprise Centre</li>
-          <li>Lavery Ave, Parkwest, Dublin 12</li>
-          <li>T: 01 2530506</li>
-          <li>E: dublin@ctsgroup.ie</li>
-        </ul>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <img src="ctslogop2.jpg" alt="CTS Group">
+      <p>Building services excellence since 1995. Delivering mechanical, electrical, and air conditioning solutions across Ireland.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 CTS Group. All rights reserved.</p>
+    <div class="footer-links">
+      <h4>Waterford Office</h4>
+      <ul>
+        <li>CTS House, Highfield Business Park</li>
+        <li>Portlaw, Co. Waterford</li>
+        <li>T: 051 387931</li>
+      </ul>
     </div>
+    <div class="footer-links">
+      <h4>Dublin Office</h4>
+      <ul>
+        <li>Unit 30, Parkwest Enterprise Centre</li>
+        <li>Dublin 12</li>
+        <li>T: 01 2530506</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 CTS Group. All rights reserved.</p>
   </div>
 </footer>
 
@@ -417,14 +638,7 @@
 function toggleMenu() {
   document.getElementById('navLinks').classList.toggle('active');
 }
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, {threshold: 0.1});
-
-document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
 </script>
+
 </body>
 </html>
