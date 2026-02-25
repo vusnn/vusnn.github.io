@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Healthcare & Education Projects | CTS Group</title>
-<link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 :root {
@@ -12,13 +11,18 @@
   --cts-orange: #f59e0b;
   --cts-white: #ffffff;
   --cts-gray: #64748b;
+  --cts-light: #f8fafc;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f8fafc;
+  background: var(--cts-light);
   color: #1e293b;
   line-height: 1.6;
 }
@@ -50,8 +54,6 @@ nav {
   font-size: 1.5rem;
 }
 
-.logo img { height: 50px; }
-
 .nav-links {
   display: flex;
   list-style: none;
@@ -62,104 +64,132 @@ nav {
   text-decoration: none;
   color: var(--cts-gray);
   font-weight: 500;
+  transition: color 0.3s;
 }
 
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--cts-white);
-  text-decoration: none;
-  font-weight: 600;
-  margin-bottom: 2rem;
+.nav-links a:hover, .nav-links a.active {
+  color: var(--cts-navy);
 }
 
 .category-hero {
   background: linear-gradient(135deg, #059669 0%, #047857 100%);
   color: var(--cts-white);
   padding: 4rem 2rem;
-}
-
-.category-hero-content {
-  max-width: 1400px;
-  margin: 0 auto;
+  text-align: center;
 }
 
 .category-hero h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.projects-container {
+.category-hero p {
+  font-size: 1.125rem;
+  opacity: 0.9;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  background: var(--cts-white);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.breadcrumb-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 3rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--cts-gray);
+}
+
+.breadcrumb a {
+  color: var(--cts-navy);
+  text-decoration: none;
+}
+
+.projects-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  color: var(--cts-navy);
+}
+
+.project-count-badge {
+  background: var(--cts-orange);
+  color: var(--cts-white);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 
 .project-card {
   background: var(--cts-white);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  margin-bottom: 3rem;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  border: 2px solid transparent;
 }
 
-.project-card:nth-child(even) {
-  grid-template-columns: 2fr 1fr;
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: var(--cts-orange);
 }
 
-.project-card:nth-child(even) .project-images {
-  order: 2;
+.project-header {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: var(--cts-white);
+  padding: 1.5rem;
+  position: relative;
 }
 
-.project-images {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 2rem;
-  background: #f1f5f9;
-}
-
-.project-images img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.project-images img:last-child {
-  height: 150px;
-}
-
-.project-content {
-  padding: 2.5rem;
-}
-
-.project-label {
-  display: inline-block;
-  background: rgba(5, 150, 105, 0.1);
-  color: #059669;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.project-title {
+.project-icon {
   font-size: 2rem;
-  color: var(--cts-navy);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-header h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.project-location {
+  opacity: 0.9;
+  font-size: 0.875rem;
+}
+
+.project-body {
+  padding: 1.5rem;
 }
 
 .project-meta {
   display: flex;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
   flex-wrap: wrap;
 }
 
@@ -167,63 +197,189 @@ nav {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-size: 0.875rem;
   color: var(--cts-gray);
-  font-size: 0.95rem;
 }
 
 .meta-item i {
   color: var(--cts-orange);
 }
 
-.project-description {
-  color: #475569;
-  margin-bottom: 1.5rem;
-  line-height: 1.7;
-}
-
-.project-details h4 {
+.meta-item.value {
   color: var(--cts-navy);
-  margin: 1.5rem 0 0.75rem;
+  font-weight: 600;
   font-size: 1rem;
 }
 
-.project-details ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
-  font-size: 0.9rem;
+.project-description {
   color: #475569;
-  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
-.value-tag {
+.project-scope {
+  background: var(--cts-light);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.project-scope h4 {
+  font-size: 0.875rem;
+  color: var(--cts-navy);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.project-scope ul {
+  list-style: none;
+  font-size: 0.875rem;
+  color: #475569;
+}
+
+.project-scope li {
+  padding: 0.25rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.project-scope li::before {
+  content: '•';
+  color: var(--cts-orange);
+  position: absolute;
+  left: 0;
+}
+
+.project-status {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--cts-navy);
-  color: var(--cts-white);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+.status-completed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.category-nav {
+  background: var(--cts-white);
+  padding: 2rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.category-nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.category-nav h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--cts-navy);
+}
+
+.category-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.category-btn {
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
-  font-weight: 600;
-  margin-top: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  border: 2px solid #e2e8f0;
+  color: var(--cts-gray);
+  background: var(--cts-white);
+}
+
+.category-btn:hover, .category-btn.active {
+  background: var(--cts-navy);
+  color: var(--cts-white);
+  border-color: var(--cts-navy);
 }
 
 footer {
   background: var(--cts-navy);
   color: var(--cts-white);
   padding: 3rem 2rem 1rem;
-  margin-top: 4rem;
-  text-align: center;
 }
 
-@media (max-width: 968px) {
-  .project-card,
-  .project-card:nth-child(even) {
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+}
+
+.footer-brand p {
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cts-white);
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.social-links a:hover {
+  background: var(--cts-orange);
+}
+
+.footer-links h4 {
+  margin-bottom: 1rem;
+  color: var(--cts-orange);
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  opacity: 0.6;
+}
+
+@media (max-width: 1024px) {
+  .projects-grid {
     grid-template-columns: 1fr;
   }
   
-  .project-card:nth-child(even) .project-images {
-    order: 0;
+  .footer-container {
+    grid-template-columns: 1fr;
   }
 }
 </style>
@@ -232,136 +388,271 @@ footer {
 
 <header>
   <nav>
-    <a href="../index.html" class="logo">
-      <img src="../ctslogop2.jpg" alt="CTS Group Logo">
+    <a href="index.html" class="logo">
       <span>CTS GROUP</span>
     </a>
     <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../about.html">About</a></li>
-      <li><a href="../projects.html">Projects</a></li>
-      <li><a href="../team.html">Team</a></li>
-      <li><a href="../careers.html">Careers</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="careers.html">Careers</a></li>
     </ul>
   </nav>
 </header>
 
 <section class="category-hero">
-  <div class="category-hero-content">
-    <a href="../projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to All Projects</a>
-    <h1>Healthcare & Education</h1>
-    <p>Primary care centres, schools, and colleges delivering safe, compliant, and modern environments for healthcare and learning.</p>
+  <h1><i class="fas fa-hospital"></i> Healthcare & Education</h1>
+  <p>Primary care centres, schools, and colleges including Boot Road, Blackwater School, Caritas College and Old Gael Scoil.</p>
+</section>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a>
+    <i class="fas fa-chevron-right" style="font-size: 0.75rem;"></i>
+    <a href="projects.html">Projects</a>
+    <i class="fas fa-chevron-right" style="font-size: 0.75rem;"></i>
+    <span>Healthcare & Education</span>
+  </div>
+</div>
+
+<section class="projects-section">
+  <div class="section-header">
+    <h2>Project Portfolio</h2>
+    <span class="project-count-badge">6 Projects</span>
+  </div>
+  
+  <div class="projects-grid">
+    
+    <!-- Project 1: Boot Road Primary Care Centre -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon"><i class="fas fa-clinic-medical"></i></div>
+        <h3>Boot Road Primary Care Centre</h3>
+        <div class="project-location"><i class="fas fa-map-marker-alt"></i> Healthcare Facility</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="meta-item"><i class="fas fa-calendar"></i> Nov 2023</span>
+          <span class="meta-item value"><i class="fas fa-euro-sign"></i> 2,190,000</span>
+        </div>
+        <p class="project-description">Full mechanical services package for modern healthcare facility executed to exacting standards required for primary care environments with full BMS integration.</p>
+        <div class="project-scope">
+          <h4>Key Scope</h4>
+          <ul>
+            <li>Full plantroom installation</li>
+            <li>LPHW heating systems and heat pumps</li>
+            <li>Cold and hot water services</li>
+            <li>Drainage and rainwater systems</li>
+            <li>Ventilation and air conditioning</li>
+            <li>BMS integration across all systems</li>
+            <li>GP area modifications for clinical fit-out</li>
+          </ul>
+        </div>
+        <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+      </div>
+    </div>
+
+    <!-- Project 2: Carrigaline Nursing Home -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon"><i class="fas fa-procedures"></i></div>
+        <h3>Carrigaline Nursing Home</h3>
+        <div class="project-location"><i class="fas fa-map-marker-alt"></i> Cork</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="meta-item"><i class="fas fa-calendar"></i> Jan 2024</span>
+          <span class="meta-item value"><i class="fas fa-euro-sign"></i> 1,912,426</span>
+        </div>
+        <p class="project-description">Comprehensive electrical installation for new-build nursing home with life-safety systems, specialist care systems and building services integration including patient monitoring.</p>
+        <div class="project-scope">
+          <h4>Key Scope</h4>
+          <ul>
+            <li>Main distribution and sub-mains cabling</li>
+            <li>Standby generator supply and installation</li>
+            <li>EV car charger installation</li>
+            <li>WanderGuard patient monitoring system</li>
+            <li>Fire alarm, CCTV and access control</li>
+            <li>Induction loop systems</li>
+            <li>Lightning protection and gas detection</li>
+          </ul>
+        </div>
+        <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+      </div>
+    </div>
+
+    <!-- Project 3: Blackwater Community School -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon"><i class="fas fa-graduation-cap"></i></div>
+        <h3>Blackwater Community School</h3>
+        <div class="project-location"><i class="fas fa-map-marker-alt"></i> Lismore</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="meta-item"><i class="fas fa-calendar"></i> July 2024</span>
+          <span class="meta-item value"><i class="fas fa-euro-sign"></i> 1,540,054</span>
+        </div>
+        <p class="project-description">Major multi-phase electrical upgrade across entire campus delivered within live educational environment. One of the most extensive educational M&E contracts undertaken by CTS Group.</p>
+        <div class="project-scope">
+          <h4>Key Scope</h4>
+          <ul>
+            <li>New Sports Hall electrical fit-out</li>
+            <li>Building 1A extension distribution</li>
+            <li>Campus-wide LED lighting upgrades</li>
+            <li>Addressable fire alarm systems</li>
+            <li>Roof-mounted photovoltaic solar installation</li>
+            <li>EV charging infrastructure</li>
+            <li>Full pitch lighting and BMS integration</li>
+          </ul>
+        </div>
+        <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+      </div>
+    </div>
+
+    <!-- Project 4: Caritas College -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon"><i class="fas fa-school"></i></div>
+        <h3>Caritas College</h3>
+        <div class="project-location"><i class="fas fa-map-marker-alt"></i> Full M&E Installation</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="meta-item"><i class="fas fa-calendar"></i> Feb 2026</span>
+          <span class="meta-item value"><i class="fas fa-euro-sign"></i> 1,478,478</span>
+        </div>
+        <p class="project-description">Comprehensive full mechanical and electrical installation for new school facilities covering all aspects of M&E services across classrooms, corridors, plant room and general areas.</p>
+        <div class="project-scope">
+          <h4>Key Scope - Electrical</h4>
+          <ul>
+            <li>Full earthing, bonding and distribution</li>
+            <li>Classroom and corridor lighting</li>
+            <li>Fire alarm, intruder alarm and CCTV</li>
+            <li>EV charger and external lighting</li>
+            <li>Wi-Fi data points and communications</li>
+          </ul>
+        </div>
+        <div class="project-scope" style="margin-top: 0.5rem;">
+          <h4>Key Scope - Mechanical</h4>
+          <ul>
+            <li>Plantroom with pumps, boilers and controls</li>
+            <li>Full soils, waste and water services</li>
+            <li>Gas pipework and ventilation</li>
+            <li>Air handling unit installation</li>
+          </ul>
+        </div>
+        <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+      </div>
+    </div>
+
+    <!-- Project 5: Old Gael Scoil -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon"><i class="fas fa-child"></i></div>
+        <h3>Old Gael Scoil</h3>
+        <div class="project-location"><i class="fas fa-map-marker-alt"></i> Ballincollig</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="meta-item"><i class="fas fa-calendar"></i> Jan 2024</span>
+          <span class="meta-item value"><i class="fas fa-euro-sign"></i> 324,963</span>
+        </div>
+        <p class="project-description">Full electrical installation for educational facility providing complete electrical services package including power, lighting, life-safety, security and communications.</p>
+        <div class="project-scope">
+          <h4>Key Scope</h4>
+          <ul>
+            <li>Distribution boards and sub-mains</li>
+            <li>Power and socket installations</li>
+            <li>Electric heating systems</li>
+            <li>Internal and external lighting</li>
+            <li>Comprehensive fire alarm system</li>
+            <li>CCTV, access control and Wi-Fi</li>
+            <li>Generator and ESB infrastructure</li>
+          </ul>
+        </div>
+        <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+      </div>
+    </div>
+
+    <!-- Project 6: Dalton's Pharmacy -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon"><i class="fas fa-prescription-bottle-alt"></i></div>
+        <h3>Dalton's Pharmacy</h3>
+        <div class="project-location"><i class="fas fa-map-marker-alt"></i> Retail Pharmacy</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="meta-item"><i class="fas fa-calendar"></i> Sept 2023</span>
+          <span class="meta-item value"><i class="fas fa-euro-sign"></i> 128,920</span>
+        </div>
+        <p class="project-description">Complete mechanical and electrical fit-out for retail pharmacy environment including air conditioning, ventilation, life-safety systems and renewable energy.</p>
+        <div class="project-scope">
+          <h4>Key Scope</h4>
+          <ul>
+            <li>Air conditioning and ventilation</li>
+            <li>Water services and drainage</li>
+            <li>Distribution boards and containment</li>
+            <li>4.5kW PV system installation</li>
+            <li>15-camera CCTV system</li>
+            <li>Intruder alarm and door access control</li>
+            <li>B-CAR sign-off and certifications</li>
+          </ul>
+        </div>
+        <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<div class="projects-container">
-
-  <!-- Project 1: Boot Road Primary Care Centre -->
-  <div class="project-card">
-    <div class="project-images">
-      <img src="../bootroad1.jpg" alt="Boot Road Primary Care Centre">
-      <img src="../bootroad2.jpg" alt="Boot Road Installation">
-    </div>
-    <div class="project-content">
-      <span class="project-label">Mechanical Installation</span>
-      <h2 class="project-title">Boot Road Primary Care Centre</h2>
-      <div class="project-meta">
-        <span class="meta-item"><i class="fas fa-calendar"></i> November 2023</span>
-        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Dublin</span>
-      </div>
-      <p class="project-description">CTS Group delivered the full mechanical services package for the Boot Road Primary Care Centre, providing a comprehensive and fully integrated mechanical installation across this modern healthcare facility, executed to the exacting standards required for primary care environments.</p>
-      
-      <div class="project-details">
-        <h4>Mechanical Services:</h4>
-        <ul>
-          <li>Plantroom installation</li>
-          <li>Heating and LPHW systems</li>
-          <li>Heat pumps and calorifiers</li>
-          <li>Cold water services</li>
-          <li>Hot water services and return</li>
-          <li>Drainage and rainwater systems</li>
-          <li>Ventilation and air conditioning</li>
-          <li>BMS integration</li>
-          <li>GP area modifications</li>
-        </ul>
-      </div>
-      
-      <span class="value-tag"><i class="fas fa-euro-sign"></i> Contract Value: €2,190,000</span>
+<section class="category-nav">
+  <div class="category-nav-container">
+    <h3>Browse Other Categories</h3>
+    <div class="category-buttons">
+      <a href="retail-commercial.html" class="category-btn"><i class="fas fa-shopping-cart"></i> Retail</a>
+      <a href="industrial-logistics.html" class="category-btn"><i class="fas fa-industry"></i> Industrial</a>
+      <a href="healthcare-education.html" class="category-btn active"><i class="fas fa-hospital"></i> Healthcare</a>
+      <a href="hospitality.html" class="category-btn"><i class="fas fa-utensils"></i> Hospitality</a>
+      <a href="public-community.html" class="category-btn"><i class="fas fa-landmark"></i> Public</a>
+      <a href="office-corporate.html" class="category-btn"><i class="fas fa-building"></i> Office</a>
     </div>
   </div>
+</section>
 
-  <!-- Project 2: Blackwater Community School -->
-  <div class="project-card">
-    <div class="project-content">
-      <span class="project-label">Major Multi-Phase Electrical Upgrade</span>
-      <h2 class="project-title">Blackwater Community School – Lismore</h2>
-      <div class="project-meta">
-        <span class="meta-item"><i class="fas fa-calendar"></i> July 2024</span>
-        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Lismore, Co. Waterford</span>
+<footer>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h3>CTS Group</h3>
+      <p>Building services excellence since 1995. Delivering mechanical, electrical, and air conditioning solutions across Ireland.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
       </div>
-      <p class="project-description">CTS Group completed a major multi-phase electrical upgrade across the entire campus of Blackwater Community School, with all works delivered within a live educational environment. The project encompassed new build construction, large-scale extensions and full refurbishment of multiple existing buildings.</p>
-      
-      <div class="project-details">
-        <h4>Campus-Wide Systems:</h4>
-        <ul>
-          <li>New Sports Hall full electrical fit-out</li>
-          <li>Building 1A extension installation</li>
-          <li>Campus-wide LED lighting upgrades</li>
-          <li>Addressable fire alarm systems</li>
-          <li>Access control and intercom</li>
-          <li>CCTV and intruder alarm systems</li>
-          <li>Roof-mounted photovoltaic solar installation</li>
-          <li>EV charging infrastructure</li>
-          <li>Full pitch lighting and upgrade</li>
-          <li>BMS and mechanical wiring integration</li>
-          <li>Fibre upgrades and specialist classroom AV</li>
-        </ul>
-      </div>
-      
-      <span class="value-tag"><i class="fas fa-euro-sign"></i> Contract Value: €1,540,053.83</span>
     </div>
-    <div class="project-images">
-      <img src="../blackwater1.jpg" alt="Blackwater Community School">
-      <img src="../blackwater2.jpg" alt="Blackwater School Installation">
+    <div class="footer-links">
+      <h4>Waterford Office</h4>
+      <ul>
+        <li>CTS House, Highfield Business Park</li>
+        <li>Portlaw, Co. Waterford</li>
+        <li>T: 051 387931</li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Dublin Office</h4>
+      <ul>
+        <li>Unit 30, Parkwest Enterprise Centre</li>
+        <li>Dublin 12</li>
+        <li>T: 01 2530506</li>
+      </ul>
     </div>
   </div>
-
-  <!-- Project 3: Old Gael Scoil -->
-  <div class="project-card">
-    <div class="project-images">
-      <img src="../gaelscoil1.jpg" alt="Old Gael Scoil Ballincollig">
-      <img src="../gaelscoil2.jpg" alt="Gael Scoil Installation">
-    </div>
-    <div class="project-content">
-      <span class="project-label">Electrical Installation</span>
-      <h2 class="project-title">Old Gael Scoil – Ballincollig</h2>
-      <div class="project-meta">
-        <span class="meta-item"><i class="fas fa-calendar"></i> January 2024</span>
-        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Ballincollig, Co. Cork</span>
-      </div>
-      <p class="project-description">CTS Group delivered a full electrical installation for the Old Gael Scoil educational facility, encompassing the complete electrical services package for the school, providing all power, lighting, life-safety, security and communications systems required for a modern educational environment.</p>
-      
-      <div class="project-details">
-        <h4>Electrical Systems:</h4>
-        <ul>
-          <li>Distribution boards and sub-mains</li>
-          <li>Power and socket installations</li>
-          <li>Electric heating systems</li>
-          <li>Internal and external lighting</li>
-          <li>Emergency lighting</li>
-          <li>Fire alarm system</li>
-          <li>CCTV and access control</li>
-          <li>Wi-Fi and TV wiring infrastructure</li>
-          <li>Generator and ESB infrastructure</li>
-        </ul>
-      </div>
-      
-      <span class="value-tag"><i class="fas fa-euro-sign"></i> Contract Value: €324,962.82</span>
-    </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 CTS Group. All rights reserved.</p>
   </div>
+</footer>
 
-  <!-- Project 4: Caritas College -->
-  <div class="project-card">
-    <div class="project-content">
-      <span class="project-label">Full M&E Installation</span>
-      <h2 class="project-title">
+</body>
+</html>
