@@ -227,4 +227,482 @@ nav {
 .project-scope h4 {
   font-size: 0.875rem;
   color: var(--cts-navy);
-  margin-bottom: 0.5rem
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.project-scope ul {
+  list-style: none;
+  font-size: 0.875rem;
+  color: #475569;
+}
+
+.project-scope li {
+  padding: 0.25rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.project-scope li::before {
+  content: '•';
+  color: var(--cts-orange);
+  position: absolute;
+  left: 0;
+}
+
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+.status-completed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.category-nav {
+  background: var(--cts-white);
+  padding: 2rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.category-nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.category-nav h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--cts-navy);
+}
+
+.category-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  border: 2px solid #e2e8f0;
+  color: var(--cts-gray);
+  background: var(--cts-white);
+}
+
+.category-btn:hover, .category-btn.active {
+  background: var(--cts-navy);
+  color: var(--cts-white);
+  border-color: var(--cts-navy);
+}
+
+footer {
+  background: var(--cts-navy);
+  color: var(--cts-white);
+  padding: 3rem 2rem 1rem;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+}
+
+.footer-brand p {
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cts-white);
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.social-links a:hover {
+  background: var(--cts-orange);
+}
+
+.footer-links h4 {
+  margin-bottom: 1rem;
+  color: var(--cts-orange);
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  opacity: 0.6;
+}
+
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">
+      <span>CTS GROUP</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="careers.html">Careers</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="category-hero">
+  <h1><i class="fas fa-utensils"></i> Hospitality</h1>
+  <p>Hotels, restaurants, and cafés including Osprey Hotel, Viking Hotel, Nando's, Pembroke Hotel and Frank & Honest Café.</p>
+</section>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a>
+    <i class="fas fa-chevron-right" style="font-size: 0.75rem;"></i>
+    <a href="projects.html">Projects</a>
+    <i class="fas fa-chevron-right" style="font-size: 0.75rem;"></i>
+    <span>Hospitality</span>
+  </div>
+</div>
+
+<section class="projects-section">
+  <div class="section-header">
+    <h2>Project Portfolio</h2>
+    <span class="project-count-badge">8 Projects</span>
+  </div>
+  
+  <div class="projects-grid">
+    
+    <!-- Project 1: Osprey Hotel -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon"><i class="fas fa-hotel"></i></div>
+        <h3>Osprey Hotel – Boilerhouse Upgrade</h3>
+        <div class="project-location"><i class="fas fa-map-marker-alt"></i> Naas</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="meta-item"><i class="fas fa-calendar"></i> Nov 2024</span>
+          <span class="meta-item value"><i class="fas fa-euro-sign"></i> 535,891</span>
+        </div>
+        <p class="project-description">Full boilerhouse upgrade delivering modernised plant facility with high-efficiency boilers, CHP unit, and full BMS integration.</p>
+        <div class="project-scope">
+          <h4>Key Scope</h4>
+          <ul>
+            <li>Two new boilers with pipework and flues</li>
+            <li>Four hot water cylinders and circulating pumps</li>
+            <li>CHP unit with ventilation and silencer</li>
+            <li>MCCB and shunt trip installations</li>
+            <li>BMS and control wiring</li>
+            <li>Cat6 installation and data logger reporting</li>
+          </ul>
+        </div>
+        <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+      </div>
+    </div>
+
+    <!-- Project 2: Viking Hotel Ensuite Upgrade -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon"><i class="fas fa-shower"></i></div>
+        <h3>Viking Hotel – Ensuite Upgrade</h3>
+        <div class="project-location"><i class="fas fa-map-marker-alt"></i> 3rd Floor</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="meta-item"><i class="fas fa-calendar"></i> May 2024</span>
+          <span class="meta-item value"><i class="fas fa-euro-sign"></i> 84,829</span>
+        </div>
+        <p class="project-description">Comprehensive plumbing upgrade of ensuite bathrooms across 3rd floor delivered within live hotel environment with careful scheduling to minimise disruption.</p>
+        <div class="project-scope">
+          <h4>Key Scope</h4>
+          <ul>
+            <li>Plumbing fit-out for rooms 301-339</li>
+            <li>Sample room additional labour</li>
+            <li>Valve set replacements across 3rd floor</li>
+            <li>Waste pipe alterations</li>
+            <li>LPHW heating system works</li>
+            <li>Circulating pump replacement</li>
+          </ul>
+        </div>
+        <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+      </div>
+    </div>
+
+    <!-- Project 3: Viking Hotel Bedroom Upgrade -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon"><i class="fas fa-bed"></i></div>
+        <h3>Viking Hotel – Bedroom Upgrade Level 1 & 2</h3>
+        <div class="project-location"><i class="fas fa-map-marker-alt"></i> 57 Rooms</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="meta-item"><i class="fas fa-calendar"></i> Sept 2025</span>
+          <span class="meta-item value"><i class="fas fa-euro-sign"></i> 418,679</span>
+        </div>
+        <p class="project-description">Comprehensive mechanical and electrical bedroom upgrade across 57 rooms including double, triple, family and accessible rooms with ensuite bathroom upgrades.</p>
+        <div class="project-scope">
+          <h4>Key Scope - Mechanical</h4>
+          <ul>
+            <li>Ensuite upgrades at €1,350 per room</li>
+            <li>Valve set replacements in risers</li>
+            <li>Waste pipe alterations for disabled rooms</li>
+            <li>Sanitary ware supply and water tank installation</li>
+          </ul>
+        </div>
+        <div class="project-scope" style="margin-top: 0.5rem;">
+          <h4>Key Scope - Electrical</h4>
+          <ul>
+            <li>Corridor lighting upgrades</li>
+            <li>Distribution board modifications</li>
+            <li>Fridge spurs and heater rewiring</li>
+            <li>TV splitter and lighting modifications</li>
+          </ul>
+        </div>
+        <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+      </div>
+    </div>
+
+    <!-- Project 4: Pembroke Hotel -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon"><i class="fas fa-building"></i></div>
+        <h3>Pembroke Hotel – 4th & 5th Floor</h3>
+        <div class="project-location"><i class="fas fa-map-marker-alt"></i> Kilkenny</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="meta-item"><i class="fas fa-calendar"></i> Aug 2025</span>
+          <span class="meta-item value"><i class="fas fa-euro-sign"></i> 366,705</span>
+        </div>
+        <p class="project-description">Electrical installation for floor upgrade covering bedrooms, suites, corridors, plant areas and specialist systems including bedroom air conditioning and underfloor heating.</p>
+        <div class="project-scope">
+          <h4>Key Scope</h4>
+          <ul>
+            <li>Cable containment and distribution boards</li>
+            <li>General and emergency lighting</li>
+            <li>Fire alarm and CCTV installation</li>
+            <li>Bedroom air conditioning wiring</li>
+            <li>Electric underfloor heating</li>
+            <li>Plantroom power to heat pumps and boilers</li>
+          </ul>
+        </div>
+        <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+      </div>
+    </div>
+
+    <!-- Project 5: Nando's Restaurant -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon"><i class="fas fa-fire"></i></div>
+        <h3>Nando's Restaurant</h3>
+        <div class="project-location"><i class="fas fa-map-marker-alt"></i> Limerick</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="meta-item"><i class="fas fa-calendar"></i> Sept 2023</span>
+          <span class="meta-item value"><i class="fas fa-euro-sign"></i> 126,825</span>
+        </div>
+        <p class="project-description">Full electrical fit-out for restaurant development covering all power, lighting, catering and data systems required for busy commercial restaurant environment.</p>
+        <div class="project-scope">
+          <h4>Key Scope</h4>
+          <ul>
+            <li>General and emergency lighting</li>
+            <li>Full power distribution with clean power supplies</li>
+            <li>Catering equipment wiring</li>
+            <li>Kitchen plant mechanical connections</li>
+            <li>Full data systems installation</li>
+            <li>Front and back of house areas</li>
+          </ul>
+        </div>
+        <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+      </div>
+    </div>
+
+    <!-- Project 6: Frank & Honest Café -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon"><i class="fas fa-coffee"></i></div>
+        <h3>WIT Arena – Frank & Honest Café</h3>
+        <div class="project-location"><i class="fas fa-map-marker-alt"></i> Waterford</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="meta-item"><i class="fas fa-calendar"></i> Sept 2022</span>
+          <span class="meta-item value"><i class="fas fa-euro-sign"></i> Completed 2022</span>
+        </div>
+        <p class="project-description">Mechanical and electrical upgrades delivered within live venue environment to minimise disruption to ongoing operations at SETU Arena.</p>
+        <div class="project-scope">
+          <h4>Key Scope</h4>
+          <ul>
+            <li>Saniflo installation</li>
+            <li>Plumbing and sanitary upgrades</li>
+            <li>Kitchen equipment relocation</li>
+            <li>Lighting alterations</li>
+            <li>Power and switching modifications</li>
+            <li>CCTV and communications upgrades</li>
+          </ul>
+        </div>
+        <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+      </div>
+    </div>
+
+    <!-- Project 7: Spar Callan Co-op -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon"><i class="fas fa-store"></i></div>
+        <h3>Spar Callan Co-op</h3>
+        <div class="project-location"><i class="fas fa-map-marker-alt"></i> Kilkenny</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="meta-item"><i class="fas fa-calendar"></i> 2024</span>
+          <span class="meta-item value"><i class="fas fa-euro-sign"></i> 30,289</span>
+        </div>
+        <p class="project-description">Combined mechanical and electrical fit-out focusing on plumbing services to coffee machine and ice cream areas with core electrical installation.</p>
+        <div class="project-scope">
+          <h4>Key Scope</h4>
+          <ul>
+            <li>Coffee machine plumbing services</li>
+            <li>Ice cream area connections</li>
+            <li>Electrical daywork variations</li>
+            <li>Hot counters and chillers wiring</li>
+            <li>PA system relocation</li>
+            <li>Freezers and tills wiring</li>
+          </ul>
+        </div>
+        <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+      </div>
+    </div>
+
+    <!-- Project 8: Centra NCR Grangegorman -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon"><i class="fas fa-convenience-store"></i></div>
+        <h3>Centra NCR Grangegorman</h3>
+        <div class="project-location"><i class="fas fa-map-marker-alt"></i> Dublin</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="meta-item"><i class="fas fa-calendar"></i> Sept 2023</span>
+          <span class="meta-item value"><i class="fas fa-euro-sign"></i> 72,508</span>
+        </div>
+        <p class="project-description">Full mechanical services installation for retail and food preparation areas with additional works for design developments and site requirements.</p>
+        <div class="project-scope">
+          <h4>Key Scope</h4>
+          <ul>
+            <li>Ventilation services throughout retail and deli</li>
+            <li>Water services installation</li>
+            <li>Fire protection and drainage services</li>
+            <li>Grease trap installation</li>
+            <li>Smoke fire dampers and external louvres</li>
+            <li>Heat pump ducting insulation</li>
+          </ul>
+        </div>
+        <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="category-nav">
+  <div class="category-nav-container">
+    <h3>Browse Other Categories</h3>
+    <div class="category-buttons">
+      <a href="retail-commercial.html" class="category-btn"><i class="fas fa-shopping-cart"></i> Retail</a>
+      <a href="industrial-logistics.html" class="category-btn"><i class="fas fa-industry"></i> Industrial</a>
+      <a href="healthcare-education.html" class="category-btn"><i class="fas fa-hospital"></i> Healthcare</a>
+      <a href="hospitality.html" class="category-btn active"><i class="fas fa-utensils"></i> Hospitality</a>
+      <a href="public-community.html" class="category-btn"><i class="fas fa-landmark"></i> Public</a>
+      <a href="office-corporate.html" class="category-btn"><i class="fas fa-building"></i> Office</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h3>CTS Group</h3>
+      <p>Building services excellence since 1995. Delivering mechanical, electrical, and air conditioning solutions across Ireland.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Waterford Office</h4>
+      <ul>
+        <li>CTS House, Highfield Business Park</li>
+        <li>Portlaw, Co. Waterford</li>
+        <li>T: 051 387931</li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Dublin Office</h4>
+      <ul>
+        <li>Unit 30, Parkwest Enterprise Centre</li>
+        <li>Dublin 12</li>
+        <li>T: 01 2530506</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 CTS Group. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
