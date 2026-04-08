@@ -1,290 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="CTS Group - Multi-disciplinary building services company with offices in Waterford and Dublin. Specializing in commercial, industrial, retail and healthcare sectors since 1995.">
-<title>CTS Group | Building Services Excellence Since 1995</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTS Group | Future of Building Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-  <nav>
-    <a href="index.html" class="logo">
-      <img src="ctslogop2.jpg" alt="CTS Group Logo">
-      <span>CTS GROUP</span>
-    </a>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="careers.html">Careers</a></li>
-    </ul>
-  </nav>
-</header>
+    <!-- Navigation -->
+    <nav class="nav-future">
+        <div class="nav-container">
+            <div class="logo-glow">
+                <span class="logo-text">CTS</span>
+                <span class="logo-sub">GROUP</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="contact.html" class="nav-link btn-glow">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-<main>
-  <section class="hero">
-    <div class="hero-content container">
-      <h1>Building Services Excellence.<br>Delivered with Integrity.</h1>
-      <p>CTS Group is a multi-disciplinary building services company with offices in Waterford and Dublin, delivering innovative projects safely, on time and within budget since 1995.</p>
-      <div class="hero-buttons">
-        <a href="projects.html" class="btn">View Our Projects</a>
-        <a href="about.html" class="btn btn-outline">Learn More</a>
-      </div>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section class="hero-future">
+        <div class="hero-bg">
+            <div class="grid-overlay"></div>
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">EST. 1995</div>
+            <h1 class="glitch-text" data-text="BUILDING THE FUTURE">BUILDING THE FUTURE</h1>
+            <p class="hero-subtitle">Multi-disciplinary excellence delivered with integrity across Waterford, Dublin, and beyond</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-num" data-target="29">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num" data-target="500">0</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num" data-target="100">0</span>
+                    <span class="stat-label">Client Satisfaction %</span>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <a href="projects.html" class="btn-primary">Explore Projects</a>
+                <a href="about.html" class="btn-secondary">Our Story</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
 
-  <section class="stats">
-    <div class="container">
-      <div class="section-header" style="margin-bottom:3rem;">
-        <h2 style="color:#fff;">Trusted by Leading Organizations</h2>
-        <p style="color:#dbeafe;">We are proud to work with Ireland's most respected public and private sector clients</p>
-      </div>
-      <div class="client-list" style="grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));">
-        <div class="client-item animate-on-scroll">
-          <h4>Bank of Ireland</h4>
-          <p>Banking & Finance</p>
+    <!-- Services Preview -->
+    <section class="services-future">
+        <div class="container">
+            <h2 class="section-title">Our <span class="highlight">Expertise</span></h2>
+            <div class="services-grid">
+                <div class="service-card" data-tilt>
+                    <div class="service-icon">🏢</div>
+                    <h3>Commercial</h3>
+                    <p>Retail fit-outs, offices, and corporate spaces</p>
+                    <div class="card-glow"></div>
+                </div>
+                <div class="service-card" data-tilt>
+                    <div class="service-icon">🏭</div>
+                    <h3>Industrial</h3>
+                    <p>Warehouses, logistics centers, manufacturing</p>
+                    <div class="card-glow"></div>
+                </div>
+                <div class="service-card" data-tilt>
+                    <div class="service-icon">🏥</div>
+                    <h3>Healthcare</h3>
+                    <p>Medical centers, hospitals, care facilities</p>
+                    <div class="card-glow"></div>
+                </div>
+                <div class="service-card" data-tilt>
+                    <div class="service-icon">🎓</div>
+                    <h3>Education</h3>
+                    <p>Schools, colleges, universities</p>
+                    <div class="card-glow"></div>
+                </div>
+            </div>
         </div>
-        <div class="client-item animate-on-scroll">
-          <h4>HSE</h4>
-          <p>Health Service Executive</p>
-        </div>
-        <div class="client-item animate-on-scroll">
-          <h4>Dublin City Council</h4>
-          <p>Local Government</p>
-        </div>
-        <div class="client-item animate-on-scroll">
-          <h4>Lidl</h4>
-          <p>International Retail</p>
-        </div>
-        <div class="client-item animate-on-scroll">
-          <h4>IRFU</h4>
-          <p>Irish Rugby Football Union</p>
-        </div>
-        <div class="client-item animate-on-scroll">
-          <h4>Fáilte Ireland</h4>
-          <p>National Tourism Development</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="container" style="padding-top:5rem;">
-    <div class="section-header animate-on-scroll">
-      <h2>About CTS Group</h2>
-      <p>Multi-disciplinary building services with expertise across commercial, industrial, retail and healthcare sectors</p>
-    </div>
-    
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; margin-top:3rem;" class="grid-responsive">
-      <div class="animate-on-scroll">
-        <h3>Excellence Since 1995</h3>
-        <p>CTS Group are a multi-disciplinary Building services company with offices in Waterford and Dublin. We have extensive expertise in our key areas of commercial, industrial and retail and healthcare. We have also expanded in to the Healthcare, conservation and renewable fields with particular success.</p>
-        <p>We were established in 1995 and are very proud of our history and heritage in delivering a nationwide service of delivering innovative projects safely, on time and within Budget.</p>
-        <p>Our people are our most prized asset and we empower them every day to collaborate with our partners to deliver innovative solutions.</p>
-        <a href="about.html" class="btn mt-2">Our Story</a>
-      </div>
-      <div class="animate-on-scroll">
-        <img src="ctslogop1.jpg" alt="CTS Group Offices" style="border-radius:1rem; box-shadow:var(--shadow-lg);">
-      </div>
-    </div>
-  </section>
+    <!-- Mission Section -->
+    <section class="mission-future">
+        <div class="container">
+            <div class="mission-content">
+                <div class="mission-text">
+                    <h2>Our Mission</h2>
+                    <p class="lead">Through collaboration with ethical partners, customers, suppliers and employees, we deliver innovative building services projects safely, on time and within budget.</p>
+                    <div class="mission-points">
+                        <div class="point">
+                            <div class="point-icon">⚡</div>
+                            <span>Innovation First</span>
+                        </div>
+                        <div class="point">
+                            <div class="point-icon">🛡️</div>
+                            <span>Safety Always</span>
+                        </div>
+                        <div class="point">
+                            <div class="point-icon">⏱️</div>
+                            <span>On Time Delivery</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mission-visual">
+                    <div class="hexagon-grid">
+                        <div class="hex"></div>
+                        <div class="hex"></div>
+                        <div class="hex"></div>
+                        <div class="hex"></div>
+                        <div class="hex"></div>
+                        <div class="hex"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="services">
-    <div class="container">
-      <div class="section-header animate-on-scroll">
-        <h2>What We Do</h2>
-        <p>Comprehensive building services tailored to your sector</p>
-      </div>
-      
-      <div class="grid">
-        <div class="card service-card animate-on-scroll">
-          <div class="service-icon">
-            <i class="fas fa-building"></i>
-          </div>
-          <h3>Commercial & Industrial</h3>
-          <p>Full electrical and mechanical services for office buildings, industrial facilities and manufacturing plants.</p>
+    <footer class="footer-future">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">CTS GROUP</div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-locations">
+                    <div class="location">📍 Waterford Office</div>
+                    <div class="location">📍 Dublin Office</div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CTS Group. Building the future since 1995.</p>
+            </div>
         </div>
-        
-        <div class="card service-card animate-on-scroll">
-          <div class="service-icon">
-            <i class="fas fa-store"></i>
-          </div>
-          <h3>Retail</h3>
-          <p>Complete fit-out services for retail chains, supermarkets and hospitality venues nationwide.</p>
-        </div>
-        
-        <div class="card service-card animate-on-scroll">
-          <div class="service-icon">
-            <i class="fas fa-hospital"></i>
-          </div>
-          <h3>Healthcare</h3>
-          <p>Specialized installations for hospitals, clinics and healthcare facilities meeting strict regulatory standards.</p>
-        </div>
-        
-        <div class="card service-card animate-on-scroll">
-          <div class="service-icon">
-            <i class="fas fa-leaf"></i>
-          </div>
-          <h3>Conservation & Renewable</h3>
-          <p>Innovative solutions in conservation projects and renewable energy installations.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <section class="container">
-    <div class="section-header animate-on-scroll">
-      <h2>Featured Projects</h2>
-      <p>Recent work demonstrating our capability and craftsmanship</p>
-    </div>
-    
-    <div class="grid">
-      <div class="card animate-on-scroll">
-        <div class="card-image">
-          <span class="card-label">Air Conditioning</span>
-          <img src="vhip1.jpg" alt="VHI Limerick">
-        </div>
-        <div class="card-content">
-          <h3>VHI Limerick</h3>
-          <p>Complete air conditioning installation and builders works including 16 internal units and electrical works.</p>
-          <div class="card-meta">
-            <span><i class="fas fa-map-marker-alt"></i> Limerick</span>
-            <span><i class="fas fa-calendar"></i> 2022</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="card animate-on-scroll">
-        <div class="card-image">
-          <span class="card-label">Retail Fit-Out</span>
-          <img src="sweatybep3.jpg" alt="Sweaty Betty">
-        </div>
-        <div class="card-content">
-          <h3>Sweaty Betty</h3>
-          <p>Electrical installation works at Kildare Village including lighting, power, and audio systems.</p>
-          <div class="card-meta">
-            <span><i class="fas fa-map-marker-alt"></i> Kildare</span>
-            <span><i class="fas fa-calendar"></i> 2022</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="card animate-on-scroll">
-        <div class="card-image">
-          <span class="card-label">Electrical & Mechanical</span>
-          <img src="cafep2.jpg" alt="Frank & Honest Café">
-        </div>
-        <div class="card-content">
-          <h3>Frank & Honest Café</h3>
-          <p>Electrical and mechanical installation for café at SETU Arena including plumbing and CCTV upgrades.</p>
-          <div class="card-meta">
-            <span><i class="fas fa-map-marker-alt"></i> Waterford</span>
-            <span><i class="fas fa-calendar"></i> 2022</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="text-center mt-2">
-      <a href="projects.html" class="btn">View All Projects</a>
-    </div>
-  </section>
-
-  <section class="services" style="background:var(--cts-dark); color:#fff;">
-    <div class="container">
-      <div class="section-header animate-on-scroll">
-        <h2 style="color:#fff;">Our Vision</h2>
-        <p style="color:#94a3b8;">To become the most respected sustainable building services business in Ireland</p>
-      </div>
-      
-      <div style="text-align:center; max-width:800px; margin:0 auto;">
-        <p style="color:#dbeafe; font-size:1.125rem;">CTS Group through collaboration with ethical partners, customers and suppliers and employees will deliver innovative building services projects safely, in time and within budget from our offices in Waterford and Dublin.</p>
-        <a href="about.html" class="btn btn-outline" style="margin-top:2rem; border-color:var(--cts-blue);">Read Our Mission</a>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <h3><img src="ctslogop2.jpg" alt="CTS Group" style="height:40px; width:auto; margin-bottom:1rem;"> CTS Group</h3>
-        <p>Building services excellence since 1995. Offices in Waterford and Dublin.</p>
-        <div class="social-links">
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        </div>
-      </div>
-      
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="projects.html">Our Projects</a></li>
-          <li><a href="team.html">Leadership Team</a></li>
-          <li><a href="careers.html">Careers</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-links">
-        <h4>Waterford Office</h4>
-        <ul>
-          <li>CTS Group (M&E) Ltd</li>
-          <li>CTS House, Highfield Business Park</li>
-          <li>Portlaw, Co. Waterford</li>
-          <li><i class="fas fa-phone" style="margin-right:0.5rem;"></i> 051 387931</li>
-          <li><i class="fas fa-envelope" style="margin-right:0.5rem;"></i> info@ctsgroup.ie</li>
-        </ul>
-      </div>
-      
-      <div class="footer-links">
-        <h4>Dublin Office</h4>
-        <ul>
-          <li>Unit 30, Parkwest Enterprise Centre</li>
-          <li>Lavery Ave, Parkwest, Dublin 12</li>
-          <li><i class="fas fa-phone" style="margin-right:0.5rem;"></i> 01 2530506</li>
-          <li><i class="fas fa-envelope" style="margin-right:0.5rem;"></i> dublin@ctsgroup.ie</li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="footer-bottom">
-      <p>&copy; 2024 CTS Group. All rights reserved. | Built with precision.</p>
-    </div>
-  </div>
-</footer>
-
-<script>
-function toggleMenu() {
-  const navLinks = document.getElementById('navLinks');
-  navLinks.classList.toggle('active');
-}
-
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.getElementById('navLinks').classList.remove('active');
-  });
-});
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, {threshold: 0.1});
-
-document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
