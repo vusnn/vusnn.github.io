@@ -4,161 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CTS Group | Future of Building Services</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8f9fa; color: #333; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header { background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%); color: white; padding: 60px 0; text-align: center; }
+        header h1 { font-size: 2.8em; margin-bottom: 10px; font-weight: 700; }
+        header .subtitle { font-size: 1.2em; opacity: 0.9; margin-bottom: 5px; }
+        header .est { font-size: 0.9em; text-transform: uppercase; letter-spacing: 3px; opacity: 0.7; }
+        
+        /* Stats Bar */
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; padding: 50px 0; }
+        .stat-card { background: white; padding: 35px; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.07); transition: transform 0.3s; }
+        .stat-card:hover { transform: translateY(-5px); }
+        .stat-card .number { font-size: 3em; font-weight: 700; color: #2c5282; display: block; }
+        .stat-card .label { font-size: 1em; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; }
+        
+        /* Section Headers */
+        .section-header { text-align: center; margin: 60px 0 40px; }
+        .section-header h2 { font-size: 2em; color: #1a365d; margin-bottom: 10px; }
+        .section-header p { color: #666; font-size: 1.1em; }
+        
+        /* Cards Grid */
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 60px; }
+        .card { background: white; border-radius: 12px; padding: 35px; box-shadow: 0 4px 6px rgba(0,0,0,0.07); transition: all 0.3s; border-left: 4px solid #2c5282; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.12); }
+        .card .icon { font-size: 2.5em; margin-bottom: 15px; }
+        .card h3 { font-size: 1.3em; color: #1a365d; margin-bottom: 10px; }
+        .card p { color: #555; line-height: 1.6; }
+        
+        /* Mission Section */
+        .mission { background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%); color: white; padding: 80px 0; text-align: center; margin-bottom: 60px; }
+        .mission h2 { font-size: 2em; margin-bottom: 20px; }
+        .mission p { font-size: 1.2em; max-width: 800px; margin: 0 auto; line-height: 1.8; opacity: 0.95; }
+        
+        /* Nav */
+        nav { background: white; padding: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        nav .logo { font-size: 1.3em; font-weight: 700; color: #1a365d; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav a { text-decoration: none; color: #555; font-weight: 500; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: #2c5282; }
+        
+        footer { background: #1a365d; color: white; text-align: center; padding: 30px 0; margin-top: 60px; }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav-future">
-        <div class="nav-container">
-            <div class="logo-glow">
-                <span class="logo-text">CTS</span>
-                <span class="logo-sub">GROUP</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="contact.html" class="nav-link btn-glow">Contact</a></li>
+    <nav>
+        <div class="container">
+            <div class="logo">CTS Group</div>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="careers.html">Careers</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-future">
-        <div class="hero-bg">
-            <div class="grid-overlay"></div>
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
+    <header>
+        <div class="container">
+            <div class="est">Est. 1995</div>
+            <h1>CTS Group</h1>
+            <div class="subtitle">Future of Building Services</div>
+            <p style="margin-top: 20px; opacity: 0.85; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Multi-disciplinary excellence delivered with integrity across Waterford, Dublin, and beyond
+            </p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="stats">
+            <div class="stat-card">
+                <span class="number">29+</span>
+                <div class="label">Years Experience</div>
+            </div>
+            <div class="stat-card">
+                <span class="number">500+</span>
+                <div class="label">Projects Completed</div>
+            </div>
+            <div class="stat-card">
+                <span class="number">100%</span>
+                <div class="label">Client Satisfaction</div>
             </div>
         </div>
-        <div class="hero-content">
-            <div class="hero-badge">EST. 1995</div>
-            <h1 class="glitch-text" data-text="BUILDING THE FUTURE">BUILDING THE FUTURE</h1>
-            <p class="hero-subtitle">Multi-disciplinary excellence delivered with integrity across Waterford, Dublin, and beyond</p>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-num" data-target="29">0</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-num" data-target="500">0</span>
-                    <span class="stat-label">Projects Completed</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-num" data-target="100">0</span>
-                    <span class="stat-label">Client Satisfaction %</span>
-                </div>
+
+        <div class="section-header">
+            <h2>Our Expertise</h2>
+            <p>Sector-leading building services across Ireland</p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="icon">🏢</div>
+                <h3>Commercial</h3>
+                <p>Retail fit-outs, offices, and corporate spaces delivered to the highest standards.</p>
             </div>
-            <div class="hero-cta">
-                <a href="projects.html" class="btn-primary">Explore Projects</a>
-                <a href="about.html" class="btn-secondary">Our Story</a>
+            <div class="card">
+                <div class="icon">🏭</div>
+                <h3>Industrial</h3>
+                <p>Warehouses, logistics centers, and manufacturing facilities.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🏥</div>
+                <h3>Healthcare</h3>
+                <p>Medical centers, hospitals, and care facilities with full compliance.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🎓</div>
+                <h3>Education</h3>
+                <p>Schools, colleges, and universities built for the future.</p>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="mouse"></div>
-            <span>Scroll to explore</span>
+    </div>
+
+    <section class="mission">
+        <div class="container">
+            <h2>Our Mission</h2>
+            <p>Through collaboration with ethical partners, customers, suppliers and employees, we deliver innovative building services projects safely, on time and within budget.</p>
         </div>
     </section>
 
-    <!-- Services Preview -->
-    <section class="services-future">
+    <footer>
         <div class="container">
-            <h2 class="section-title">Our <span class="highlight">Expertise</span></h2>
-            <div class="services-grid">
-                <div class="service-card" data-tilt>
-                    <div class="service-icon">🏢</div>
-                    <h3>Commercial</h3>
-                    <p>Retail fit-outs, offices, and corporate spaces</p>
-                    <div class="card-glow"></div>
-                </div>
-                <div class="service-card" data-tilt>
-                    <div class="service-icon">🏭</div>
-                    <h3>Industrial</h3>
-                    <p>Warehouses, logistics centers, manufacturing</p>
-                    <div class="card-glow"></div>
-                </div>
-                <div class="service-card" data-tilt>
-                    <div class="service-icon">🏥</div>
-                    <h3>Healthcare</h3>
-                    <p>Medical centers, hospitals, care facilities</p>
-                    <div class="card-glow"></div>
-                </div>
-                <div class="service-card" data-tilt>
-                    <div class="service-icon">🎓</div>
-                    <h3>Education</h3>
-                    <p>Schools, colleges, universities</p>
-                    <div class="card-glow"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mission Section -->
-    <section class="mission-future">
-        <div class="container">
-            <div class="mission-content">
-                <div class="mission-text">
-                    <h2>Our Mission</h2>
-                    <p class="lead">Through collaboration with ethical partners, customers, suppliers and employees, we deliver innovative building services projects safely, on time and within budget.</p>
-                    <div class="mission-points">
-                        <div class="point">
-                            <div class="point-icon">⚡</div>
-                            <span>Innovation First</span>
-                        </div>
-                        <div class="point">
-                            <div class="point-icon">🛡️</div>
-                            <span>Safety Always</span>
-                        </div>
-                        <div class="point">
-                            <div class="point-icon">⏱️</div>
-                            <span>On Time Delivery</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="mission-visual">
-                    <div class="hexagon-grid">
-                        <div class="hex"></div>
-                        <div class="hex"></div>
-                        <div class="hex"></div>
-                        <div class="hex"></div>
-                        <div class="hex"></div>
-                        <div class="hex"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer-future">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">CTS GROUP</div>
-                <div class="footer-links">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="projects.html">Projects</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-                <div class="footer-locations">
-                    <div class="location">📍 Waterford Office</div>
-                    <div class="location">📍 Dublin Office</div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 CTS Group. Building the future since 1995.</p>
-            </div>
+            <p>&copy; 2025 CTS Group (M&E) Ltd. All rights reserved.</p>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
