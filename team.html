@@ -1,321 +1,426 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Meet the leadership team behind CTS Group's success in delivering innovative building services across Ireland.">
-<title>Our Team | CTS Group Leadership</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | CTS Group Leadership</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --navy: #0a1628;
+            --navy-light: #1a365d;
+            --accent: #2c5282;
+            --neon: #00d4ff;
+            --glass: rgba(255,255,255,0.03);
+            --glass-border: rgba(255,255,255,0.08);
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--navy);
+            color: #e2e8f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+        
+        nav {
+            background: rgba(10,22,40,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        nav .logo {
+            font-size: 1.4em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, var(--neon) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+        nav ul { display: flex; list-style: none; gap: 35px; }
+        nav a {
+            text-decoration: none;
+            color: #94a3b8;
+            font-weight: 500;
+            font-size: 0.95em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon);
+            transition: width 0.3s;
+            box-shadow: 0 0 10px var(--neon);
+        }
+        nav a:hover, nav a.active { color: var(--neon); }
+        nav a:hover::after, nav a.active::after { width: 100%; }
+
+        header {
+            padding: 100px 0 60px;
+            text-align: center;
+            position: relative;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0,212,255,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        header h1 {
+            font-size: 3em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, var(--neon) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        header p { color: #64748b; font-size: 1.1em; }
+
+        .anniversary {
+            background: linear-gradient(135deg, rgba(237,137,54,0.2) 0%, rgba(221,107,32,0.2) 100%);
+            border: 1px solid rgba(237,137,54,0.3);
+            color: #fbd38d;
+            text-align: center;
+            padding: 25px;
+            border-radius: 16px;
+            margin: 40px 0;
+            font-size: 1.2em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            backdrop-filter: blur(10px);
+        }
+
+        .section-header { text-align: center; margin: 50px 0 30px; }
+        .section-header h2 {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        .team-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--neon));
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .team-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0,212,255,0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        .team-card:hover::before { opacity: 1; }
+        .team-card .avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--neon) 100%);
+            border-radius: 50%;
+            margin: 0 auto 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.6em;
+            font-weight: 700;
+            box-shadow: 0 0 20px rgba(0,212,255,0.3);
+        }
+        .team-card h3 {
+            font-size: 1.15em;
+            color: #fff;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .team-card .role {
+            color: var(--neon);
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        .team-card .dept {
+            color: #64748b;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .dept-section { margin-bottom: 40px; }
+        .dept-title {
+            font-size: 1.3em;
+            color: #fff;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .dept-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--neon);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--neon);
+        }
+
+        .cta {
+            background: linear-gradient(135deg, rgba(26,54,93,0.5) 0%, rgba(10,22,40,0.9) 100%);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 70px 40px;
+            text-align: center;
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0,212,255,0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .cta h2 {
+            font-size: 1.8em;
+            color: #fff;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .cta p {
+            color: #94a3b8;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .cta a {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), var(--neon));
+            color: #fff;
+            padding: 16px 45px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,212,255,0.3);
+        }
+        .cta a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,212,255,0.4);
+        }
+
+        footer {
+            border-top: 1px solid var(--glass-border);
+            padding: 40px 0;
+            text-align: center;
+            color: #475569;
+            font-size: 0.9em;
+            background: rgba(10,22,40,0.5);
+        }
+    </style>
 </head>
 <body>
-<header>
-  <nav>
-    <a href="index.html" class="logo">
-      <img src="ctslogop2.jpg" alt="CTS Group Logo">
-      <span>CTS GROUP</span>
-    </a>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="team.html" class="active">Team</a></li>
-      <li><a href="careers.html">Careers</a></li>
-    </ul>
-  </nav>
-</header>
+    <nav>
+        <div class="container">
+            <div class="logo">◆ CTS GROUP</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="team.html" class="active">Team</a></li>
+                <li><a href="careers.html">Careers</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<div class="breadcrumb">
-  <div class="breadcrumb-content">
-    <a href="index.html">Home</a> / Our Team
-  </div>
-</div>
+    <header>
+        <div class="container">
+            <h1>Our Team | CTS Group Leadership</h1>
+            <p>The people behind our 30 years of excellence</p>
+        </div>
+    </header>
 
-<main>
-  <section style="padding-top:3rem;">
     <div class="container">
-      <div class="section-header">
-        <h1>Management Structure</h1>
-        <p>Celebrating 30 Years of Excellence (1995-2025)</p>
-      </div>
-      
-      <!-- Board of Directors -->
-      <div class="animate-on-scroll" style="text-align:center; margin-bottom:3rem;">
-        <h2 style="color:var(--cts-dark); margin-bottom:1rem;">Board of Directors</h2>
-        <p style="font-size:1.1rem; color:var(--cts-gray);">Niall Cullinane, Eilish Cullinane, Leonard O'Shea</p>
-      </div>
+        <div class="anniversary">🎉 Celebrating 30 Years of Excellence (1995–2025)</div>
 
-      <!-- Managing Director -->
-      <div class="card animate-on-scroll" style="max-width:400px; margin:0 auto 3rem; text-align:center;">
-        <div style="padding:2rem;">
-          <div style="width:80px; height:80px; background:var(--cts-blue); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2rem; margin:0 auto 1rem;">
-            <i class="fas fa-user-tie"></i>
-          </div>
-          <h3 style="color:var(--cts-dark); margin-bottom:0.5rem;">Niall Cullinane</h3>
-          <span style="color:var(--cts-blue); font-weight:600; font-size:1.1rem;">Managing Director</span>
+        <div class="section-header">
+            <h2>Board of Directors</h2>
         </div>
-      </div>
-
-      <!-- Directors Level -->
-      <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; margin-bottom:3rem;">
-        <div class="card animate-on-scroll" style="text-align:center;">
-          <div style="padding:2rem;">
-            <div style="width:70px; height:70px; background:var(--cts-blue); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin:0 auto 1rem;">
-              <i class="fas fa-chart-line"></i>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="avatar">NC</div>
+                <h3>Niall Cullinane</h3>
+                <div class="role">Managing Director</div>
+                <div class="dept">Leadership</div>
             </div>
-            <h3 style="color:var(--cts-dark); margin-bottom:0.5rem;">Leonard O'Shea</h3>
-            <span style="color:var(--cts-blue); font-weight:600;">Commercial Director</span>
-          </div>
+            <div class="team-card">
+                <div class="avatar">LO</div>
+                <h3>Leonard O'Shea</h3>
+                <div class="role">Commercial Director</div>
+                <div class="dept">Leadership</div>
+            </div>
+            <div class="team-card">
+                <div class="avatar">EC</div>
+                <h3>Eilish Cullinane</h3>
+                <div class="role">Financial Director</div>
+                <div class="dept">Leadership</div>
+            </div>
         </div>
 
-        <div class="card animate-on-scroll" style="text-align:center;">
-          <div style="padding:2rem;">
-            <div style="width:70px; height:70px; background:var(--cts-blue); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin:0 auto 1rem;">
-              <i class="fas fa-calculator"></i>
+        <div class="dept-section">
+            <div class="dept-title">Commercial Team</div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="avatar">MK</div>
+                    <h3>Martin Kinsella</h3>
+                    <div class="role">Electrical Estimator/QS</div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">KC</div>
+                    <h3>Karl Cheasty</h3>
+                    <div class="role">Mechanical Estimator/QS</div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">SB</div>
+                    <h3>Scout Bliss</h3>
+                    <div class="role">Junior Estimator</div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">CG</div>
+                    <h3>Creven Geary</h3>
+                    <div class="role">Purchasing Officer</div>
+                </div>
             </div>
-            <h3 style="color:var(--cts-dark); margin-bottom:0.5rem;">Eilish Cullinane</h3>
-            <span style="color:var(--cts-blue); font-weight:600;">Financial Director</span>
-          </div>
         </div>
-      </div>
 
-      <!-- Project Managers -->
-      <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:2rem; margin-bottom:3rem;">
-        <div class="card animate-on-scroll" style="text-align:center;">
-          <div style="padding:1.5rem;">
-            <div style="width:60px; height:60px; background:var(--cts-light-blue); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.25rem; margin:0 auto 1rem;">
-              <i class="fas fa-tasks"></i>
+        <div class="dept-section">
+            <div class="dept-title">Site Management</div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="avatar">BB</div>
+                    <h3>Brendan Byrne</h3>
+                    <div class="role">Electrical Foreman</div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">MN</div>
+                    <h3>Martin Nolan</h3>
+                    <div class="role">Mechanical Foreman</div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">MB</div>
+                    <h3>Miroslaw Beszczynski</h3>
+                    <div class="role">Plant & Logistics</div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">JS</div>
+                    <h3>Johnny Sandvoss</h3>
+                    <div class="role">Company Tester</div>
+                </div>
             </div>
-            <h4 style="color:var(--cts-dark); margin-bottom:0.5rem;">Keith Byrne</h4>
-            <span style="color:var(--cts-gray); font-size:0.9rem;">Project Manager</span>
-          </div>
         </div>
 
-        <div class="card animate-on-scroll" style="text-align:center;">
-          <div style="padding:1.5rem;">
-            <div style="width:60px; height:60px; background:var(--cts-light-blue); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.25rem; margin:0 auto 1rem;">
-              <i class="fas fa-tasks"></i>
+        <div class="dept-section">
+            <div class="dept-title">Quality & Compliance</div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="avatar">EC</div>
+                    <h3>Evelyn Curry</h3>
+                    <div class="role">Quality & Compliance Manager</div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">VM</div>
+                    <h3>Vusani Moyo</h3>
+                    <div class="role">Electrical Intern</div>
+                </div>
             </div>
-            <h4 style="color:var(--cts-dark); margin-bottom:0.5rem;">Paddy Wall</h4>
-            <span style="color:var(--cts-gray); font-size:0.9rem;">Project Manager</span>
-          </div>
         </div>
-      </div>
 
-      <!-- Commercial Team -->
-      <div class="animate-on-scroll" style="margin-bottom:2rem;">
-        <h3 style="text-align:center; color:var(--cts-dark); margin-bottom:1.5rem;">Commercial Team</h3>
-        <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem;">
-          <div class="card" style="text-align:center;">
-            <div style="padding:1.5rem;">
-              <i class="fas fa-bolt" style="font-size:1.5rem; color:var(--cts-blue); margin-bottom:0.5rem;"></i>
-              <h4 style="color:var(--cts-dark); font-size:1rem;">Martin Kinsella</h4>
-              <p style="color:var(--cts-gray); font-size:0.85rem; margin:0;">Electrical Estimator/QS</p>
+        <div class="dept-section">
+            <div class="dept-title">Administration & External Consultants</div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="avatar">LH</div>
+                    <h3>Linda Hogan</h3>
+                    <div class="role">Administration</div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">DP</div>
+                    <h3>David Power</h3>
+                    <div class="role">BIM Management</div>
+                    <div class="dept">External Consultant</div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">RB</div>
+                    <h3>Robert Blackmore</h3>
+                    <div class="role">Health & Safety Officer</div>
+                    <div class="dept">External Consultant</div>
+                </div>
             </div>
-          </div>
-          <div class="card" style="text-align:center;">
-            <div style="padding:1.5rem;">
-              <i class="fas fa-cogs" style="font-size:1.5rem; color:var(--cts-blue); margin-bottom:0.5rem;"></i>
-              <h4 style="color:var(--cts-dark); font-size:1rem;">Karl Cheasty</h4>
-              <p style="color:var(--cts-gray); font-size:0.85rem; margin:0;">Mechanical Estimator/QS</p>
-            </div>
-          </div>
-          <div class="card" style="text-align:center;">
-            <div style="padding:1.5rem;">
-              <i class="fas fa-calculator" style="font-size:1.5rem; color:var(--cts-blue); margin-bottom:0.5rem;"></i>
-              <h4 style="color:var(--cts-dark); font-size:1rem;">Scout Bliss</h4>
-              <p style="color:var(--cts-gray); font-size:0.85rem; margin:0;">Junior Estimator</p>
-            </div>
-          </div>
-          <div class="card" style="text-align:center;">
-            <div style="padding:1.5rem;">
-              <i class="fas fa-shopping-cart" style="font-size:1.5rem; color:var(--cts-blue); margin-bottom:0.5rem;"></i>
-              <h4 style="color:var(--cts-dark); font-size:1rem;">Creven Geary</h4>
-              <p style="color:var(--cts-gray); font-size:0.85rem; margin:0;">Purchasing Officer</p>
-            </div>
-          </div>
         </div>
-      </div>
 
-      <!-- Site Management -->
-      <div class="animate-on-scroll" style="margin-bottom:2rem;">
-        <h3 style="text-align:center; color:var(--cts-dark); margin-bottom:1.5rem;">Site Management</h3>
-        <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem;">
-          <div class="card" style="text-align:center;">
-            <div style="padding:1.5rem;">
-              <i class="fas fa-bolt" style="font-size:1.5rem; color:var(--cts-blue); margin-bottom:0.5rem;"></i>
-              <h4 style="color:var(--cts-dark); font-size:1rem;">Brendan Byrne</h4>
-              <p style="color:var(--cts-gray); font-size:0.85rem; margin:0;">Electrical Foreman</p>
-              <p style="color:var(--cts-gray); font-size:0.8rem; margin:0.25rem 0 0;">Michael O'Keeffe etc.</p>
-            </div>
-          </div>
-          <div class="card" style="text-align:center;">
-            <div style="padding:1.5rem;">
-              <i class="fas fa-wrench" style="font-size:1.5rem; color:var(--cts-blue); margin-bottom:0.5rem;"></i>
-              <h4 style="color:var(--cts-dark); font-size:1rem;">Martin Nolan</h4>
-              <p style="color:var(--cts-gray); font-size:0.85rem; margin:0;">Mechanical Foreman</p>
-              <p style="color:var(--cts-gray); font-size:0.8rem; margin:0.25rem 0 0;">JJ O'Gorman etc.</p>
-            </div>
-          </div>
-          <div class="card" style="text-align:center;">
-            <div style="padding:1.5rem;">
-              <i class="fas fa-truck" style="font-size:1.5rem; color:var(--cts-blue); margin-bottom:0.5rem;"></i>
-              <h4 style="color:var(--cts-dark); font-size:1rem;">Miroslaw Beszczynski</h4>
-              <p style="color:var(--cts-gray); font-size:0.85rem; margin:0;">Plant & Logistics</p>
-            </div>
-          </div>
-          <div class="card" style="text-align:center;">
-            <div style="padding:1.5rem;">
-              <i class="fas fa-tools" style="font-size:1.5rem; color:var(--cts-blue); margin-bottom:0.5rem;"></i>
-              <h4 style="color:var(--cts-dark); font-size:1rem;">Johnny Sandvoss</h4>
-              <p style="color:var(--cts-gray); font-size:0.85rem; margin:0;">Company Tester</p>
-            </div>
-          </div>
+        <div class="cta">
+            <h2>Join Our Growing Team</h2>
+            <p>We're always looking for talented individuals who share our commitment to quality, safety, and innovation.</p>
+            <a href="careers.html">View Careers</a>
         </div>
-      </div>
-
-      <!-- Quality & Compliance -->
-      <div class="animate-on-scroll" style="margin-bottom:2rem;">
-        <h3 style="text-align:center; color:var(--cts-dark); margin-bottom:1.5rem;">Quality & Compliance</h3>
-        <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem;">
-          <div class="card" style="text-align:center;">
-            <div style="padding:1.5rem;">
-              <i class="fas fa-clipboard-check" style="font-size:1.5rem; color:var(--cts-blue); margin-bottom:0.5rem;"></i>
-              <h4 style="color:var(--cts-dark); font-size:1rem;">Evelyn Curry</h4>
-              <p style="color:var(--cts-gray); font-size:0.85rem; margin:0;">Quality & Compliance Manager</p>
-            </div>
-          </div>
-          <div class="card" style="text-align:center;">
-            <div style="padding:1.5rem;">
-              <i class="fas fa-user-graduate" style="font-size:1.5rem; color:var(--cts-blue); margin-bottom:0.5rem;"></i>
-              <h4 style="color:var(--cts-dark); font-size:1rem;">Vusani Moyo</h4>
-              <p style="color:var(--cts-gray); font-size:0.85rem; margin:0;">Electrical Intern</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Administration & Accounts -->
-      <div class="animate-on-scroll" style="margin-bottom:2rem;">
-        <h3 style="text-align:center; color:var(--cts-dark); margin-bottom:1.5rem;">Administration & Accounts</h3>
-        <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem;">
-          <div class="card" style="text-align:center;">
-            <div style="padding:1.5rem;">
-              <i class="fas fa-user" style="font-size:1.5rem; color:var(--cts-blue); margin-bottom:0.5rem;"></i>
-              <h4 style="color:var(--cts-dark); font-size:1rem;">Linda Hogan</h4>
-              <p style="color:var(--cts-gray); font-size:0.85rem; margin:0;">Administration</p>
-            </div>
-          </div>
-          <div class="card" style="text-align:center;">
-            <div style="padding:1.5rem;">
-              <i class="fas fa-user" style="font-size:1.5rem; color:var(--cts-blue); margin-bottom:0.5rem;"></i>
-              <h4 style="color:var(--cts-dark); font-size:1rem;">Annette Cody</h4>
-              <p style="color:var(--cts-gray); font-size:0.85rem; margin:0;">Accounts</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- External Consultants -->
-      <div class="animate-on-scroll" style="margin-bottom:3rem;">
-        <h3 style="text-align:center; color:var(--cts-dark); margin-bottom:1.5rem;">External Consultants</h3>
-        <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem;">
-          <div class="card" style="text-align:center; border:2px dashed var(--cts-blue);">
-            <div style="padding:1.5rem;">
-              <i class="fas fa-drafting-compass" style="font-size:1.5rem; color:var(--cts-blue); margin-bottom:0.5rem;"></i>
-              <h4 style="color:var(--cts-dark); font-size:1rem;">David Power</h4>
-              <p style="color:var(--cts-gray); font-size:0.85rem; margin:0;">BIM Management</p>
-            </div>
-          </div>
-          <div class="card" style="text-align:center; border:2px dashed var(--cts-blue);">
-            <div style="padding:1.5rem;">
-              <i class="fas fa-hard-hat" style="font-size:1.5rem; color:var(--cts-blue); margin-bottom:0.5rem;"></i>
-              <h4 style="color:var(--cts-dark); font-size:1rem;">Robert Blackmore</h4>
-              <p style="color:var(--cts-gray); font-size:0.85rem; margin:0;">Health & Safety Officer</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Trades -->
-      <div class="animate-on-scroll" style="background:var(--cts-light); padding:2rem; border-radius:1rem; margin-bottom:3rem;">
-        <h3 style="text-align:center; color:var(--cts-dark); margin-bottom:1.5rem;">Our Trades</h3>
-        <div style="display:flex; justify-content:center; gap:3rem; flex-wrap:wrap;">
-          <div style="text-align:center;">
-            <i class="fas fa-bolt" style="font-size:2rem; color:var(--cts-blue); margin-bottom:0.5rem;"></i>
-            <p style="margin:0; font-weight:600; color:var(--cts-dark);">Electricians</p>
-            <p style="margin:0; font-size:0.85rem; color:var(--cts-gray);">& Apprentices</p>
-          </div>
-          <div style="text-align:center;">
-            <i class="fas fa-wrench" style="font-size:2rem; color:var(--cts-blue); margin-bottom:0.5rem;"></i>
-            <p style="margin:0; font-weight:600; color:var(--cts-dark);">Plumbers</p>
-            <p style="margin:0; font-size:0.85rem; color:var(--cts-gray);">& Apprentices</p>
-          </div>
-        </div>
-      </div>
-
-      <div style="margin-top:5rem; background:var(--cts-blue); color:#fff; padding:3rem; border-radius:1rem; text-align:center;" class="animate-on-scroll">
-        <h3 style="color:#fff;">Join Our Growing Team</h3>
-        <p style="color:#dbeafe; max-width:600px; margin:1rem auto;">We're always looking for talented individuals who share our commitment to quality, safety, and innovation. Check out our current vacancies.</p>
-        <a href="careers.html" class="btn" style="background:#fff; color:var(--cts-blue); margin-top:1rem;">View Careers</a>
-      </div>
     </div>
-  </section>
-</main>
 
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <h3><img src="ctslogop2.jpg" alt="CTS Group" style="height:40px; width:auto; margin-bottom:1rem;"> CTS Group</h3>
-        <p>Building services excellence since 1995.</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
+    <footer>
+        <div class="container">
+            <p>© 2025 CTS Group (M&E) Ltd. All rights reserved.</p>
         </div>
-      </div>
-      <div class="footer-links">
-        <h4>Waterford</h4>
-        <ul>
-          <li>CTS House, Highfield Business Park</li>
-          <li>Portlaw, Co. Waterford</li>
-          <li>T: 051 387931</li>
-          <li>E: info@ctsgroup.ie</li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Dublin</h4>
-        <ul>
-          <li>Unit 30, Parkwest Enterprise Centre</li>
-          <li>Lavery Ave, Parkwest, Dublin 12</li>
-          <li>T: 01 2530506</li>
-          <li>E: dublin@ctsgroup.ie</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 CTS Group. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
-
-<script>
-function toggleMenu() {
-  document.getElementById('navLinks').classList.toggle('active');
-}
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, {threshold: 0.1});
-
-document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
-</script>
+    </footer>
 </body>
 </html>
